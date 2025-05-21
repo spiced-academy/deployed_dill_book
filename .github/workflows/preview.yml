@@ -1,0 +1,39 @@
+# .github/workflows/preview.yml
+name: Deploy PR previews
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
+
+concurrency: preview-${{ github.ref }}
+
+jobs:
+  deploy-preview:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.11
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+
+    # Build the book
+    - name: Build the book
+      run: |
+        jupyter-book build DSBOOK
+        mv ./DSBOOK/images/ ./DSBOOK/_build/html/
+
+    - name: Deploy PR Preview
+      uses: rossjrw/pr-preview-action@v1.3.0
+      with:
+        source-dir: ./DSBOOK/_build/html
