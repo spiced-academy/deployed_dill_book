@@ -7,7 +7,7 @@ parts:
   - caption: Coding fundamentals & Introduction
     chapters:
   #  - file: sessions/01_Orientation
-  #  - file: sessions/01_Orientation_deployed-dill
+    - file: sessions/01_Orientation_deployed-dill
 
   #   - file: sessions/02_Git_Workflows
   #   - file: sessions/03_Intro_to_Data_Science_ML
