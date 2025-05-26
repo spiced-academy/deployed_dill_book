@@ -45,8 +45,8 @@ parts:
   #   - file: sessions/23_Clustering
   #   - file: sessions/24_NLP_Intro
 
-   - caption: Rapid Assessment Test
-  #   chapters:
+  - caption: Rapid Assessment Test
+    chapters:
     - file: RATs/01_Git_RAT
   #   - file: RATs/02_Intro_to_ML_RAT
   #   - file: RATs/03_Python_Part_1_RAT
