@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Git and Github &#8212; DS Course Material</title>
+    <title>Intro to Machine Learning &#8212; DS Course Material</title>
   
   
   
@@ -58,12 +58,12 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'RATs/01_Git_RAT';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'RATs/02_Intro_to_ML_RAT';</script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Intro to Machine Learning" href="02_Intro_to_ML_RAT.html" />
-    <link rel="prev" title="Introduction to Data Science &amp; ML" href="../sessions/03_Intro_to_Data_Science_ML.html" />
+    <link rel="next" title="Python Part 1" href="03_Python_Part_1_RAT.html" />
+    <link rel="prev" title="Git and Github" href="01_Git_RAT.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -181,8 +181,8 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Rapid Assessment Test</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Git and Github</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_Intro_to_ML_RAT.html">Intro to Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Git_RAT.html">Git and Github</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Intro to Machine Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_Python_Part_1_RAT.html">Python Part 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_Python_Part_2_RAT.html">Python Part 2</a></li>
 </ul>
@@ -273,7 +273,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Git and Github</h1>
+    <h1>Intro to Machine Learning</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -287,17 +287,17 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="git-and-github">
-<h1>Git and Github<a class="headerlink" href="#git-and-github" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="intro-to-machine-learning">
+<h1>Intro to Machine Learning<a class="headerlink" href="#intro-to-machine-learning" title="Link to this heading">#</a></h1>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="FYkLGQTAdivY" data-shufflequestions="False"
+<div class="output text_html"><div id="lRXeqsKosQAM" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#FYkLGQTAdivY {
+#lRXeqsKosQAM {
    --jq-multiple-choice-bg: #2E016D;
    --jq-mc-button-bg: #F5F5F5;
    --jq-mc-button-border: #252629;
@@ -467,161 +467,78 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsFYkLGQTAdivY=[
+</style></div><script type="application/javascript">var questionslRXeqsKosQAM=[
     {
-        "question": "How do you supply a commit message to a commit?",
+        "question": "Which statement applies to supervised learning?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "The training data (known data) does NOT include the desired output (response)",
+                "correct": false,
+                "feedback": "That's not the correct answer. Try again!"
+            },
+            {
+                "answer": "Training data (known data) includes SOME of the desired output (response)",
+                "correct": false,
+                "feedback": "That's not the correct answer. Try again!"
+            },
+            {
+                "answer": "An example of Supervised Learning is the grouping of customers by purchasing behavior",
+                "correct": false,
+                "feedback": "That's not the correct answer. Try again!"
+            },
+            {
+                "answer": "Training data (known data) includes the desired output (response) as well",
+                "correct": true,
+                "feedback": "That's correct. The training data also includes the desired output (response). "
+            }
+        ]
+    },
+    {
+        "question": "What are the applications for unsupervised learning?",
+        "type": "many_choice",
+        "answers": [
+            {
+                "answer": "Clustering",
+                "correct": true,
+                "feedback": "That's correct. "
+            },
+            {
+                "answer": "Regression",
+                "correct": false,
+                "feedback": "That's not the correct answer. Try again!"
+            },
+            {
+                "answer": "Classification",
+                "correct": false,
+                "feedback": "That's not the correct answer. Try again!"
+            },
+            {
+                "answer": "Dimensionality Reduction",
+                "correct": true,
+                "feedback": "That's correct."
+            },
+            {
+                "answer": "Predicting house prices based on given features",
+                "correct": false,
+                "feedback": "That's not the correct answer. Try again!"
+            },
+            {
+                "answer": "Recommender systems",
+                "correct": true,
+                "feedback": "That's correct. "
+            }
+        ]
+    },
+    {
+        "question": "Name two fields each in which AI can be beneficial or maleficial!",
         "type": "multiple_choice",
         "answer_cols": 1,
         "answers": [
             {
-                "code": "git message 'My first commit'",
-                "correct": false,
-                "feedback": "That's not the correct answer. Try again!"
-            },
-            {
-                "code": " git add 'My first commit'",
-                "correct": false,
-                "feedback": "That's not the correct answer. Try again!"
-            },
-            {
-                "code": "git commit -c 'My first commit'",
-                "correct": false,
-                "feedback": "That's not the correct answer. Try again!"
-            },
-            {
-                "code": "git commit -m 'My first commit'",
+                "answer": "Click here to see the answer.",
                 "correct": true,
-                "feedback": "That's correct. git commit -m 'message' is used when committing changes to a git repository with a commit message."
-            }
-        ]
-    },
-    {
-        "question": "You are working on a software project which provides services to Hotels. It helps them booking rooms and track the prices for different rooms etc. Now you want to add a new feature to this software which helps hotel employees in checking availability of rooms. How should you name the new branch so that everyone in your team can understand and work on it.",
-        "type": "many_choice",
-        "answer_cols": 1,
-        "answers": [
-            {
-                "code": "git switch -c team_branch",
-                "correct": false,
-                "feedback": "That's not the correct answer. Try again!"
-            },
-            {
-                "code": "git switch -c room_availability",
-                "correct": true,
-                "feedback": "That's correct. Naming a branch e.g. 'room_availability' will make everyone understand what the branch is about and not only just your team."
-            },
-            {
-                "code": "git switch -c feature_availability_room",
-                "correct": true,
-                "feedback": "That's correct. Naming a branch e.g. 'feature_availability_room' will make everyone understand what the branch is about and not only just your team."
-            },
-            {
-                "code": "git switch -c new_feature",
-                "correct": false,
-                "feedback": "That's not the correct answer. Try again!"
-            }
-        ]
-    },
-    {
-        "question": "Which one of them is an incorrect command?",
-        "type": "multiple_choice",
-        "answers": [
-            {
-                "code": "git add test.txt",
-                "correct": false,
-                "feedback": "That's not the correct answer. We are looking for an incorrect command. Try again!"
-            },
-            {
-                "code": "git pull origin main",
-                "correct": false,
-                "feedback": "That's not the correct answer. We are looking for an incorrect command. Try again!"
-            },
-            {
-                "code": "git push origin main",
-                "correct": false,
-                "feedback": "That's not the correct answer. We are looking for an incorrect command. Try again!"
-            },
-            {
-                "answer": "All of the commands",
-                "correct": false,
-                "feedback": "That's not the correct answer. We are looking for an incorrect command. Try again!"
-            },
-            {
-                "answer": "None of the commands",
-                "correct": true,
-                "feedback": "Nice job! All commands were valid commands"
-            }
-        ]
-    },
-    {
-        "question": "You found an interesting project on GitHub and you want to try it on your own machine. After running the project on your machine you decided to add some small changes to the project. Select all options you think you should do from starting till the end.",
-        "type": "many_choice",
-        "answers": [
-            {
-                "answer": "Clone the main repository",
-                "correct": false,
-                "feedback": "That's not the correct answer. Try again!"
-            },
-            {
-                "answer": "Fork the main repository",
-                "correct": true,
-                "feedback": "Great Job! Forking the main repository is the first step."
-            },
-            {
-                "answer": "Create a new branch",
-                "correct": true,
-                "feedback": "Yes! Creating a new branch is the third step."
-            },
-            {
-                "answer": "Clone the forked repository",
-                "correct": true,
-                "feedback": "Excellent. Cloning the forked repository is the second step."
-            },
-            {
-                "answer": "Commit changes to main repository",
-                "correct": false,
-                "feedback": "That's not the correct answer. Try again!"
-            },
-            {
-                "answer": "Commit changes to a branch of your repository",
-                "correct": true,
-                "feedback": "Good job. Committing your changes to a branch of your repository is the fourth step."
-            },
-            {
-                "answer": "Merge branch to main repository",
-                "correct": false,
-                "feedback": "That's not the correct answer. Try again!"
-            },
-            {
-                "answer": "Create a pull request to main repository",
-                "correct": true,
-                "feedback": "Well done. Creating a pull request is the last step."
-            }
-        ]
-    },
-    {
-        "question": "While working on a git repository, you want to push some changes but you get an error, which says 'you need to pull the repository before you can push your changes'. How can you pull the changes without losing your local changes.",
-        "type": "multiple_choice",
-        "answers": [
-            {
-                "answer": "git pull followed by git push",
-                "correct": false,
-                "feedback": "That's not the correct answer. Try again!"
-            },
-            {
-                "answer": "git stash followed by git pull",
-                "correct": true,
-                "feedback": "Great Job! git stash followed by git pull. git stash helps you to store your changes so you can pull the new version of the repository."
-            },
-            {
-                "answer": "git push followed by git stash and git pull",
-                "correct": false,
-                "feedback": "That's not the correct answer. Try again!"
-            },
-            {
-                "answer": "deleting whole local folder and starting from zero",
-                "correct": false,
-                "feedback": "That's not the correct answer. Try again!"
+                "feedback": "AI can be beneficial in the fields of e.g. smarter weather prediction and agriculture, energy optimization, self-driving cars, healthcare or on-demand language translation. But it can also be malicious in the fields of autonomous weapons, social manipulation, invasion of privacy and social grading, or recruiting. It can also amplify discrimination."
             }
         ]
     }
@@ -1375,8 +1292,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("FYkLGQTAdivY")) {
-            show_questions(questionsFYkLGQTAdivY,  FYkLGQTAdivY); 
+          if(document.getElementById("lRXeqsKosQAM")) {
+            show_questions(questionslRXeqsKosQAM,  lRXeqsKosQAM); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -1385,8 +1302,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("FYkLGQTAdivY");
-        // console.log(document.getElementById("FYkLGQTAdivY"));
+        //console.log("lRXeqsKosQAM");
+        // console.log(document.getElementById("lRXeqsKosQAM"));
 
         try_show();
         }
@@ -1425,20 +1342,20 @@ if (typeof version == 'undefined') {
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../sessions/03_Intro_to_Data_Science_ML.html"
+       href="01_Git_RAT.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Introduction to Data Science &amp; ML</p>
+        <p class="prev-next-title">Git and Github</p>
       </div>
     </a>
     <a class="right-next"
-       href="02_Intro_to_ML_RAT.html"
+       href="03_Python_Part_1_RAT.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Intro to Machine Learning</p>
+        <p class="prev-next-title">Python Part 1</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
