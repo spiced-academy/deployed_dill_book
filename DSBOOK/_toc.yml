@@ -47,9 +47,9 @@ parts:
   - caption: Rapid Assessment Test
     chapters:
     - file: RATs/01_Git_RAT
-  #   - file: RATs/02_Intro_to_ML_RAT
-  #   - file: RATs/03_Python_Part_1_RAT
-  #   - file: RATs/04_Python_Part_2_RAT
+    - file: RATs/02_Intro_to_ML_RAT
+    - file: RATs/03_Python_Part_1_RAT
+    - file: RATs/04_Python_Part_2_RAT
   #   - file: RATs/05_pandas_NumPy
   #   - file: RATs/06_EDA_RAT
   #   - file: RATs/07_Linear_Regression_RAT
