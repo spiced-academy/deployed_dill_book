@@ -11,8 +11,8 @@ parts:
     - file: sessions/02_Git_Workflows
     - file: sessions/03_Intro_to_Data_Science_ML
   #   - file: sessions/04_Ethics_Data_Science
-  #   - file: sessions/05.1_Intro_to_Databases
-  #   - file: sessions/05.2_Intro_to_SQL
+    - file: sessions/05.1_Intro_to_Databases
+    - file: sessions/05.2_Intro_to_SQL
   #   - file: sessions/06.1_Gestalt_Principles
   #   - file: sessions/06.2_Fantastic_Charts
   #   - file: sessions/07_Intro_EDA
