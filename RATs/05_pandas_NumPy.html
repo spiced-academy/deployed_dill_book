@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Git and Github &#8212; DS Course Material</title>
+    <title>pandas &amp; NumPy &#8212; DS Course Material</title>
   
   
   
@@ -58,12 +58,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'RATs/01_Git_RAT';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'RATs/05_pandas_NumPy';</script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Intro to Machine Learning" href="02_Intro_to_ML_RAT.html" />
-    <link rel="prev" title="Introduction to SQL" href="../sessions/05.2_Intro_to_SQL.html" />
+    <link rel="prev" title="Python Part 2" href="04_Python_Part_2_RAT.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -183,11 +182,11 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Rapid Assessment Test</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Git and Github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Git_RAT.html">Git and Github</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_Intro_to_ML_RAT.html">Intro to Machine Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_Python_Part_1_RAT.html">Python Part 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_Python_Part_2_RAT.html">Python Part 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05_pandas_NumPy.html">pandas &amp; NumPy</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">pandas &amp; NumPy</a></li>
 </ul>
 
     </div>
@@ -276,7 +275,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Git and Github</h1>
+    <h1>pandas & NumPy</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -290,17 +289,17 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="git-and-github">
-<h1>Git and Github<a class="headerlink" href="#git-and-github" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="pandas-numpy">
+<h1>pandas &amp; NumPy<a class="headerlink" href="#pandas-numpy" title="Link to this heading">#</a></h1>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="OupjTxVClmql" data-shufflequestions="False"
+<div class="output text_html"><div id="JapPmKerjVuP" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#OupjTxVClmql {
+#JapPmKerjVuP {
    --jq-multiple-choice-bg: #2E016D;
    --jq-mc-button-bg: #F5F5F5;
    --jq-mc-button-border: #252629;
@@ -470,166 +469,142 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsOupjTxVClmql=[
+</style></div><script type="application/javascript">var questionsJapPmKerjVuP=[
     {
-        "question": "How do you supply a commit message to a commit?",
-        "type": "multiple_choice",
-        "answer_cols": 1,
+        "question": " Which of the following are pandas data structures?",
+        "type": "many_choice",
         "answers": [
             {
-                "code": "git message 'My first commit'",
+                "answer": "SpreadSheet",
                 "correct": false,
                 "feedback": "That's not the correct answer. Try again!"
             },
             {
-                "code": " git add 'My first commit'",
+                "answer": "DataDict",
                 "correct": false,
                 "feedback": "That's not the correct answer. Try again!"
             },
             {
-                "code": "git commit -c 'My first commit'",
-                "correct": false,
-                "feedback": "That's not the correct answer. Try again!"
-            },
-            {
-                "code": "git commit -m 'My first commit'",
+                "answer": "DataFrame",
                 "correct": true,
-                "feedback": "That's correct. git commit -m 'message' is used when committing changes to a git repository with a commit message."
+                "feedback": "That's correct! "
+            },
+            {
+                "answer": "Series",
+                "correct": true,
+                "feedback": "That's correct! "
             }
         ]
     },
     {
-        "question": "You are working on a software project which provides services to Hotels. It helps them booking rooms and track the prices for different rooms etc. Now you want to add a new feature to this software which helps hotel employees in checking availability of rooms. How should you name the new branch so that everyone in your team can understand and work on it.",
+        "question": " Which of the following ways to grab a subset of your dataframe is correct? ",
         "type": "many_choice",
         "answer_cols": 1,
         "answers": [
             {
-                "code": "git switch -c team_branch",
+                "code": "df.loc[15:25, ['sepal_length', 'sepal_width']]",
+                "correct": true,
+                "feedback": "That's right! If you use \".loc\" you have to use the labels/column names to address the specific columns."
+            },
+            {
+                "code": "df.ilcoc[15:20, 'petal_length']",
                 "correct": false,
                 "feedback": "That's not the correct answer. Try again!"
             },
             {
-                "code": "git switch -c room_availability",
-                "correct": true,
-                "feedback": "That's correct. Naming a branch e.g. 'room_availability' will make everyone understand what the branch is about and not only just your team."
-            },
-            {
-                "code": "git switch -c feature_availability_room",
-                "correct": true,
-                "feedback": "That's correct. Naming a branch e.g. 'feature_availability_room' will make everyone understand what the branch is about and not only just your team."
-            },
-            {
-                "code": "git switch -c new_feature",
+                "code": "df.loc[0:10, 2]",
                 "correct": false,
                 "feedback": "That's not the correct answer. Try again!"
+            },
+            {
+                "code": "df.iloc[20:30, 4]",
+                "correct": true,
+                "feedback": "That's right!  \".iloc\" works purely integer-location based, that means you need to pass it the index of the columns."
             }
         ]
     },
     {
-        "question": "Which one of them is an incorrect command?",
+        "question": "Assuming you have a DataFrame called \"df\" with several columns. Which of the following commands returns the count of unique values for each column?",
+        "code": "",
         "type": "multiple_choice",
         "answers": [
             {
-                "code": "git add test.txt",
+                "code": "df.value_counts()",
                 "correct": false,
-                "feedback": "That's not the correct answer. We are looking for an incorrect command. Try again!"
+                "feedback": "That's not the correct answer. Try again!"
             },
             {
-                "code": "git pull origin main",
+                "code": "df.unique()",
                 "correct": false,
-                "feedback": "That's not the correct answer. We are looking for an incorrect command. Try again!"
+                "feedback": "That's not the correct answer. Try again!"
             },
             {
-                "code": "git push origin main",
+                "code": "df.count()",
                 "correct": false,
-                "feedback": "That's not the correct answer. We are looking for an incorrect command. Try again!"
+                "feedback": "That's not the correct answer. Try again!"
             },
             {
-                "answer": "All of the commands",
-                "correct": false,
-                "feedback": "That's not the correct answer. We are looking for an incorrect command. Try again!"
-            },
-            {
-                "answer": "None of the commands",
+                "code": "df.nunique()",
                 "correct": true,
-                "feedback": "Nice job! All commands were valid commands"
+                "feedback": "That's correct! \".unique()\" can only be applied to a Pandas Series. \".count()\" will return the amount of entries for each column and \".value_counts()\" returns the counts of unique rows in the DataFrame."
             }
         ]
     },
     {
-        "question": "You found an interesting project on GitHub and you want to try it on your own machine. After running the project on your machine you decided to add some small changes to the project. Select all options you think you should do from starting till the end.",
+        "question": "Let's say you have a NumPy array a. Which of the following commands will return this output?",
+        "code": "a = np.array([1, 2, 3, 4, 5, 6, 7, 8])\n\noutput:\narray([[[1, 2,],\n        [3, 4]],\n\n       [[5, 6],\n        [7, 8]]])",
         "type": "many_choice",
         "answers": [
             {
-                "answer": "Clone the main repository",
+                "code": "a.resize(2, 2, 2)",
+                "correct": true,
+                "feedback": "That's correct."
+            },
+            {
+                "code": "a.reshape(2, 2, -1)",
+                "correct": true,
+                "feedback": "Well done. "
+            },
+            {
+                "code": "a.reshape(2, 2)",
                 "correct": false,
-                "feedback": "That's not the correct answer. Try again!"
+                "feedback": "That's not the correct answer. An array of size 8 cannot be reshaped into shape (2,2)."
             },
             {
-                "answer": "Fork the main repository",
+                "code": "a.reshape(2, 2, 2)",
                 "correct": true,
-                "feedback": "Great Job! Forking the main repository is the first step."
-            },
-            {
-                "answer": "Create a new branch",
-                "correct": true,
-                "feedback": "Yes! Creating a new branch is the third step."
-            },
-            {
-                "answer": "Clone the forked repository",
-                "correct": true,
-                "feedback": "Excellent. Cloning the forked repository is the second step."
-            },
-            {
-                "answer": "Commit changes to main repository",
-                "correct": false,
-                "feedback": "That's not the correct answer. Try again!"
-            },
-            {
-                "answer": "Commit changes to a branch of your repository",
-                "correct": true,
-                "feedback": "Good job. Committing your changes to a branch of your repository is the fourth step."
-            },
-            {
-                "answer": "Merge branch to main repository",
-                "correct": false,
-                "feedback": "That's not the correct answer. Try again!"
-            },
-            {
-                "answer": "Create a pull request to main repository",
-                "correct": true,
-                "feedback": "Well done. Creating a pull request is the last step."
+                "feedback": "Well done."
             }
         ]
     },
     {
-        "question": "While working on a git repository, you want to push some changes but you get an error, which says 'you need to pull the repository before you can push your changes'. How can you pull the changes without losing your local changes.",
+        "question": " Assuming we have two arrays what would the result look like, if you filter array a with the array b?",
+        "code": "a = np.array([1, 2, 3, 4])\nb = np.array([False, True, True, False])\na[b]",
         "type": "multiple_choice",
         "answers": [
             {
-                "answer": "git pull followed by git push",
+                "code": "array([1, 4])",
                 "correct": false,
                 "feedback": "That's not the correct answer. Try again!"
             },
             {
-                "answer": "git stash followed by git pull",
+                "code": "array([2, 3])",
                 "correct": true,
-                "feedback": "Great Job! git stash followed by git pull. git stash helps you to store your changes so you can pull the new version of the repository."
+                "feedback": "Correct! Filtering a with b returns only the values where b is \"True\"."
             },
             {
-                "answer": "git push followed by git stash and git pull",
+                "code": "array([True, True])",
                 "correct": false,
                 "feedback": "That's not the correct answer. Try again!"
             },
             {
-                "answer": "deleting whole local folder and starting from zero",
+                "code": "array(2, 3)",
                 "correct": false,
                 "feedback": "That's not the correct answer. Try again!"
             }
         ]
     }
-]
-;
+];
     // Make a random ID
 function makeid(length) {
     var result = [];
@@ -1378,8 +1353,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("OupjTxVClmql")) {
-            show_questions(questionsOupjTxVClmql,  OupjTxVClmql); 
+          if(document.getElementById("JapPmKerjVuP")) {
+            show_questions(questionsJapPmKerjVuP,  JapPmKerjVuP); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -1388,8 +1363,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("OupjTxVClmql");
-        // console.log(document.getElementById("OupjTxVClmql"));
+        //console.log("JapPmKerjVuP");
+        // console.log(document.getElementById("JapPmKerjVuP"));
 
         try_show();
         }
@@ -1428,22 +1403,13 @@ if (typeof version == 'undefined') {
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../sessions/05.2_Intro_to_SQL.html"
+       href="04_Python_Part_2_RAT.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Introduction to SQL</p>
+        <p class="prev-next-title">Python Part 2</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="02_Intro_to_ML_RAT.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Intro to Machine Learning</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
