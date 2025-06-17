@@ -15,7 +15,7 @@ parts:
     - file: sessions/05.2_Intro_to_SQL
     - file: sessions/06.1_Gestalt_Principles_Visualisation
   #   - file: sessions/06.2_Fantastic_Charts
-  #   - file: sessions/07_Intro_EDA
+    - file: sessions/07_Intro_EDA
   #   - file: sessions/07.2_EDA_process
     
   # - caption: Machine Learning Basics
