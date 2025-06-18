@@ -16,7 +16,7 @@ parts:
     - file: sessions/06.1_Gestalt_Principles_Visualisation
   #   - file: sessions/06.2_Fantastic_Charts
     - file: sessions/07_Intro_EDA
-  #   - file: sessions/07.2_EDA_process
+    - file: sessions/07.2_EDA_process
     
   # - caption: Machine Learning Basics
   #   chapters:
@@ -51,7 +51,7 @@ parts:
     - file: RATs/03_Python_Part_1_RAT
     - file: RATs/04_Python_Part_2_RAT
     - file: RATs/05_pandas_NumPy
-  #   - file: RATs/06_EDA_RAT
+    - file: RATs/06_EDA_RAT
   #   - file: RATs/07_Linear_Regression_RAT
   #   - file: RATs/08_Bias_Variance_RAT
   #   - file: RATs/09_Gradient_Descent_RAT
