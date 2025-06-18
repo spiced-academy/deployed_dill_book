@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>pandas &amp; NumPy &#8212; DS Course Material</title>
+    <title>Exploratory Data Analysis &#8212; DS Course Material</title>
   
   
   
@@ -58,12 +58,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'RATs/05_pandas_NumPy';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'RATs/06_EDA_RAT';</script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Exploratory Data Analysis" href="06_EDA_RAT.html" />
-    <link rel="prev" title="Python Part 2" href="04_Python_Part_2_RAT.html" />
+    <link rel="prev" title="pandas &amp; NumPy" href="05_pandas_NumPy.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -190,8 +189,8 @@
 <li class="toctree-l1"><a class="reference internal" href="02_Intro_to_ML_RAT.html">Intro to Machine Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_Python_Part_1_RAT.html">Python Part 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_Python_Part_2_RAT.html">Python Part 2</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">pandas &amp; NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06_EDA_RAT.html">Exploratory Data Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_pandas_NumPy.html">pandas &amp; NumPy</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exploratory Data Analysis</a></li>
 </ul>
 
     </div>
@@ -280,7 +279,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>pandas & NumPy</h1>
+    <h1>Exploratory Data Analysis</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -294,17 +293,17 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="pandas-numpy">
-<h1>pandas &amp; NumPy<a class="headerlink" href="#pandas-numpy" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="exploratory-data-analysis">
+<h1>Exploratory Data Analysis<a class="headerlink" href="#exploratory-data-analysis" title="Link to this heading">#</a></h1>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="xNnhkdWIkLeg" data-shufflequestions="False"
+<div class="output text_html"><div id="apWCqwCgIAiF" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#xNnhkdWIkLeg {
+#apWCqwCgIAiF {
    --jq-multiple-choice-bg: #2E016D;
    --jq-mc-button-bg: #F5F5F5;
    --jq-mc-button-border: #252629;
@@ -474,138 +473,116 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsxNnhkdWIkLeg=[
+</style></div><script type="application/javascript">var questionsapWCqwCgIAiF=[
     {
-        "question": " Which of the following are pandas data structures?",
+        "question": "Which measure of central tendency can be used for categorical variables?",
         "type": "many_choice",
         "answers": [
             {
-                "answer": "SpreadSheet",
+                "answer": "Median",
                 "correct": false,
-                "feedback": "That's not the correct answer. Try again!"
+                "feedback": "Sorry, that was wrong. The median can be only calculated for numerical variables. Please try again"
             },
             {
-                "answer": "DataDict",
+                "answer": "Mean",
                 "correct": false,
-                "feedback": "That's not the correct answer. Try again!"
+                "feedback": "Sorry, that was wrong. The mean can be only calculated for numerical variables. Please try again"
             },
             {
-                "answer": "DataFrame",
+                "answer": "Mode",
                 "correct": true,
-                "feedback": "That's correct! "
+                "feedback": "That's right. The Mode can be used as measures of central tendency for categorical variables. The mode is the most commonly occurring category."
             },
             {
-                "answer": "Series",
+                "answer": "Expected Value",
                 "correct": true,
-                "feedback": "That's correct! "
+                "feedback": "That's right. The expected value can be used as measures of central tendency for categorical variables. It is a form of a weighted mean where the weights are probabilities."
             }
         ]
     },
     {
-        "question": " Which of the following ways to grab a subset of your dataframe is correct? ",
+        "question": "When should you prefer the median instead of the mean? ",
         "type": "many_choice",
+        "answers": [
+            {
+                "answer": "when the data is distributed symmetrically",
+                "correct": false,
+                "feedback": "Sorry, that was wrong. Please try again"
+            },
+            {
+                "answer": "when the dataset contains outliers",
+                "correct": true,
+                "feedback": "That is correct. The Mean is sensitive to extreme values while the Median is more robust. In case of outliers, it's preferred to use the median."
+            },
+            {
+                "answer": "when the dataset has no outliers",
+                "correct": false,
+                "feedback": "Sorry, that was wrong. Please try again"
+            },
+            {
+                "answer": "when the data is skewed",
+                "correct": true,
+                "feedback": "That is correct. The Mean is sensitive to extreme values while the Median is more robust. Skewed data has extreme values at the tail, therefore, the median is the better choice for this case."
+            },
+            {
+                "answer": "None of the other answers. Mean is always the best choice.",
+                "correct": false,
+                "feedback": "Sorry, that was wrong. Please try again"
+            }
+        ]
+    },
+    {
+        "question": "If variable A and B are linearly correlated,",
+        "type": "many_choice",
+        "answers": [
+            {
+                "answer": "it could be that this just happened by coincidence.",
+                "correct": true,
+                "feedback": "That's correct. Without further knowledge you cannot conclude the reason for the correlation, it could be pure coincidence."
+            },
+            {
+                "answer": "it means that A causes B.",
+                "correct": false,
+                "feedback": "Sorry, that was wrong. Correlation does not imply causation! Please try again"
+            },
+            {
+                "answer": "it means that when A increases, also B increases.",
+                "correct": false,
+                "feedback": "Sorry, that was wrong. From the statement that A and B correlate we do not yet know whether it is a positive correlation or a negative correlation."
+            },
+            {
+                "answer": "it could be possible that the relationship between A and B are caused by an other variable C",
+                "correct": true,
+                "feedback": "That's correct. Without further knowledge you cannot conclude the reason for the correlation, it could be caused by a further variable C."
+            },
+            {
+                "answer": "the pearson correlation coefficient is close to 0.",
+                "correct": false,
+                "feedback": "Sorry, that was wrong. In case of a positive linear correlation, the Pearson's correlation coefficient is close to 1, in case of a negative correlation it is close to -1."
+            }
+        ]
+    },
+    {
+        "question": "What is an outlier?",
+        "type": "multiple_choice",
+        "answer_cols": 1,
+        "answers":  [
+            {
+                "answer": "Click here to see the answer.",
+                "correct": true,
+                "feedback": "In statistics, an outlier is a data point that differs significantly from other observations. An outlier may be due to variability in the measurement or it may indicate experimental error. The choice of how to deal with an outlier should depend on the cause. There is no rigid mathematical definition of what constitutes an outlier; determining whether or not an observation is an outlier is ultimately a subjective exercise."
+            }
+        ]
+    },
+    {
+        "question": " What is a deviation?",
+        "type": "multiple_choice",
         "answer_cols": 1,
         "answers": [
             {
-                "code": "df.loc[15:25, ['sepal_length', 'sepal_width']]",
-                "correct": true,
-                "feedback": "That's right! If you use \".loc\" you have to use the labels/column names to address the specific columns."
-            },
-            {
-                "code": "df.ilcoc[15:20, 'petal_length']",
-                "correct": false,
-                "feedback": "That's not the correct answer. Try again!"
-            },
-            {
-                "code": "df.loc[0:10, 2]",
-                "correct": false,
-                "feedback": "That's not the correct answer. Try again!"
-            },
-            {
-                "code": "df.iloc[20:30, 4]",
-                "correct": true,
-                "feedback": "That's right!  \".iloc\" works purely integer-location based, that means you need to pass it the index of the columns."
-            }
-        ]
-    },
-    {
-        "question": "Assuming you have a DataFrame called \"df\" with several columns. Which of the following commands returns the count of unique values for each column?",
-        "code": "",
-        "type": "multiple_choice",
-        "answers": [
-            {
-                "code": "df.value_counts()",
-                "correct": false,
-                "feedback": "That's not the correct answer. Try again!"
-            },
-            {
-                "code": "df.unique()",
-                "correct": false,
-                "feedback": "That's not the correct answer. Try again!"
-            },
-            {
-                "code": "df.count()",
-                "correct": false,
-                "feedback": "That's not the correct answer. Try again!"
-            },
-            {
-                "code": "df.nunique()",
-                "correct": true,
-                "feedback": "That's correct! \".unique()\" can only be applied to a Pandas Series. \".count()\" will return the amount of entries for each column and \".value_counts()\" returns the counts of unique rows in the DataFrame."
-            }
-        ]
-    },
-    {
-        "question": "Let's say you have a NumPy array a. Which of the following commands will return this output?",
-        "code": "a = np.array([1, 2, 3, 4, 5, 6, 7, 8])\n\noutput:\narray([[[1, 2,],\n        [3, 4]],\n\n       [[5, 6],\n        [7, 8]]])",
-        "type": "many_choice",
-        "answers": [
-            {
-                "code": "a.resize(2, 2, 2)",
-                "correct": true,
-                "feedback": "That's correct."
-            },
-            {
-                "code": "a.reshape(2, 2, -1)",
-                "correct": true,
-                "feedback": "Well done. "
-            },
-            {
-                "code": "a.reshape(2, 2)",
-                "correct": false,
-                "feedback": "That's not the correct answer. An array of size 8 cannot be reshaped into shape (2,2)."
-            },
-            {
-                "code": "a.reshape(2, 2, 2)",
-                "correct": true,
-                "feedback": "Well done."
-            }
-        ]
-    },
-    {
-        "question": " Assuming we have two arrays what would the result look like, if you filter array a with the array b?",
-        "code": "a = np.array([1, 2, 3, 4])\nb = np.array([False, True, True, False])\na[b]",
-        "type": "multiple_choice",
-        "answers": [
-            {
-                "code": "array([1, 4])",
-                "correct": false,
-                "feedback": "That's not the correct answer. Try again!"
-            },
-            {
-                "code": "array([2, 3])",
-                "correct": true,
-                "feedback": "Correct! Filtering a with b returns only the values where b is \"True\"."
-            },
-            {
-                "code": "array([True, True])",
-                "correct": false,
-                "feedback": "That's not the correct answer. Try again!"
-            },
-            {
-                "code": "array(2, 3)",
-                "correct": false,
-                "feedback": "That's not the correct answer. Try again!"
+            "answer": "Click here to see the answer.",
+            "correct": true,
+            "feedback": "The deviation is the difference between an observation and the estimate of location. A deviation that is a difference between an observed value and the true value of a quantity of interest (where true value denotes the Expected Value, such as the population mean) is an 'error'. A deviation that is the difference between the observed value and an estimate of the true value (e.g. the sample mean; the Expected Value of a sample can be used as an estimate of the Expected Value of the population) is a 'residual'."
             }
         ]
     }
@@ -1358,8 +1335,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("xNnhkdWIkLeg")) {
-            show_questions(questionsxNnhkdWIkLeg,  xNnhkdWIkLeg); 
+          if(document.getElementById("apWCqwCgIAiF")) {
+            show_questions(questionsapWCqwCgIAiF,  apWCqwCgIAiF); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -1368,8 +1345,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("xNnhkdWIkLeg");
-        // console.log(document.getElementById("xNnhkdWIkLeg"));
+        //console.log("apWCqwCgIAiF");
+        // console.log(document.getElementById("apWCqwCgIAiF"));
 
         try_show();
         }
@@ -1408,22 +1385,13 @@ if (typeof version == 'undefined') {
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="04_Python_Part_2_RAT.html"
+       href="05_pandas_NumPy.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Python Part 2</p>
+        <p class="prev-next-title">pandas &amp; NumPy</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="06_EDA_RAT.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Exploratory Data Analysis</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
