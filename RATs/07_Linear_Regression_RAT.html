@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Exploratory Data Analysis &#8212; DS Course Material</title>
+    <title>Linear Regression &#8212; DS Course Material</title>
   
   
   
@@ -58,12 +58,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'RATs/06_EDA_RAT';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'RATs/07_Linear_Regression_RAT';</script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Linear Regression" href="07_Linear_Regression_RAT.html" />
-    <link rel="prev" title="pandas &amp; NumPy" href="05_pandas_NumPy.html" />
+    <link rel="prev" title="Exploratory Data Analysis" href="06_EDA_RAT.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -195,8 +194,8 @@
 <li class="toctree-l1"><a class="reference internal" href="03_Python_Part_1_RAT.html">Python Part 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_Python_Part_2_RAT.html">Python Part 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_pandas_NumPy.html">pandas &amp; NumPy</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exploratory Data Analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07_Linear_Regression_RAT.html">Linear Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_EDA_RAT.html">Exploratory Data Analysis</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Linear Regression</a></li>
 </ul>
 
     </div>
@@ -285,7 +284,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Exploratory Data Analysis</h1>
+    <h1>Linear Regression</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -299,17 +298,17 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="exploratory-data-analysis">
-<h1>Exploratory Data Analysis<a class="headerlink" href="#exploratory-data-analysis" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="linear-regression">
+<h1>Linear Regression<a class="headerlink" href="#linear-regression" title="Link to this heading">#</a></h1>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="TZeHqnJCwQrH" data-shufflequestions="False"
+<div class="output text_html"><div id="sollxSaUxMbU" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#TZeHqnJCwQrH {
+#sollxSaUxMbU {
    --jq-multiple-choice-bg: #2E016D;
    --jq-mc-button-bg: #F5F5F5;
    --jq-mc-button-border: #252629;
@@ -479,116 +478,115 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsTZeHqnJCwQrH=[
+</style></div><script type="application/javascript">var questionssollxSaUxMbU=[
     {
-        "question": "Which measure of central tendency can be used for categorical variables?",
+        "question": "What are the important assumptions of Linear Regression?",
         "type": "many_choice",
         "answers": [
             {
-                "answer": "Median",
-                "correct": false,
-                "feedback": "Sorry, that was wrong. The median can be only calculated for numerical variables. Please try again"
-            },
-            {
-                "answer": "Mean",
-                "correct": false,
-                "feedback": "Sorry, that was wrong. The mean can be only calculated for numerical variables. Please try again"
-            },
-            {
-                "answer": "Mode",
+                "answer": "Linearity & Normality",
                 "correct": true,
-                "feedback": "That's right. The Mode can be used as measures of central tendency for categorical variables. The mode is the most commonly occurring category."
+                "feedback": "That's correct. The major assumptions of linear regression are linearity, normality, independence and homoscedasticity."
             },
             {
-                "answer": "Expected Value",
-                "correct": true,
-                "feedback": "That's right. The expected value can be used as measures of central tendency for categorical variables. It is a form of a weighted mean where the weights are probabilities."
-            }
-        ]
-    },
-    {
-        "question": "When should you prefer the median instead of the mean? ",
-        "type": "many_choice",
-        "answers": [
-            {
-                "answer": "when the data is distributed symmetrically",
+                "answer": "Skewness & Kurtosis",
                 "correct": false,
                 "feedback": "Sorry, that was wrong. Please try again"
             },
             {
-                "answer": "when the dataset contains outliers",
-                "correct": true,
-                "feedback": "That is correct. The Mean is sensitive to extreme values while the Median is more robust. In case of outliers, it's preferred to use the median."
-            },
-            {
-                "answer": "when the dataset has no outliers",
+                "answer": "Independence & Heteroscedasticity",
                 "correct": false,
                 "feedback": "Sorry, that was wrong. Please try again"
             },
             {
-                "answer": "when the data is skewed",
+                "answer": "Homoscedasticity & Independence",
                 "correct": true,
-                "feedback": "That is correct. The Mean is sensitive to extreme values while the Median is more robust. Skewed data has extreme values at the tail, therefore, the median is the better choice for this case."
+                "feedback": "That's correct. The major assumptions of linear regression are linearity, normality, independence and homoscedasticity."
             },
             {
-                "answer": "None of the other answers. Mean is always the best choice.",
+                "answer": "Normality & Non-linearity",
                 "correct": false,
                 "feedback": "Sorry, that was wrong. Please try again"
             }
         ]
     },
     {
-        "question": "If variable A and B are linearly correlated,",
+        "question": "You train a linear regression model with three features and get the following regression equation. How can you interpret the intercept and coefficient for feature 1?",
+        "code": "$\\hat_{y} = 1.04 + 0.61*feature_{1} - 0.59*feature_{2} + 0.56*feature_{3}",
         "type": "many_choice",
         "answers": [
             {
-                "answer": "it could be that this just happened by coincidence.",
+                "answer": "We would expect that our target variable (y) increases by 0.61 when we increase feature_1 by 1 unit. This applies regardless of whether we change the value for other features as well.",
+                "correct": false,
+                "feedback": "Sorry, that was wrong. Please try again"
+            },
+            {
+                "answer": "Feature_1 is the most important feature because it has the highest coefficient.",
+                "correct": false,
+                "feedback": "Sorry, that was wrong. Please try again"
+            },
+            {
+                "answer": "The intercept of 1.04 is the value for our target variable (y) when all our explanatory variables (features) are 0.",
                 "correct": true,
-                "feedback": "That's correct. Without further knowledge you cannot conclude the reason for the correlation, it could be pure coincidence."
+                "feedback": "Correct. The first value in the equation is the intercept and it tells us the expected value for our target variable if all the features are 0. "
             },
             {
-                "answer": "it means that A causes B.",
+                "answer": "We would expect that feature_1 changes by 0.61 when we increase our target variable by 1 unit. Provided that we keep all other features constant.",
                 "correct": false,
-                "feedback": "Sorry, that was wrong. Correlation does not imply causation! Please try again"
+                "feedback": "Sorry, that was wrong. Please try again"
             },
             {
-                "answer": "it means that when A increases, also B increases.",
-                "correct": false,
-                "feedback": "Sorry, that was wrong. From the statement that A and B correlate we do not yet know whether it is a positive correlation or a negative correlation."
-            },
-            {
-                "answer": "it could be possible that the relationship between A and B are caused by an other variable C",
+                "answer": "We would expect that our target variable (y) increases by 0.61 when we increase feature_1 by 1 unit. Provided that we keep all other features constant.",
                 "correct": true,
-                "feedback": "That's correct. Without further knowledge you cannot conclude the reason for the correlation, it could be caused by a further variable C."
+                "feedback": "Correct. The coefficient for feature_1 (slope) tells us what change in our target variable we would expect if we increase this feature by 1 unit holding all other features constant. In this case it would be an increase of 0.61."
             },
             {
-                "answer": "the pearson correlation coefficient is close to 0.",
+                "answer": "The intercept of 1.04 is the value for our target variable (y) when all our explanatory variables (features) are 1.",
                 "correct": false,
-                "feedback": "Sorry, that was wrong. In case of a positive linear correlation, the Pearson's correlation coefficient is close to 1, in case of a negative correlation it is close to -1."
+                "feedback": "Sorry, that was wrong. Please try again"
             }
         ]
     },
     {
-        "question": "What is an outlier?",
+        "question": "If you would calculate the adjusted R-squared for this model. What do you expect?",
         "type": "multiple_choice",
-        "answer_cols": 1,
-        "answers":  [
+        "answers": [
             {
-                "answer": "Click here to see the answer.",
+                "answer": "The adjusted r-squared should be lower or as high as the r-squared.",
                 "correct": true,
-                "feedback": "In statistics, an outlier is a data point that differs significantly from other observations. An outlier may be due to variability in the measurement or it may indicate experimental error. The choice of how to deal with an outlier should depend on the cause. There is no rigid mathematical definition of what constitutes an outlier; determining whether or not an observation is an outlier is ultimately a subjective exercise."
+                "feedback": "Correct. The adjusted r-squared penalizes us for adding more features that actually don't improve the model."
+            },
+            {
+                "answer": "The adjusted r-squared should be higher as the r-squared.",
+                "correct": false,
+                "feedback": "Sorry, that was wrong. Please try again"
+            },
+            {
+                "answer": "The adjusted r-squared should be higher or as high as the r-squared.",
+                "correct": false,
+                "feedback": "Sorry, that was wrong. Please try again"
+            },
+            {
+                "answer": "The adjusted r-squared should be lower as the r-squared.",
+                "correct": false,
+                "feedback": "Sorry, that was wrong. Please try again"
+            },
+            {
+                "answer": "There are not enough information to make an assumption.",
+                "correct": false,
+                "feedback": "Sorry, that was wrong. Please try again"
             }
         ]
     },
     {
-        "question": " What is a deviation?",
+        "question": "The r-squared for this model is 0.52 What does it tell you? ",
         "type": "multiple_choice",
         "answer_cols": 1,
         "answers": [
             {
             "answer": "Click here to see the answer.",
             "correct": true,
-            "feedback": "The deviation is the difference between an observation and the estimate of location. A deviation that is a difference between an observed value and the true value of a quantity of interest (where true value denotes the Expected Value, such as the population mean) is an 'error'. A deviation that is the difference between the observed value and an estimate of the true value (e.g. the sample mean; the Expected Value of a sample can be used as an estimate of the Expected Value of the population) is a 'residual'."
+            "feedback": "We can interpret the r-squared as the proportion of the variance in the target variable that can be explained by our model. In this particular case our linear model with the three features can account 'only' for 52% of the variation in our target variable. Nearly half of the variation is still unexplained. That indicates that the model is probably missing some important information (e.g. more features, non-linear relationship...)."
             }
         ]
     }
@@ -1341,8 +1339,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("TZeHqnJCwQrH")) {
-            show_questions(questionsTZeHqnJCwQrH,  TZeHqnJCwQrH); 
+          if(document.getElementById("sollxSaUxMbU")) {
+            show_questions(questionssollxSaUxMbU,  sollxSaUxMbU); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -1351,8 +1349,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("TZeHqnJCwQrH");
-        // console.log(document.getElementById("TZeHqnJCwQrH"));
+        //console.log("sollxSaUxMbU");
+        // console.log(document.getElementById("sollxSaUxMbU"));
 
         try_show();
         }
@@ -1391,22 +1389,13 @@ if (typeof version == 'undefined') {
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="05_pandas_NumPy.html"
+       href="06_EDA_RAT.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">pandas &amp; NumPy</p>
+        <p class="prev-next-title">Exploratory Data Analysis</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="07_Linear_Regression_RAT.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Linear Regression</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
