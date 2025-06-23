@@ -18,9 +18,9 @@ parts:
     - file: sessions/07_Intro_EDA
     - file: sessions/07.2_EDA_process
     
-  # - caption: Machine Learning Basics
-  #   chapters:
-  #   - file: sessions/08_Linear_Regression
+  - caption: Machine Learning Basics
+    chapters:
+    - file: sessions/08_Linear_Regression
   #   - file: sessions/09.1_Bias_Variance_Tradeoff
   #   - file: sessions/09.2_Regularization
   #   - file: sessions/10_Gradient_Descent
@@ -52,7 +52,7 @@ parts:
     - file: RATs/04_Python_Part_2_RAT
     - file: RATs/05_pandas_NumPy
     - file: RATs/06_EDA_RAT
-  #   - file: RATs/07_Linear_Regression_RAT
+    - file: RATs/07_Linear_Regression_RAT
   #   - file: RATs/08_Bias_Variance_RAT
   #   - file: RATs/09_Gradient_Descent_RAT
   #   - file: RATs/10_Evaluation_Metrics_RAT
