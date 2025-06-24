@@ -53,7 +53,7 @@ parts:
     - file: RATs/05_pandas_NumPy
     - file: RATs/06_EDA_RAT
     - file: RATs/07_Linear_Regression_RAT
-  #   - file: RATs/08_Bias_Variance_RAT
+    - file: RATs/08_Bias_Variance_RAT
   #   - file: RATs/09_Gradient_Descent_RAT
   #   - file: RATs/10_Evaluation_Metrics_RAT
   #   - file: RATs/11_Logistic_Regression_RAT    
