@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Python Part 2 &#8212; DS Course Material</title>
+    <title>Bias Variance Trade-Off &#8212; DS Course Material</title>
   
   
   
@@ -58,12 +58,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'RATs/04_Python_Part_2_RAT';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'RATs/08_Bias_Variance_RAT';</script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="pandas &amp; NumPy" href="05_pandas_NumPy.html" />
-    <link rel="prev" title="Python Part 1" href="03_Python_Part_1_RAT.html" />
+    <link rel="prev" title="Linear Regression" href="07_Linear_Regression_RAT.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -195,11 +194,11 @@
 <li class="toctree-l1"><a class="reference internal" href="01_Git_RAT.html">Git and Github</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_Intro_to_ML_RAT.html">Intro to Machine Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_Python_Part_1_RAT.html">Python Part 1</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Python Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_Python_Part_2_RAT.html">Python Part 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_pandas_NumPy.html">pandas &amp; NumPy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_EDA_RAT.html">Exploratory Data Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07_Linear_Regression_RAT.html">Linear Regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="08_Bias_Variance_RAT.html">Bias Variance Trade-Off</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Bias Variance Trade-Off</a></li>
 </ul>
 
     </div>
@@ -288,7 +287,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Python Part 2</h1>
+    <h1>Bias Variance Trade-Off</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -302,17 +301,17 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="python-part-2">
-<h1>Python Part 2<a class="headerlink" href="#python-part-2" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="bias-variance-trade-off">
+<h1>Bias Variance Trade-Off<a class="headerlink" href="#bias-variance-trade-off" title="Link to this heading">#</a></h1>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="xCECKtqfsZdD" data-shufflequestions="False"
+<div class="output text_html"><div id="rMPoNANDXBhE" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#xCECKtqfsZdD {
+#rMPoNANDXBhE {
    --jq-multiple-choice-bg: #2E016D;
    --jq-mc-button-bg: #F5F5F5;
    --jq-mc-button-border: #252629;
@@ -482,121 +481,138 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsxCECKtqfsZdD=[
+</style></div><script type="application/javascript">var questionsrMPoNANDXBhE=[
     {
-        "question": "Two of the following answers will give you the same result. Can you figure out which?",
+        "question": " How do you know if your supervised learning model has high or low bias?",
+        "code": "",
         "type": "many_choice",
-        "answer_cols": 1,
         "answers": [
             {
-                "code": "x = my_dictionary['Python']",
+                "answer": "You look at the error metric",
                 "correct": true,
-                "feedback": "That's correct. "
+                "feedback": "That's right. Bias, by simplifying assumptions, make the mapping function easier to learn and understand. Linear algorithms with high bias are often less flexible because of their low predictive capability on complex data samples/problems. Such low predictive performance arises due to simplifying assumptions inherent in bias. Bias can also be defined as the difference between the average predictions of a model and the correct values the model is trying to predict. High biased models are oversimplified and pay little attention to the training data causing high errors in training and test data. Therefore looking at the error metric or the average error metric over several runs can indicate wether your model has high bias."
             },
             {
-                "code": " x = my_dictionary.items('Python')",
+                "answer": "You compare the error metric on different train test splits",
                 "correct": false,
-                "feedback": "That's not the correct answer. Try again!'.items()'  takes no argument and will return  all keys and values."
+                "feedback": "Sorry, that was wrong. Please try again"
             },
             {
-                "code": "x = my_dictionary.keys('Python')",
-                "correct": false,
-                "feedback": "That's not the correct answer. Try again!  '.keys' takes no argument and will return only all keys."
-            },
-            {
-                "code": "x = my_dictionary.get('Python')",
+                "answer": "You run different experiments (train/test splits) and get the average error metric",
                 "correct": true,
-                "feedback": "That's correct. "
+                "feedback": "That's right. Bias, by simplifying assumptions, make the mapping function easier to learn and understand. Linear algorithms with high bias are often less flexible because of their low predictive capability on complex data samples/problems. Such low predictive performance arises due to simplifying assumptions inherent in bias. Bias can also be defined as the difference between the average predictions of a model and the correct values the model is trying to predict. High biased models are oversimplified and pay little attention to the training data causing high errors in training and test data. Therefore looking at the error metric or the average error metric over several runs can indicate wether your model has high bias."
+            },
+            {
+                "answer": "You run different experiments (train/test splits) and look at the standard deviation of the error metric",
+                "correct": false,
+                "feedback": "Sorry, that was wrong. Please try again"
             }
         ]
     },
     {
-        "question": "Choose the correct statements about lists, sets, dictionaries and tuples.",
+        "question": "How do you know if your supervised learning model has high or low variance?",
+        "code": "",
         "type": "many_choice",
         "answers": [
             {
-                "answer": "Lists and tuples are ordered and mutable data structures.",
+                "answer": "You look at the error metric",
                 "correct": false,
-                "feedback": "That's not the correct answer. Try again! :)"
+                "feedback": "Sorry, that was wrong. Please try again"
             },
             {
-                "answer": "Dictionaries and sets are unordered whereas lists and tuples are ordered data structures.",
+                "answer": "You compare the error metric on different train test splits",
                 "correct": true,
-                "feedback": "That's correct."
+                "feedback": "That's right. Variance is the variability of model prediction for a given data point or a value that tells us the spread of our data. It implies the change in the estimation of the mapping function due to variations in the training data. Since in supervised ML algorithms, the mapping function is approximately determined from the training data, there will be some amount of variance. If our model picks out the underlying patterns of mapping the data, the model shouldn't differ considerably from one training set to another. This means having a high variance will significantly influence the behavior of the model due to even smaller variations in the training data. The number and types of parameters to identify the mapping function are greatly influenced by the data when the variance is high. Models with high variance pay a lot of attention to training data and do not generalize on the data which it hasn\u2019t seen before. As a result, such models perform very well on training data but have high error rates on test data. The standard deviation of the error metric will show you how much different training data influence the estimation of the mapping function."
             },
             {
-                "answer": "Lists and dictionaries are mutable whereas tuples are immutable.",
-                "correct": true,
-                "feedback": "That's correct."
-            },
-            {
-                "answer": "Accessing elements via indexing only works for lists.",
+                "answer": "You run different experiments (train/test splits) and get the average error metric",
                 "correct": false,
-                "feedback": "That's not the correct answer. Try again! :)"
+                "feedback": "Sorry, that was wrong. Please try again"
+            },
+            {
+                "answer": "You run different experiments (train/test splits) and look at the standard deviation of the error metric",
+                "correct": true,
+                "feedback": "That's right. Variance is the variability of model prediction for a given data point or a value that tells us the spread of our data. It implies the change in the estimation of the mapping function due to variations in the training data. Since in supervised ML algorithms, the mapping function is approximately determined from the training data, there will be some amount of variance. If our model picks out the underlying patterns of mapping the data, the model shouldn't differ considerably from one training set to another. This means having a high variance will significantly influence the behavior of the model due to even smaller variations in the training data. The number and types of parameters to identify the mapping function are greatly influenced by the data when the variance is high. Models with high variance pay a lot of attention to training data and do not generalize on the data which it hasn\u2019t seen before. As a result, such models perform very well on training data but have high error rates on test data. The standard deviation of the error metric will show you how much different training data influence the estimation of the mapping function."
             }
         ]
     },
     {
-        "question": "What is the output of the following code snippet?",
-        "code": "my_list = [['Hello', 'World', '!'], 42, (4, '9'), 'BAM!']\nmy_list[3][1]",
+        "question": "What would be more trustworthy.",
+        "code": "",
         "type": "multiple_choice",
         "answers": [
             {
-                "answer": "4",
+                "answer": "a model with low bias and high variance",
                 "correct": false,
-                "feedback": "That's not the correct answer. Try again!"
+                "feedback": "Sorry, that was wrong. Please try again"
             },
             {
-                "answer": "'!'",
-                "correct": false,
-                "feedback": "That's not the correct answer. Try again!"
-            },
-            {
-                "answer": "42",
-                "correct": false,
-                "feedback": "That's not the correct answer. Try again!"
-            },
-            {
-                "answer": "'A'",
+                "answer": "a model with low bias and moderate variance",
                 "correct": true,
-                "feedback": "Nice job! The code snippet will return 'A'. '[3]' points to the string 'BAM!'. '[1]' selects the second element of that string (remember zero-indexing!)."
+                "feedback": "High variance is usually a very bad thing.. as you do not know what to expect on new data. With high bias but low variance, although you do not have a lot of confidence in your predictions at least you know it's consistent. So you can look for a better model if needed."
+            },
+            {
+                "answer": "a model with moderate bias and moderate variance",
+                "correct": true,
+                "feedback": "High variance is usually a very bad thing.. as you do not know what to expect on new data. With high bias but low variance, although you do not have a lot of confidence in your predictions at least you know it's consistent. So you can look for a better model if needed."
+            },
+            {
+                "answer": "a model with moderate bias and low variance",
+                "correct": true,
+                "feedback":"High variance is usually a very bad thing.. as you do not know what to expect on new data. With high bias but low variance, although you do not have a lot of confidence in your predictions at least you know it's consistent. So you can look for a better model if needed."
+            },
+            {
+                "answer": "a model with high bias and low variance",
+                "correct": true,
+                "feedback": "High variance is usually a very bad thing.. as you do not know what to expect on new data. With high bias but low variance, although you do not have a lot of confidence in your predictions at least you know it's consistent. So you can look for a better model if needed."
             }
         ]
     },
     {
-        "question": "Select all answers which are a valid way to call the following function.",
+        "question": "What can be done to avoid over-fitting?",
+        "code": "",
         "type": "many_choice",
+        "answers": [
+            {
+                "answer": "Use regularization (l1, l2, or other specific to the model)",
+                "correct": true,
+                "feedback": "Well done! Usually you would try regularization to penalize over fitting. Or changing the model, a simple model with fewer parameters has high bias and low variance. In contrast, a model with many parameters has high variance and low bias. For any supervised model, a search for a right/good balance without overfitting and underfitting the data is required. An optimal balance of bias and variance prevents both overfitting and underfitting of the model."
+            },
+            {
+                "answer": "Add more assumptions to your model, or user a more complex model",
+                "correct": false,
+                "feedback": "Sorry, that was wrong. Please try again"
+            },
+            {
+                "answer": "Get more data",
+                "correct": true,
+                "feedback": "Well done! Usually you would try regularization to penalize over fitting. Or changing the model, a simple model with fewer parameters has high bias and low variance. In contrast, a model with many parameters has high variance and low bias. For any supervised model, a search for a right/good balance without overfitting and underfitting the data is required. An optimal balance of bias and variance prevents both overfitting and underfitting of the model."
+            },
+            {
+                "answer": "Use a different evaluation metric.",
+                "correct": false,
+                "feedback": "Sorry, that was wrong. Please try again"
+            },
+            {
+                "answer": "Simplify the assumptions, or use a simpler model",
+                "correct": true,
+                "feedback": "Well done! Usually you would try regularization to penalize over fitting. Or changing the model, a simple model with fewer parameters has high bias and low variance. In contrast, a model with many parameters has high variance and low bias. For any supervised model, a search for a right/good balance without overfitting and underfitting the data is required. An optimal balance of bias and variance prevents both overfitting and underfitting of the model."
+            }
+        ]
+    },
+    {
+        "question": " What is the bias variance tradeoff?",
+        "type": "multiple_choice",
         "answer_cols": 1,
         "answers": [
             {
-                "code": "my_function('Merlin', 'Atlantic')",
-                "correct": true,
-                "feedback": "Well done! "
-            },
-            {
-                "code": "my_function('Shark', ocean='Indian Ocean')",
-                "correct": true,
-                "feedback": "Well done! "
-            },
-            {
-                "code": "my_function(fish='Nemo', 'Atlantic')",
-                "correct": false,
-                "feedback": "That's not the correct answer. Try again! This won't work since a positional argument follows a key-word argument. It only works if key-word arguments follow positional arguments."
-            },
-            {
-                "code": "my_function('Dori')",
-                "correct": true,
-                "feedback": "Well done! "
-            },
-            {
-                "code": "my_function(ocean='Mediterranean sea', fish='Khan')",
-                "correct": true,
-                "feedback": "Well done!"
+            "answer": "Click here to see the answer.",
+            "correct": true,
+            "feedback": "Supervised ML algorithms want to achieve low bias and low variance ensuring good prediction on test set. Whereas linear ML algorithms often have a high bias but a low variance, nonlinear ML algorithms often have a low bias but a high variance. So we see a battle to balance out bias and variance with no escape from the relationship between bias and variance. If we increase the bias, the variance will decrease. If we increase the variance, the bias will decrease."
             }
         ]
     }
-]
-;
+];
     // Make a random ID
 function makeid(length) {
     var result = [];
@@ -1345,8 +1361,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("xCECKtqfsZdD")) {
-            show_questions(questionsxCECKtqfsZdD,  xCECKtqfsZdD); 
+          if(document.getElementById("rMPoNANDXBhE")) {
+            show_questions(questionsrMPoNANDXBhE,  rMPoNANDXBhE); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -1355,8 +1371,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("xCECKtqfsZdD");
-        // console.log(document.getElementById("xCECKtqfsZdD"));
+        //console.log("rMPoNANDXBhE");
+        // console.log(document.getElementById("rMPoNANDXBhE"));
 
         try_show();
         }
@@ -1395,22 +1411,13 @@ if (typeof version == 'undefined') {
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="03_Python_Part_1_RAT.html"
+       href="07_Linear_Regression_RAT.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Python Part 1</p>
+        <p class="prev-next-title">Linear Regression</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="05_pandas_NumPy.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">pandas &amp; NumPy</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
