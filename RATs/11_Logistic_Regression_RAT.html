@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Python Part 2 &#8212; DS Course Material</title>
+    <title>Logistic Regression &#8212; DS Course Material</title>
   
   
   
@@ -58,12 +58,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'RATs/04_Python_Part_2_RAT';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'RATs/11_Logistic_Regression_RAT';</script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="pandas &amp; NumPy" href="05_pandas_NumPy.html" />
-    <link rel="prev" title="Python Part 1" href="03_Python_Part_1_RAT.html" />
+    <link rel="prev" title="Evaluation Metrics" href="10_Evaluation_Metrics_RAT.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -197,13 +196,13 @@
 <li class="toctree-l1"><a class="reference internal" href="01_Git_RAT.html">Git and Github</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_Intro_to_ML_RAT.html">Intro to Machine Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_Python_Part_1_RAT.html">Python Part 1</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Python Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_Python_Part_2_RAT.html">Python Part 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_pandas_NumPy.html">pandas &amp; NumPy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_EDA_RAT.html">Exploratory Data Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07_Linear_Regression_RAT.html">Linear Regression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="08_Bias_Variance_RAT.html">Bias Variance Trade-Off</a></li>
 <li class="toctree-l1"><a class="reference internal" href="10_Evaluation_Metrics_RAT.html">Evaluation Metrics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="11_Logistic_Regression_RAT.html">Logistic Regression</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Logistic Regression</a></li>
 </ul>
 
     </div>
@@ -292,7 +291,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Python Part 2</h1>
+    <h1>Logistic Regression</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -306,17 +305,17 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="python-part-2">
-<h1>Python Part 2<a class="headerlink" href="#python-part-2" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="logistic-regression">
+<h1>Logistic Regression<a class="headerlink" href="#logistic-regression" title="Link to this heading">#</a></h1>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="fZZUKodLKJgU" data-shufflequestions="False"
+<div class="output text_html"><div id="jHbbbbvrOyBS" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#fZZUKodLKJgU {
+#jHbbbbvrOyBS {
    --jq-multiple-choice-bg: #2E016D;
    --jq-mc-button-bg: #F5F5F5;
    --jq-mc-button-border: #252629;
@@ -486,121 +485,129 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsfZZUKodLKJgU=[
+</style></div><script type="application/javascript">var questionsjHbbbbvrOyBS=[
     {
-        "question": "Two of the following answers will give you the same result. Can you figure out which?",
+        "question": "This is the typical function of logistic regression. What's the name of this function? ",
+        "code": "$\\hat{p} = \\frac{1}{1+e^{-b^Tx}}$",
         "type": "many_choice",
-        "answer_cols": 1,
         "answers": [
             {
-                "code": "x = my_dictionary['Python']",
-                "correct": true,
-                "feedback": "That's correct. "
-            },
-            {
-                "code": " x = my_dictionary.items('Python')",
+                "answer": "Cost function of logistic regression.",
                 "correct": false,
-                "feedback": "That's not the correct answer. Try again!'.items()'  takes no argument and will return  all keys and values."
+                "feedback": "Sorry, that was wrong. Please try again"
             },
             {
-                "code": "x = my_dictionary.keys('Python')",
+                "answer": "Sigma-Function",
                 "correct": false,
-                "feedback": "That's not the correct answer. Try again!  '.keys' takes no argument and will return only all keys."
+                "feedback": "Sorry, that was wrong. Please try again"
             },
             {
-                "code": "x = my_dictionary.get('Python')",
+                "answer": "Logistic Function",
                 "correct": true,
-                "feedback": "That's correct. "
+                "feedback": "That's right."
+            },
+            {
+                "answer": "Sigmoid Function",
+                "correct": true,
+                "feedback": "That's right."
+            },
+            {
+                "answer": "Logit Function",
+                "correct": false,
+                "feedback": "Sorry, that was wrong. Please try again"
             }
         ]
     },
     {
-        "question": "Choose the correct statements about lists, sets, dictionaries and tuples.",
+        "question": "Why is the function above (function of logistic regression) suitable for binary classification? ",
         "type": "many_choice",
         "answers": [
             {
-                "answer": "Lists and tuples are ordered and mutable data structures.",
+                "answer": "All values lie in the range of -1 and 1.",
                 "correct": false,
-                "feedback": "That's not the correct answer. Try again! :)"
+                "feedback": "Sorry, that was wrong. Please try again"
             },
             {
-                "answer": "Dictionaries and sets are unordered whereas lists and tuples are ordered data structures.",
+                "answer": "All values lie in a range of 0 and 1.",
                 "correct": true,
-                "feedback": "That's correct."
+                "feedback": "That's right. If you set \"b^Tx\" to be a very high number, the function asymptotes to 1, if you set \"b^Tx\" to be a high negative number (-\u221e), the function asymptotes to 0. "
             },
             {
-                "answer": "Lists and dictionaries are mutable whereas tuples are immutable.",
-                "correct": true,
-                "feedback": "That's correct."
-            },
-            {
-                "answer": "Accessing elements via indexing only works for lists.",
+                "answer": "Exponential functions prevent over-fitting.",
                 "correct": false,
-                "feedback": "That's not the correct answer. Try again! :)"
+                "feedback": "Sorry, that was wrong. Please try again"
+            },
+            {
+                "answer": "Values can be interpreted as probabilities.",
+                "correct": true,
+                "feedback": "Due to the range between 0 and 1 for the output of the logistic regression, the result can also be interpreted as the probability of being part of class 1. Overfitting of logistic regression can be avoided by adding a regularization term to the cost function."
             }
         ]
     },
     {
-        "question": "What is the output of the following code snippet?",
-        "code": "my_list = [['Hello', 'World', '!'], 42, (4, '9'), 'BAM!']\nmy_list[3][1]",
+        "question": "Which of the following statements about b is true? Check all that apply.",
         "type": "multiple_choice",
         "answers": [
             {
-                "answer": "4",
+                "answer": "b is a hyperparameter that can be tuned with Grid-Search.",
                 "correct": false,
-                "feedback": "That's not the correct answer. Try again!"
+                "feedback": "Sorry, that was wrong. Please try again"
             },
             {
-                "answer": "'!'",
+                "answer": "The dimension of the vector b is equal to the number of variables of the model.",
                 "correct": false,
-                "feedback": "That's not the correct answer. Try again!"
+                "feedback": "Sorry, that was wrong. Please try again"
             },
             {
-                "answer": "42",
-                "correct": false,
-                "feedback": "That's not the correct answer. Try again!"
-            },
-            {
-                "answer": "'A'",
+                "answer": "The dimension of the vector b is equal to the number of variables of the model + 1.",
                 "correct": true,
-                "feedback": "Nice job! The code snippet will return 'A'. '[3]' points to the string 'BAM!'. '[1]' selects the second element of that string (remember zero-indexing!)."
+                "feedback": "That's right. b always refers to the parameters learned by the machine learning algorithm during training. In the case of logistic regression, you usually get a weight for each variable you use as input plus an additional weight, usually called \"b zero\", which is also called \"bias\" or \"intercept\"."
+            },
+            {
+                "answer": "The values for the vector b are obtained by training the model.",
+                "correct": true,
+                "feedback": "That's right. b always refers to the parameters learned by the machine learning algorithm during training. In the case of logistic regression, you usually get a weight for each variable you use as input plus an additional weight, usually called \"b zero\", which is also called \"bias\" or \"intercept\"."
             }
         ]
     },
     {
-        "question": "Select all answers which are a valid way to call the following function.",
-        "type": "many_choice",
-        "answer_cols": 1,
+        "question": "You trained 2 logistic regression models, one where you set the hyperparameter \u03bb = 0, and one where you set the hyperparameter \u03bb = 10 (same as alpha in scikit-learn). You forgot which model used \u03bb = 0 and which \u03bb = 10. Can you use the thetas below to draw conclusions about lambda? Check all statements that are true.",
+        "code": "b_A = [0.29, 8.34, 0.02].T\nb_B = [42.95, 68.03, 2.68].T",
+        "type": "multiple_choice",
         "answers": [
             {
-                "code": "my_function('Merlin', 'Atlantic')",
-                "correct": true,
-                "feedback": "Well done! "
-            },
-            {
-                "code": "my_function('Shark', ocean='Indian Ocean')",
-                "correct": true,
-                "feedback": "Well done! "
-            },
-            {
-                "code": "my_function(fish='Nemo', 'Atlantic')",
+                "answer": "Model A used \u03bb = 0, model B used \u03bb = 10.",
                 "correct": false,
-                "feedback": "That's not the correct answer. Try again! This won't work since a positional argument follows a key-word argument. It only works if key-word arguments follow positional arguments."
+                "feedback": "Sorry, that was wrong. Please try again"
             },
             {
-                "code": "my_function('Dori')",
+                "answer": "Model B used \u03bb = 0, model A used \u03bb = 10.",
                 "correct": true,
-                "feedback": "Well done! "
+                "feedback": "That's right. \u03bb influences how much high values for b are penalized. Using a large value for \u03bb result in smaller values for b. Therefore, you used \u03bb = 0 for model B and for model A \u03bb = 10. "
             },
             {
-                "code": "my_function(ocean='Mediterranean sea', fish='Khan')",
+                "answer": "\u03bb just influences the step-size of Gradient Descent and therefore does not influence the learned \u03b8.",
+                "correct": false,
+                "feedback": "Sorry, that was wrong. Please try again"
+            },
+            {
+                "answer": "Most probably \u03bb was used with a L1 regularization term.",
+                "correct": false,
+                "feedback": "Sorry, that was wrong. Please try again"
+            },
+            {
+                "answer": "Most probably \u03bb was used with a L2 regularization term.",
                 "correct": true,
-                "feedback": "Well done!"
+                "feedback": "Lasso or L1 Regularization has the property to shrink some of the coefficients (bs) to zero (--> the variable is not used for prediction at all). With L2 regularization (ridge), bs are likely to have values close to 0, but rarely 0; it only reduces the influence of a variable for prediction without eliminating the variable altogether. Therefore, in this example, you most likely used L2 regularization."
+            },
+            {
+                "answer": "None of the above. Logistic Regression is not using hyper-parameters to calculate \u03b8.",
+                "correct": false,
+                "feedback": "Sorry, that was wrong. Please try again"
             }
         ]
     }
-]
-;
+];
     // Make a random ID
 function makeid(length) {
     var result = [];
@@ -1349,8 +1356,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("fZZUKodLKJgU")) {
-            show_questions(questionsfZZUKodLKJgU,  fZZUKodLKJgU); 
+          if(document.getElementById("jHbbbbvrOyBS")) {
+            show_questions(questionsjHbbbbvrOyBS,  jHbbbbvrOyBS); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -1359,8 +1366,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("fZZUKodLKJgU");
-        // console.log(document.getElementById("fZZUKodLKJgU"));
+        //console.log("jHbbbbvrOyBS");
+        // console.log(document.getElementById("jHbbbbvrOyBS"));
 
         try_show();
         }
@@ -1399,22 +1406,13 @@ if (typeof version == 'undefined') {
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="03_Python_Part_1_RAT.html"
+       href="10_Evaluation_Metrics_RAT.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Python Part 1</p>
+        <p class="prev-next-title">Evaluation Metrics</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="05_pandas_NumPy.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">pandas &amp; NumPy</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
