@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Python Part 2 &#8212; DS Course Material</title>
+    <title>Gradient Descent &#8212; DS Course Material</title>
   
   
   
@@ -58,12 +58,12 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'RATs/04_Python_Part_2_RAT';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'RATs/09_Gradient_Descent_RAT';</script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="pandas &amp; NumPy" href="05_pandas_NumPy.html" />
-    <link rel="prev" title="Python Part 1" href="03_Python_Part_1_RAT.html" />
+    <link rel="next" title="Evaluation Metrics" href="10_Evaluation_Metrics_RAT.html" />
+    <link rel="prev" title="Bias Variance Trade-Off" href="08_Bias_Variance_RAT.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -198,12 +198,12 @@
 <li class="toctree-l1"><a class="reference internal" href="01_Git_RAT.html">Git and Github</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_Intro_to_ML_RAT.html">Intro to Machine Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_Python_Part_1_RAT.html">Python Part 1</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Python Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_Python_Part_2_RAT.html">Python Part 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_pandas_NumPy.html">pandas &amp; NumPy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_EDA_RAT.html">Exploratory Data Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07_Linear_Regression_RAT.html">Linear Regression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="08_Bias_Variance_RAT.html">Bias Variance Trade-Off</a></li>
-<li class="toctree-l1"><a class="reference internal" href="09_Gradient_Descent_RAT.html">Gradient Descent</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Gradient Descent</a></li>
 <li class="toctree-l1"><a class="reference internal" href="10_Evaluation_Metrics_RAT.html">Evaluation Metrics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="11_Logistic_Regression_RAT.html">Logistic Regression</a></li>
 </ul>
@@ -294,7 +294,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Python Part 2</h1>
+    <h1>Gradient Descent</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -308,17 +308,17 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="python-part-2">
-<h1>Python Part 2<a class="headerlink" href="#python-part-2" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="gradient-descent">
+<h1>Gradient Descent<a class="headerlink" href="#gradient-descent" title="Link to this heading">#</a></h1>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="rpNtKovRZoSw" data-shufflequestions="False"
+<div class="output text_html"><div id="ZBIYXFIRBPmV" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#rpNtKovRZoSw {
+#ZBIYXFIRBPmV {
    --jq-multiple-choice-bg: #2E016D;
    --jq-mc-button-bg: #F5F5F5;
    --jq-mc-button-border: #252629;
@@ -488,121 +488,70 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsrpNtKovRZoSw=[
+</style></div><script type="application/javascript">var questionsZBIYXFIRBPmV=[
     {
-        "question": "Two of the following answers will give you the same result. Can you figure out which?",
+        "question": "Let J be some cost-function so that J(b0, b1) outputs a cost (number). For this problem, J is some arbitrary/unknown smooth function and **may have local optima**. Suppose we use gradient descent to try to minimize J(b0, b1) as a function of b0 and b1. Which of the following statements are true? (Check all that apply.)",
         "type": "many_choice",
-        "answer_cols": 1,
         "answers": [
             {
-                "code": "x = my_dictionary['Python']",
-                "correct": true,
-                "feedback": "That's correct. "
-            },
-            {
-                "code": " x = my_dictionary.items('Python')",
+                "answer": "Even if the learning rate \u03b1 is very large, every iteration of gradient descent will decrease the value of J(b0, b1).",
                 "correct": false,
-                "feedback": "That's not the correct answer. Try again!'.items()'  takes no argument and will return  all keys and values."
+                "feedback": "Sorry, that was wrong. Please try again. If the learning rate is too large, one step of gradient descent can actually vastly \"overshoot\" and actually increase the value of f(b0, b1)."
             },
             {
-                "code": "x = my_dictionary.keys('Python')",
-                "correct": false,
-                "feedback": "That's not the correct answer. Try again!  '.keys' takes no argument and will return only all keys."
-            },
-            {
-                "code": "x = my_dictionary.get('Python')",
+                "answer": "If the learning rate is too small, then gradient descent may take a very long time to converge.",
                 "correct": true,
-                "feedback": "That's correct. "
+                "feedback": "That's right. If the learning rate is small, gradient descent ends up taking an extremely small step on each iteration, and therefor can take a long time to converge."
+            },
+            {
+                "answer": "If b0 and b1 are initialized at a local minimum, then one iteration will not change their values.",
+                "correct": true,
+                "feedback": "That's right. At a local minimum, the derivative (gradient) is zero, so gradient descent will not change the parameters."
+            },
+            {
+                "answer": "If b0 and b1 are initialized so that b0=b1, then by symmetry (because we do simultaneous updates to the two parameters), after one iteration of gradient descent, we will still have b0=b1.",
+                "correct": false,
+                "feedback": "Sorry, that was wrong. The updates to b0 and b1 are different (even though we're doing simultaneous updates), so there's no particular reason to update them to be same after one iteration of gradient descent."
             }
         ]
     },
     {
-        "question": "Choose the correct statements about lists, sets, dictionaries and tuples.",
-        "type": "many_choice",
-        "answers": [
-            {
-                "answer": "Lists and tuples are ordered and mutable data structures.",
-                "correct": false,
-                "feedback": "That's not the correct answer. Try again! :)"
-            },
-            {
-                "answer": "Dictionaries and sets are unordered whereas lists and tuples are ordered data structures.",
-                "correct": true,
-                "feedback": "That's correct."
-            },
-            {
-                "answer": "Lists and dictionaries are mutable whereas tuples are immutable.",
-                "correct": true,
-                "feedback": "That's correct."
-            },
-            {
-                "answer": "Accessing elements via indexing only works for lists.",
-                "correct": false,
-                "feedback": "That's not the correct answer. Try again! :)"
-            }
-        ]
-    },
-    {
-        "question": "What is the output of the following code snippet?",
-        "code": "my_list = [['Hello', 'World', '!'], 42, (4, '9'), 'BAM!']\nmy_list[3][1]",
+        "question": "A colleague states that no matter how b0 and b1 are initialized for Gradient Descent (same example as above), so long as learning rate is sufficiently small, we can safely expect gradient descent to converge to the same solution. Is he correct? Explain your answer.",
         "type": "multiple_choice",
+        "answer_cols": 1,
         "answers": [
             {
-                "answer": "4",
-                "correct": false,
-                "feedback": "That's not the correct answer. Try again!"
-            },
-            {
-                "answer": "'!'",
-                "correct": false,
-                "feedback": "That's not the correct answer. Try again!"
-            },
-            {
-                "answer": "42",
-                "correct": false,
-                "feedback": "That's not the correct answer. Try again!"
-            },
-            {
-                "answer": "'A'",
-                "correct": true,
-                "feedback": "Nice job! The code snippet will return 'A'. '[3]' points to the string 'BAM!'. '[1]' selects the second element of that string (remember zero-indexing!)."
+            "answer": "Click here to see the answer.",
+            "correct": true,
+            "feedback": "This is not true. In our example is stated, that the cost function may have local minima. Depending on the initial condition, gradient descent may end up at different local optima."
             }
         ]
     },
     {
-        "question": "Select all answers which are a valid way to call the following function.",
-        "type": "many_choice",
+        "question": "Your colleague complains about very long training periods for each step in his gradient descent algorithm. What kind of gradient descent implementation is he most probably using? Could you advise him some other implementations. Your colleague is very suspicious and want to know the pros and cons of those other algorithms. Please name them as well.",
+        "type": "multiple_choice",
         "answer_cols": 1,
         "answers": [
             {
-                "code": "my_function('Merlin', 'Atlantic')",
-                "correct": true,
-                "feedback": "Well done! "
-            },
+            "answer": "Click here to see the answer.",
+            "correct": true,
+            "feedback": "Your colleague is most probably using batch gradient descent (for each step, all data are used to calculate the gradient). A drawback is that this is often slow, but on the positive side it reaches an optimum of the cost function. He can alternatively use stochastic gradient descent (for each step, only one observation is used to calculate the gradient). This performs very fast and the bouncing back and forth can help to not get stuck at a local minima. A drawback is that in the end the optimum will be close but usually never reached. Another possibility would be mini-batch gradient descent (for each step, only a small part of the data is used to calculate the gradient). It is ~medium fast and performs usually better than SGD."
+            }
+        ]
+    },
+    {
+        "question": " You and your colleague develop a linear regression model on a very large dataset. Using the normal equations is not an option and you turn to gradient descent. The algorithm appears to not converge. Your colleague is on the opinion that gradient descent reached a plateau. Is he right? If not, what is possibly happening here?",
+        "type": "multiple_choice",
+        "answer_cols": 1,
+        "answers": [
             {
-                "code": "my_function('Shark', ocean='Indian Ocean')",
-                "correct": true,
-                "feedback": "Well done! "
-            },
-            {
-                "code": "my_function(fish='Nemo', 'Atlantic')",
-                "correct": false,
-                "feedback": "That's not the correct answer. Try again! This won't work since a positional argument follows a key-word argument. It only works if key-word arguments follow positional arguments."
-            },
-            {
-                "code": "my_function('Dori')",
-                "correct": true,
-                "feedback": "Well done! "
-            },
-            {
-                "code": "my_function(ocean='Mediterranean sea', fish='Khan')",
-                "correct": true,
-                "feedback": "Well done!"
+            "answer": "Click here to see the answer.",
+            "correct": true,
+            "feedback": "The cost function of a linear regression model is a convex function, so plateaus don't exist. Probably, the step size is too large so the model can't converge to the minimum or you forgot to rescale the data so it takes a lot of time till the algorithm converges."
             }
         ]
     }
-]
-;
+];
     // Make a random ID
 function makeid(length) {
     var result = [];
@@ -1351,8 +1300,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("rpNtKovRZoSw")) {
-            show_questions(questionsrpNtKovRZoSw,  rpNtKovRZoSw); 
+          if(document.getElementById("ZBIYXFIRBPmV")) {
+            show_questions(questionsZBIYXFIRBPmV,  ZBIYXFIRBPmV); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -1361,8 +1310,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("rpNtKovRZoSw");
-        // console.log(document.getElementById("rpNtKovRZoSw"));
+        //console.log("ZBIYXFIRBPmV");
+        // console.log(document.getElementById("ZBIYXFIRBPmV"));
 
         try_show();
         }
@@ -1401,20 +1350,20 @@ if (typeof version == 'undefined') {
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="03_Python_Part_1_RAT.html"
+       href="08_Bias_Variance_RAT.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Python Part 1</p>
+        <p class="prev-next-title">Bias Variance Trade-Off</p>
       </div>
     </a>
     <a class="right-next"
-       href="05_pandas_NumPy.html"
+       href="10_Evaluation_Metrics_RAT.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">pandas &amp; NumPy</p>
+        <p class="prev-next-title">Evaluation Metrics</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

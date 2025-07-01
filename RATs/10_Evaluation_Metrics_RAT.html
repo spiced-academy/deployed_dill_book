@@ -63,7 +63,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Logistic Regression" href="11_Logistic_Regression_RAT.html" />
-    <link rel="prev" title="Bias Variance Trade-Off" href="08_Bias_Variance_RAT.html" />
+    <link rel="prev" title="Gradient Descent" href="09_Gradient_Descent_RAT.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -189,6 +189,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../sessions/08_Linear_Regression.html">Linear Regression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sessions/09.1_Bias_Variance_Tradeoff.html">Bias Variance Tradeoff</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sessions/09.2_Regularization.html">Regularization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sessions/10_Gradient_Descent.html">Gradient Descent</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sessions/11_Evaluation_Metrics.html">Evaluation Metrics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sessions/12_Logistic_Regression.html">Logistic Regression</a></li>
 </ul>
@@ -202,6 +203,7 @@
 <li class="toctree-l1"><a class="reference internal" href="06_EDA_RAT.html">Exploratory Data Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07_Linear_Regression_RAT.html">Linear Regression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="08_Bias_Variance_RAT.html">Bias Variance Trade-Off</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_Gradient_Descent_RAT.html">Gradient Descent</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Evaluation Metrics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="11_Logistic_Regression_RAT.html">Logistic Regression</a></li>
 </ul>
@@ -310,13 +312,13 @@ document.write(`
 <h1>Evaluation Metrics<a class="headerlink" href="#evaluation-metrics" title="Link to this heading">#</a></h1>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="MEXwvOfKiQti" data-shufflequestions="False"
+<div class="output text_html"><div id="IrHVXqIiCOKn" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#MEXwvOfKiQti {
+#IrHVXqIiCOKn {
    --jq-multiple-choice-bg: #2E016D;
    --jq-mc-button-bg: #F5F5F5;
    --jq-mc-button-border: #252629;
@@ -486,7 +488,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsMEXwvOfKiQti=[
+</style></div><script type="application/javascript">var questionsIrHVXqIiCOKn=[
     {
         "question": "With your model you get the following confusion matrix. Please try to calculate the following evaluation metrics and check all statements that are correct.",
         "code": "                   Predicted\n                   negative | positive\n Actual negative |    25    |    25    \n        positive |    15    |    35    ",
@@ -1352,8 +1354,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("MEXwvOfKiQti")) {
-            show_questions(questionsMEXwvOfKiQti,  MEXwvOfKiQti); 
+          if(document.getElementById("IrHVXqIiCOKn")) {
+            show_questions(questionsIrHVXqIiCOKn,  IrHVXqIiCOKn); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -1362,8 +1364,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("MEXwvOfKiQti");
-        // console.log(document.getElementById("MEXwvOfKiQti"));
+        //console.log("IrHVXqIiCOKn");
+        // console.log(document.getElementById("IrHVXqIiCOKn"));
 
         try_show();
         }
@@ -1402,12 +1404,12 @@ if (typeof version == 'undefined') {
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="08_Bias_Variance_RAT.html"
+       href="09_Gradient_Descent_RAT.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Bias Variance Trade-Off</p>
+        <p class="prev-next-title">Gradient Descent</p>
       </div>
     </a>
     <a class="right-next"
