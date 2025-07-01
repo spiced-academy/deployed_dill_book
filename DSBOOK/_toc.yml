@@ -23,7 +23,7 @@ parts:
     - file: sessions/08_Linear_Regression
     - file: sessions/09.1_Bias_Variance_Tradeoff
     - file: sessions/09.2_Regularization
-  #   - file: sessions/10_Gradient_Descent
+    - file: sessions/10_Gradient_Descent
     - file: sessions/11_Evaluation_Metrics
     - file: sessions/12_Logistic_Regression
   #   - file: sessions/13_KNN_Distance_Metrics
@@ -54,7 +54,7 @@ parts:
     - file: RATs/06_EDA_RAT
     - file: RATs/07_Linear_Regression_RAT
     - file: RATs/08_Bias_Variance_RAT
-  #   - file: RATs/09_Gradient_Descent_RAT
+    - file: RATs/09_Gradient_Descent_RAT
     - file: RATs/10_Evaluation_Metrics_RAT
     - file: RATs/11_Logistic_Regression_RAT    
   #   - file: RATs/12_KNN_RAT
