@@ -57,7 +57,7 @@ parts:
     - file: RATs/09_Gradient_Descent_RAT
     - file: RATs/10_Evaluation_Metrics_RAT
     - file: RATs/11_Logistic_Regression_RAT    
-  #   - file: RATs/12_KNN_RAT
+    - file: RATs/12_KNN_RAT
   #   - file: RATs/13_Decision_Trees_RAT
   #   - file: RATs/14_Ensemble_Methods_RAT
   #   - file: RATs/15_CNNs_RAT
