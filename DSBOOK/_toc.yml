@@ -26,7 +26,7 @@ parts:
     - file: sessions/10_Gradient_Descent
     - file: sessions/11_Evaluation_Metrics
     - file: sessions/12_Logistic_Regression
-  #   - file: sessions/13_KNN_Distance_Metrics
+    - file: sessions/13_KNN_Distance_Metrics
   #   - file: sessions/14_Testing
   #   - file: sessions/15_Decision_Tree
   #   - file: sessions/Recap
