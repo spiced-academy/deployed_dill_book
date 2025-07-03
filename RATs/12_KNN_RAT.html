@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Python Part 1 &#8212; DS Course Material</title>
+    <title>K-nearest Neighbors &#8212; DS Course Material</title>
   
   
   
@@ -58,12 +58,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'RATs/03_Python_Part_1_RAT';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'RATs/12_KNN_RAT';</script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Python Part 2" href="04_Python_Part_2_RAT.html" />
-    <link rel="prev" title="Intro to Machine Learning" href="02_Intro_to_ML_RAT.html" />
+    <link rel="prev" title="Logistic Regression" href="11_Logistic_Regression_RAT.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -198,7 +197,7 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_Git_RAT.html">Git and Github</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_Intro_to_ML_RAT.html">Intro to Machine Learning</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Python Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_Python_Part_1_RAT.html">Python Part 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_Python_Part_2_RAT.html">Python Part 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_pandas_NumPy.html">pandas &amp; NumPy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_EDA_RAT.html">Exploratory Data Analysis</a></li>
@@ -207,7 +206,7 @@
 <li class="toctree-l1"><a class="reference internal" href="09_Gradient_Descent_RAT.html">Gradient Descent</a></li>
 <li class="toctree-l1"><a class="reference internal" href="10_Evaluation_Metrics_RAT.html">Evaluation Metrics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="11_Logistic_Regression_RAT.html">Logistic Regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="12_KNN_RAT.html">K-nearest Neighbors</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">K-nearest Neighbors</a></li>
 </ul>
 
     </div>
@@ -296,7 +295,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Python Part 1</h1>
+    <h1>K-nearest Neighbors</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -310,17 +309,17 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="python-part-1">
-<h1>Python Part 1<a class="headerlink" href="#python-part-1" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="k-nearest-neighbors">
+<h1>K-nearest Neighbors<a class="headerlink" href="#k-nearest-neighbors" title="Link to this heading">#</a></h1>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="arASMyoZlGGr" data-shufflequestions="False"
+<div class="output text_html"><div id="PiSvSXzjyEJs" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#arASMyoZlGGr {
+#PiSvSXzjyEJs {
    --jq-multiple-choice-bg: #2E016D;
    --jq-mc-button-bg: #F5F5F5;
    --jq-mc-button-border: #252629;
@@ -490,97 +489,129 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsarASMyoZlGGr=[
+</style></div><script type="application/javascript">var questionsPiSvSXzjyEJs=[
     {
-        "question": "What will the following code return?",
-        "code": "my_string = 'DS-Bootcamp'\nmy_string[3:7]",
-        "type": "multiple_choice",
+        "question": "Check all statements on KNN that are correct.",
+        "type": "many_choice",
         "answers": [
             {
-                "answer": "Bootc",
-                "correct": false,
-                "feedback": "Sorry. That is wrong. Please try again."
-            },
-            {
-                "answer": "Boot",
+                "answer": "KNN can be used for classification.",
                 "correct": true,
-                "feedback": "Correct. In the first line the string 'DS-Bootcamp' is stored in a variable called my_string. In the second line we use slicing to access a substring. [3:7] will return the fourth to seventh letter from the string. Python uses zero-indexing, so we start counting with 0. In this example it will not return the letter 'c', since the ending index is always excluded."
+                "feedback": "That's correct! KNN is a supervised learning algorithm and can be used for classification. "
             },
             {
-                "answer": "-Boo",
-                "correct": false,
-                "feedback": "Sorry. That is wrong. Please try again."
+                "answer": "KNN can be used for regression.",
+                "correct": true,
+                "feedback": "That's correct! KNN is a supervised learning algorithm and can be used for regression. "
             },
             {
-                "answer": "-Boot",
+                "answer": "KNN is an unsupervised learning algorithm.",
                 "correct": false,
-                "feedback": "Sorry. That is wrong. Please try again."
+                "feedback": "Sorry, that was wrong. KNN is a supervised learning algorithm. Please try again"
+            },
+            {
+                "answer": "KNN has longer training time than prediction time.",
+                "correct": false,
+                "feedback": "Sorry, that was wrong. At training time, KNN doesn't need to do distance calculations, while the prediction time is high, as distances between test data and training data points have to be calculated (to decide which are its closest neighbors). Please try again"
+            },
+            {
+                "answer": "KNN makes assumptions about the functional form of the problem being solved.",
+                "correct": false,
+                "feedback": "Sorry, that was wrong. KNN is a non-parametric algorithm and does not make any assumption on data distribution! Please try again"
             }
         ]
     },
     {
-        "question": "What will the following code return?",
-        "code": "x = 8\n4 > x or not x <= 13",
+        "question": "Is it important to scale the data when applying KNN? What do you answer?",
         "type": "multiple_choice",
         "answers": [
             {
-                "answer": "True",
+                "answer": "No, KNN will find the nearest neighbors despite different scales.",
                 "correct": false,
-                "feedback": "Sorry. That is wrong. Please try again."
+                "feedback": "Sorry, that was wrong. Please try again"
             },
             {
-                "answer": "False",
+                "answer": "Yes, it is computationally more efficient. The results would be the same, but Gradient Descent will find the minimum faster.",
+                "correct": false,
+                "feedback": "Sorry, that was wrong. Please try again"
+            },
+            {
+                "answer": "It depends. You don't need to scale when using Euclidean distance. For Manhattan distance you should use scaled data.",
+                "correct": false,
+                "feedback": "Sorry, that was wrong. Please try again"
+            },
+            {
+                "answer": "Yes, KNN is based on similarity measurement,  which is sensitive to scaling.",
                 "correct": true,
-                "feedback": "That's correct. Python will evaluate 'not x <= 13' at first. Because of the 'not' the result will be 'False'. '4 > x' is also 'False' and the expression 'False or False' will eventually evaluate also to 'False'."
-            },
-            {
-                "answer": "Raise an error",
-                "correct": false,
-                "feedback": "Sorry. That is wrong. Please try again."
+                "feedback": "Correct. Algorithms based on similarity measurements are sensitive to scaling. The similarity is measured by calculating distances between points. If the features don't have the same scale, the feature with the larger scale will have a bigger influence of the outcome than smaller scaled features. To avoid this, you should scale your data before using KNN."
             }
         ]
     },
     {
-        "question": "How often will the following for loop run through?",
-        "code": "for i in range(5, 13):\n    print(i)",
+        "question": "When you find noise in data which of the following option would you consider in KNN?",
         "type": "multiple_choice",
         "answers": [
             {
-                "answer": "7 times",
-                "correct": false,
-                "feedback": "Sorry. That is wrong. Please try again."
-            },
-            {
-                "answer": "9 times",
-                "correct": false,
-                "feedback": "Sorry. That is wrong. Please try again."
-            },
-            {
-                "answer": "8 times",
+                "answer": "I will increase the value of k.",
                 "correct": true,
-                "feedback": "That's right. The loop will run through 8 times and print the numbers from 5 to 12. 'range(5, 13)' will start at 5 and end at 13-1."
+                "feedback": "That's right. To be more sure of which classifications you make, you can try increasing the value of k."
             },
             {
-                "answer": "It will not work.",
+                "answer": "I will decrease the value of k.",
                 "correct": false,
-                "feedback": "Sorry. That is wrong. Please try again."
+                "feedback": "Sorry, that was wrong. Please try again"
+            },
+            {
+                "answer": "Noise can not be dependent on value of k.",
+                "correct": false,
+                "feedback": "Sorry, that was wrong. Please try again"
+            },
+            {
+                "answer": "None of these.",
+                "correct": false,
+                "feedback": "Sorry, that was wrong. Please try again"
             }
         ]
     },
     {
-        "question": "What effect can you achieve by using the 'break' or 'continue' statement inside a loop?",
+        "question": "Which of the following will be true about k in KNN in terms of Bias?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "When you increase the k the bias will be increased.",
+                "correct": true,
+                "feedback": "Choosing large k means simplify the model and simple model tend to have high bias."
+            },
+            {
+                "answer": "When you decrease the k the bias will be increased.",
+                "correct": false,
+                "feedback": "Sorry, that was wrong. Please try again"
+            },
+            {
+                "answer": "Can't say.",
+                "correct": false,
+                "feedback": "Sorry, that was wrong. Please try again"
+            },
+            {
+                "answer": "None of these.",
+                "correct": false,
+                "feedback": "Sorry, that was wrong. Please try again"
+            }
+        ]
+    },
+    {
+        "question": "Your colleague believes he is overfitting his KNN model. How could you check that the model is overfitting? Which parameter can you change (and how) to reduce overfitting?",
         "type": "multiple_choice",
         "answer_cols": 1,
         "answers": [
             {
-                "answer": "Click here to see the answer.",
-                "correct": true,
-                "feedback": "'break' and 'continue' statements can alter the flow of a normal loop. 'break' can be used to terminate the loop before it has gone through all cycles. With 'continue' you can skip the rest of the code inside a loop for the current iteration. The loop will not terminate, it will just start with the next iteration."
+            "answer": "Click here to see the answer.",
+            "correct": true,
+            "feedback": "A model is overfitting, if it cannot generalize well on unseen data. Therefore, you should test model performance on an unseen test data set. If the error on the test set is much higher than the error on the train data, your model might be overfitting. If you want to reduce overfitting using KNN, you need to increase the hyperparameter k. With increasing k, the decision boundary gets less flexible and less responsive to variance in the training data."
             }
         ]
     }
-]
-;
+];
     // Make a random ID
 function makeid(length) {
     var result = [];
@@ -1329,8 +1360,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("arASMyoZlGGr")) {
-            show_questions(questionsarASMyoZlGGr,  arASMyoZlGGr); 
+          if(document.getElementById("PiSvSXzjyEJs")) {
+            show_questions(questionsPiSvSXzjyEJs,  PiSvSXzjyEJs); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -1339,8 +1370,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("arASMyoZlGGr");
-        // console.log(document.getElementById("arASMyoZlGGr"));
+        //console.log("PiSvSXzjyEJs");
+        // console.log(document.getElementById("PiSvSXzjyEJs"));
 
         try_show();
         }
@@ -1379,22 +1410,13 @@ if (typeof version == 'undefined') {
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="02_Intro_to_ML_RAT.html"
+       href="11_Logistic_Regression_RAT.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Intro to Machine Learning</p>
+        <p class="prev-next-title">Logistic Regression</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="04_Python_Part_2_RAT.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Python Part 2</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
