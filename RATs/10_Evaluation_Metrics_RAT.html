@@ -193,6 +193,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../sessions/11_Evaluation_Metrics.html">Evaluation Metrics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sessions/12_Logistic_Regression.html">Logistic Regression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sessions/13_KNN_Distance_Metrics.html">KNN &amp; Distance Metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sessions/15_Decision_Tree.html">Decision Trees</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Rapid Assessment Test</span></p>
 <ul class="current nav bd-sidenav">
@@ -208,6 +209,7 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Evaluation Metrics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="11_Logistic_Regression_RAT.html">Logistic Regression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="12_KNN_RAT.html">K-nearest Neighbors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_Decision_Trees_RAT.html">Decision Trees</a></li>
 </ul>
 
     </div>
@@ -314,13 +316,13 @@ document.write(`
 <h1>Evaluation Metrics<a class="headerlink" href="#evaluation-metrics" title="Link to this heading">#</a></h1>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="zmUTyfJkLqUB" data-shufflequestions="False"
+<div class="output text_html"><div id="PJqofFwIEeDN" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#zmUTyfJkLqUB {
+#PJqofFwIEeDN {
    --jq-multiple-choice-bg: #2E016D;
    --jq-mc-button-bg: #F5F5F5;
    --jq-mc-button-border: #252629;
@@ -490,7 +492,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionszmUTyfJkLqUB=[
+</style></div><script type="application/javascript">var questionsPJqofFwIEeDN=[
     {
         "question": "With your model you get the following confusion matrix. Please try to calculate the following evaluation metrics and check all statements that are correct.",
         "code": "                   Predicted\n                   negative | positive\n Actual negative |    25    |    25    \n        positive |    15    |    35    ",
@@ -1356,8 +1358,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("zmUTyfJkLqUB")) {
-            show_questions(questionszmUTyfJkLqUB,  zmUTyfJkLqUB); 
+          if(document.getElementById("PJqofFwIEeDN")) {
+            show_questions(questionsPJqofFwIEeDN,  PJqofFwIEeDN); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -1366,8 +1368,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("zmUTyfJkLqUB");
-        // console.log(document.getElementById("zmUTyfJkLqUB"));
+        //console.log("PJqofFwIEeDN");
+        // console.log(document.getElementById("PJqofFwIEeDN"));
 
         try_show();
         }

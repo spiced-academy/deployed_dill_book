@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Bias Variance Trade-Off &#8212; DS Course Material</title>
+    <title>Decision Trees &#8212; DS Course Material</title>
   
   
   
@@ -58,12 +58,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'RATs/08_Bias_Variance_RAT';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'RATs/13_Decision_Trees_RAT';</script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Gradient Descent" href="09_Gradient_Descent_RAT.html" />
-    <link rel="prev" title="Linear Regression" href="07_Linear_Regression_RAT.html" />
+    <link rel="prev" title="K-nearest Neighbors" href="12_KNN_RAT.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -204,12 +203,12 @@
 <li class="toctree-l1"><a class="reference internal" href="05_pandas_NumPy.html">pandas &amp; NumPy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_EDA_RAT.html">Exploratory Data Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07_Linear_Regression_RAT.html">Linear Regression</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Bias Variance Trade-Off</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_Bias_Variance_RAT.html">Bias Variance Trade-Off</a></li>
 <li class="toctree-l1"><a class="reference internal" href="09_Gradient_Descent_RAT.html">Gradient Descent</a></li>
 <li class="toctree-l1"><a class="reference internal" href="10_Evaluation_Metrics_RAT.html">Evaluation Metrics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="11_Logistic_Regression_RAT.html">Logistic Regression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="12_KNN_RAT.html">K-nearest Neighbors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="13_Decision_Trees_RAT.html">Decision Trees</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Decision Trees</a></li>
 </ul>
 
     </div>
@@ -298,7 +297,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Bias Variance Trade-Off</h1>
+    <h1>Decision Trees</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -312,17 +311,17 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="bias-variance-trade-off">
-<h1>Bias Variance Trade-Off<a class="headerlink" href="#bias-variance-trade-off" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="decision-trees">
+<h1>Decision Trees<a class="headerlink" href="#decision-trees" title="Link to this heading">#</a></h1>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="VDrLexOxarId" data-shufflequestions="False"
+<div class="output text_html"><div id="DMWhvlnaXpAB" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#VDrLexOxarId {
+#DMWhvlnaXpAB {
    --jq-multiple-choice-bg: #2E016D;
    --jq-mc-button-bg: #F5F5F5;
    --jq-mc-button-border: #252629;
@@ -492,138 +491,118 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsVDrLexOxarId=[
+</style></div><script type="application/javascript">var questionsDMWhvlnaXpAB=[
     {
-        "question": " How do you know if your supervised learning model has high or low bias?",
-        "code": "",
-        "type": "many_choice",
-        "answers": [
-            {
-                "answer": "You look at the error metric",
-                "correct": true,
-                "feedback": "That's right. Bias, by simplifying assumptions, make the mapping function easier to learn and understand. Linear algorithms with high bias are often less flexible because of their low predictive capability on complex data samples/problems. Such low predictive performance arises due to simplifying assumptions inherent in bias. Bias can also be defined as the difference between the average predictions of a model and the correct values the model is trying to predict. High biased models are oversimplified and pay little attention to the training data causing high errors in training and test data. Therefore looking at the error metric or the average error metric over several runs can indicate wether your model has high bias."
-            },
-            {
-                "answer": "You compare the error metric on different train test splits",
-                "correct": false,
-                "feedback": "Sorry, that was wrong. Please try again"
-            },
-            {
-                "answer": "You run different experiments (train/test splits) and get the average error metric",
-                "correct": true,
-                "feedback": "That's right. Bias, by simplifying assumptions, make the mapping function easier to learn and understand. Linear algorithms with high bias are often less flexible because of their low predictive capability on complex data samples/problems. Such low predictive performance arises due to simplifying assumptions inherent in bias. Bias can also be defined as the difference between the average predictions of a model and the correct values the model is trying to predict. High biased models are oversimplified and pay little attention to the training data causing high errors in training and test data. Therefore looking at the error metric or the average error metric over several runs can indicate wether your model has high bias."
-            },
-            {
-                "answer": "You run different experiments (train/test splits) and look at the standard deviation of the error metric",
-                "correct": false,
-                "feedback": "Sorry, that was wrong. Please try again"
-            }
-        ]
-    },
-    {
-        "question": "How do you know if your supervised learning model has high or low variance?",
-        "code": "",
-        "type": "many_choice",
-        "answers": [
-            {
-                "answer": "You look at the error metric",
-                "correct": false,
-                "feedback": "Sorry, that was wrong. Please try again"
-            },
-            {
-                "answer": "You compare the error metric on different train test splits",
-                "correct": true,
-                "feedback": "That's right. Variance is the variability of model prediction for a given data point or a value that tells us the spread of our data. It implies the change in the estimation of the mapping function due to variations in the training data. Since in supervised ML algorithms, the mapping function is approximately determined from the training data, there will be some amount of variance. If our model picks out the underlying patterns of mapping the data, the model shouldn't differ considerably from one training set to another. This means having a high variance will significantly influence the behavior of the model due to even smaller variations in the training data. The number and types of parameters to identify the mapping function are greatly influenced by the data when the variance is high. Models with high variance pay a lot of attention to training data and do not generalize on the data which it hasn\u2019t seen before. As a result, such models perform very well on training data but have high error rates on test data. The standard deviation of the error metric will show you how much different training data influence the estimation of the mapping function."
-            },
-            {
-                "answer": "You run different experiments (train/test splits) and get the average error metric",
-                "correct": false,
-                "feedback": "Sorry, that was wrong. Please try again"
-            },
-            {
-                "answer": "You run different experiments (train/test splits) and look at the standard deviation of the error metric",
-                "correct": true,
-                "feedback": "That's right. Variance is the variability of model prediction for a given data point or a value that tells us the spread of our data. It implies the change in the estimation of the mapping function due to variations in the training data. Since in supervised ML algorithms, the mapping function is approximately determined from the training data, there will be some amount of variance. If our model picks out the underlying patterns of mapping the data, the model shouldn't differ considerably from one training set to another. This means having a high variance will significantly influence the behavior of the model due to even smaller variations in the training data. The number and types of parameters to identify the mapping function are greatly influenced by the data when the variance is high. Models with high variance pay a lot of attention to training data and do not generalize on the data which it hasn\u2019t seen before. As a result, such models perform very well on training data but have high error rates on test data. The standard deviation of the error metric will show you how much different training data influence the estimation of the mapping function."
-            }
-        ]
-    },
-    {
-        "question": "What would be more trustworthy.",
-        "code": "",
+        "question": "For which problems can decision trees be used?",
         "type": "multiple_choice",
         "answers": [
             {
-                "answer": "a model with low bias and high variance",
+                "answer": "only for classification",
                 "correct": false,
                 "feedback": "Sorry, that was wrong. Please try again"
             },
             {
-                "answer": "a model with low bias and moderate variance",
-                "correct": true,
-                "feedback": "High variance is usually a very bad thing.. as you do not know what to expect on new data. With high bias but low variance, although you do not have a lot of confidence in your predictions at least you know it's consistent. So you can look for a better model if needed."
+                "answer": "only for regression",
+                "correct": false,
+                "feedback": "Sorry, that was wrong. Please try again"
             },
             {
-                "answer": "a model with moderate bias and moderate variance",
+                "answer": "for both, classification and regression",
                 "correct": true,
-                "feedback": "High variance is usually a very bad thing.. as you do not know what to expect on new data. With high bias but low variance, although you do not have a lot of confidence in your predictions at least you know it's consistent. So you can look for a better model if needed."
+                "feedback": "That is correct. Decision trees can be used for both, classification and regression. For classification, the majority class of a leaf is the predicted class. For regression, the mean of all observations in the leaf is the predicted target value."
             },
             {
-                "answer": "a model with moderate bias and low variance",
-                "correct": true,
-                "feedback":"High variance is usually a very bad thing.. as you do not know what to expect on new data. With high bias but low variance, although you do not have a lot of confidence in your predictions at least you know it's consistent. So you can look for a better model if needed."
-            },
-            {
-                "answer": "a model with high bias and low variance",
-                "correct": true,
-                "feedback": "High variance is usually a very bad thing.. as you do not know what to expect on new data. With high bias but low variance, although you do not have a lot of confidence in your predictions at least you know it's consistent. So you can look for a better model if needed."
+                "answer": "none of the above, it's a unsupervised method",
+                "correct": false,
+                "feedback": "Sorry, that was wrong. Please try again"
             }
         ]
     },
     {
-        "question": "What can be done to avoid over-fitting?",
-        "code": "",
-        "type": "many_choice",
+        "question": "Decision trees carry the risk of overfitting. Which regularization method can be used to overcome overfitting in Decision Trees? ",
+        "type": "multiple_choice",
         "answers": [
             {
-                "answer": "Use regularization (l1, l2, or other specific to the model)",
-                "correct": true,
-                "feedback": "Well done! Usually you would try regularization to penalize over fitting. Or changing the model, a simple model with fewer parameters has high bias and low variance. In contrast, a model with many parameters has high variance and low bias. For any supervised model, a search for a right/good balance without overfitting and underfitting the data is required. An optimal balance of bias and variance prevents both overfitting and underfitting of the model."
-            },
-            {
-                "answer": "Add more assumptions to your model, or user a more complex model",
+                "answer": "L2 Regularization",
                 "correct": false,
                 "feedback": "Sorry, that was wrong. Please try again"
             },
             {
-                "answer": "Get more data",
-                "correct": true,
-                "feedback": "Well done! Usually you would try regularization to penalize over fitting. Or changing the model, a simple model with fewer parameters has high bias and low variance. In contrast, a model with many parameters has high variance and low bias. For any supervised model, a search for a right/good balance without overfitting and underfitting the data is required. An optimal balance of bias and variance prevents both overfitting and underfitting of the model."
-            },
-            {
-                "answer": "Use a different evaluation metric.",
+                "answer": "L1 Regularization",
                 "correct": false,
                 "feedback": "Sorry, that was wrong. Please try again"
             },
             {
-                "answer": "Simplify the assumptions, or use a simpler model",
+                "answer": "Lasso",
+                "correct": false,
+                "feedback": "Sorry, that was wrong. Please try again"
+            },
+            {
+                "answer": "All of the above",
+                "correct": false,
+                "feedback": "Sorry, that was wrong. Please try again"
+            },
+            {
+                "answer": "None of the above",
                 "correct": true,
-                "feedback": "Well done! Usually you would try regularization to penalize over fitting. Or changing the model, a simple model with fewer parameters has high bias and low variance. In contrast, a model with many parameters has high variance and low bias. For any supervised model, a search for a right/good balance without overfitting and underfitting the data is required. An optimal balance of bias and variance prevents both overfitting and underfitting of the model."
+                "feedback": "That is correct. L2 and L1 (== Lasso) Regularization will help to keep the parameters (thetas/slopes and intercept) of models in check. These regularization can be used for example in Linear and Logistic Regression. You can regularize decision trees for example by setting a maximal depth of the tree or by pruning it."
             }
         ]
     },
     {
-        "question": " What is the bias variance tradeoff?",
+        "question": "Your customer wants to detect customers that will seemingly buy a certain product on his website. He needs an algorithm that explains the outcomes best. Which algorithms can you suggest to him?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "Logistic Regression",
+                "correct": false,
+                "feedback": "Sorry, that was wrong. Please try again"
+            },
+            {
+                "answer": "Decision Trees",
+                "correct": true,
+                "feedback": "That is correct. Decision Tree works in the same manner as simple if-else statements which are very easy to understand. The output of a Decision Tree can be easily interpreted by humans."
+            },
+            {
+                "answer": "Gradient Descent",
+                "correct": false,
+                "feedback": "Sorry, that was wrong. Please try again"
+            },
+            {
+                "answer": "All of the above",
+                "correct": false,
+                "feedback": "Sorry, that was wrong. Please try again"
+            }
+        ]
+    },
+    {
+        "question": "State at least 2 advantages and 2 disadvantages of decision trees.",
         "type": "multiple_choice",
         "answer_cols": 1,
         "answers": [
             {
             "answer": "Click here to see the answer.",
             "correct": true,
-            "feedback": "Supervised ML algorithms want to achieve low bias and low variance ensuring good prediction on test set. Whereas linear ML algorithms often have a high bias but a low variance, nonlinear ML algorithms often have a low bias but a high variance. So we see a battle to balance out bias and variance with no escape from the relationship between bias and variance. If we increase the bias, the variance will decrease. If we increase the variance, the bias will decrease."
+            "feedback": "Advantages: Decision trees are simple to understand, interpret and visualize. They can be used for both classification and regression problems. They can handle both continuous and categorical variables. They require no feature scaling (for Decision trees scale doesn't matter, they are just making ... by rank). Decision Trees are quite robust to outliers and can handle missing values. Disadvantages: Decision Trees have a major problem of overfitting. You really should consider regularization! Instability: Even a small change in input data can at times, cause large changes in the tree. Due to the overfitting, there is more likely a chance of high variance in the output which leads to many errors in the final predictions and shows high inaccuracy in the results. They are not suitable for large datasets: If the data size is large, then one single Tree may grow complex and lead to overfitting. Decision trees often involves higher time to train the model (esp. for deep trees and then pruning it). They are not good for regression: Decision Tree can be used for regression but decision tree won't perform well."
+            }
+        ]
+    },
+    {
+        "question": "In Decision Trees, is a node's Gini impurity generally lower or greater than its parent's? Is it generally lower/greater, or always lower/greater?",
+        "type": "multiple_choice",
+        "answer_cols": 1,
+        "answers": [
+            {
+            "answer": "Click here to see the answer.",
+            "correct": true,
+            "feedback": "A node's Gini impurity is generally lower than that of its parent as the CART training algorithm cost function splits each of the nodes in a way that minimizes the weighted sum of its children's Gini impurities. But if one child is smaller than the other, it is possible for it to have a higher Gini score than its parent. The increase is more than compensated by a decrease in the other child's impurity."
             }
         ]
     }
-];
+]
+
+
+;
     // Make a random ID
 function makeid(length) {
     var result = [];
@@ -1372,8 +1351,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("VDrLexOxarId")) {
-            show_questions(questionsVDrLexOxarId,  VDrLexOxarId); 
+          if(document.getElementById("DMWhvlnaXpAB")) {
+            show_questions(questionsDMWhvlnaXpAB,  DMWhvlnaXpAB); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -1382,8 +1361,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("VDrLexOxarId");
-        // console.log(document.getElementById("VDrLexOxarId"));
+        //console.log("DMWhvlnaXpAB");
+        // console.log(document.getElementById("DMWhvlnaXpAB"));
 
         try_show();
         }
@@ -1422,22 +1401,13 @@ if (typeof version == 'undefined') {
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="07_Linear_Regression_RAT.html"
+       href="12_KNN_RAT.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Linear Regression</p>
+        <p class="prev-next-title">K-nearest Neighbors</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="09_Gradient_Descent_RAT.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Gradient Descent</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
