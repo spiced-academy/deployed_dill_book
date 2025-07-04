@@ -28,7 +28,7 @@ parts:
     - file: sessions/12_Logistic_Regression
     - file: sessions/13_KNN_Distance_Metrics
   #   - file: sessions/14_Testing
-  #   - file: sessions/15_Decision_Tree
+    - file: sessions/15_Decision_Tree
   #   - file: sessions/Recap
 
   # - caption: More Machine Learning
@@ -58,7 +58,7 @@ parts:
     - file: RATs/10_Evaluation_Metrics_RAT
     - file: RATs/11_Logistic_Regression_RAT    
     - file: RATs/12_KNN_RAT
-  #   - file: RATs/13_Decision_Trees_RAT
+    - file: RATs/13_Decision_Trees_RAT
   #   - file: RATs/14_Ensemble_Methods_RAT
   #   - file: RATs/15_CNNs_RAT
   #   - file: RATs/16_Clustering_RAT
