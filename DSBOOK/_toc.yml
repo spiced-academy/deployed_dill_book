@@ -31,9 +31,9 @@ parts:
     - file: sessions/15_Decision_Tree
   #   - file: sessions/Recap
 
-  # - caption: More Machine Learning
-  #   chapters:
-  #   - file: sessions/16_Ensemble_Methods_part1
+  - caption: More Machine Learning
+    chapters:
+    - file: sessions/16_Ensemble_Methods_part1
   #   - file: sessions/16_Ensemble_Methods_part2
   #   - file: sessions/17_Data_Products
   #   - file: sessions/18_Neural_Networks
@@ -59,7 +59,7 @@ parts:
     - file: RATs/11_Logistic_Regression_RAT    
     - file: RATs/12_KNN_RAT
     - file: RATs/13_Decision_Trees_RAT
-  #   - file: RATs/14_Ensemble_Methods_RAT
+    - file: RATs/14_Ensemble_Methods_RAT
   #   - file: RATs/15_CNNs_RAT
   #   - file: RATs/16_Clustering_RAT
 
