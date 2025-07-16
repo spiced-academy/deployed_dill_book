@@ -36,7 +36,7 @@ parts:
     - file: sessions/16_Ensemble_Methods_part1
     - file: sessions/16_Ensemble_Methods_part2
     - file: sessions/17_Data_Products
-  #   - file: sessions/18_Neural_Networks
+    - file: sessions/18_Neural_Networks
   #   - file: sessions/19_Image_Modelling
   #   - file: sessions/20_Capstone_Phase
   #   - file: sessions/21_Time_Series_Analysis_Intro
