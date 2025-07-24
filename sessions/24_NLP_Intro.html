@@ -359,6 +359,13 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text-classification">Text classification</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#word-embeddings">Word Embeddings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Word Embeddings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#word-similarity">Word similarity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-embeddings">Using Embeddings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-get-word-embeddings">How do we get Word Embeddings</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -1035,7 +1042,7 @@ probability: [0.2178996  0.39701782 0.16718298 0.2178996 ]
 <h3>POS Tagging using Spacy<a class="headerlink" href="#pos-tagging-using-spacy" title="Link to this heading">#</a></h3>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ch">#!pip install spacy</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>spacy
 <span class="o">!</span>python<span class="w"> </span>-m<span class="w"> </span>spacy<span class="w"> </span>download<span class="w"> </span>en_core_web_sm
 </pre></div>
 </div>
@@ -1176,7 +1183,7 @@ billion NUM
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span class="tex2jax_ignore"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:lang="en" id="a5d57711c4f9492eaf109afe367a4bc7-0" class="displacy" width="1975" height="399.5" direction="ltr" style="max-width: none; height: 399.5px; color: #000000; background: #ffffff; font-family: Arial; direction: ltr">
+<div class="output text_html"><span class="tex2jax_ignore"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:lang="en" id="522ecba8fa2c491788d42117ad5a0efc-0" class="displacy" width="1975" height="399.5" direction="ltr" style="max-width: none; height: 399.5px; color: #000000; background: #ffffff; font-family: Arial; direction: ltr">
 <text class="displacy-token" fill="currentColor" text-anchor="middle" y="309.5">
     <tspan class="displacy-word" fill="currentColor" x="50">Apple</tspan>
     <tspan class="displacy-tag" dy="2em" fill="currentColor" x="50">PROPN</tspan>
@@ -1233,81 +1240,81 @@ billion NUM
 </text>
 
 <g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-a5d57711c4f9492eaf109afe367a4bc7-0-0" stroke-width="2px" d="M70,264.5 C70,89.5 395.0,89.5 395.0,264.5" fill="none" stroke="currentColor"/>
+    <path class="displacy-arc" id="arrow-522ecba8fa2c491788d42117ad5a0efc-0-0" stroke-width="2px" d="M70,264.5 C70,89.5 395.0,89.5 395.0,264.5" fill="none" stroke="currentColor"/>
     <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-a5d57711c4f9492eaf109afe367a4bc7-0-0" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">nsubj</textPath>
+        <textPath xlink:href="#arrow-522ecba8fa2c491788d42117ad5a0efc-0-0" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">nsubj</textPath>
     </text>
     <path class="displacy-arrowhead" d="M70,266.5 L62,254.5 78,254.5" fill="currentColor"/>
 </g>
 
 <g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-a5d57711c4f9492eaf109afe367a4bc7-0-1" stroke-width="2px" d="M245,264.5 C245,177.0 390.0,177.0 390.0,264.5" fill="none" stroke="currentColor"/>
+    <path class="displacy-arc" id="arrow-522ecba8fa2c491788d42117ad5a0efc-0-1" stroke-width="2px" d="M245,264.5 C245,177.0 390.0,177.0 390.0,264.5" fill="none" stroke="currentColor"/>
     <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-a5d57711c4f9492eaf109afe367a4bc7-0-1" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">aux</textPath>
+        <textPath xlink:href="#arrow-522ecba8fa2c491788d42117ad5a0efc-0-1" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">aux</textPath>
     </text>
     <path class="displacy-arrowhead" d="M245,266.5 L237,254.5 253,254.5" fill="currentColor"/>
 </g>
 
 <g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-a5d57711c4f9492eaf109afe367a4bc7-0-2" stroke-width="2px" d="M420,264.5 C420,177.0 565.0,177.0 565.0,264.5" fill="none" stroke="currentColor"/>
+    <path class="displacy-arc" id="arrow-522ecba8fa2c491788d42117ad5a0efc-0-2" stroke-width="2px" d="M420,264.5 C420,177.0 565.0,177.0 565.0,264.5" fill="none" stroke="currentColor"/>
     <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-a5d57711c4f9492eaf109afe367a4bc7-0-2" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">prep</textPath>
+        <textPath xlink:href="#arrow-522ecba8fa2c491788d42117ad5a0efc-0-2" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">prep</textPath>
     </text>
     <path class="displacy-arrowhead" d="M565.0,266.5 L573.0,254.5 557.0,254.5" fill="currentColor"/>
 </g>
 
 <g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-a5d57711c4f9492eaf109afe367a4bc7-0-3" stroke-width="2px" d="M595,264.5 C595,177.0 740.0,177.0 740.0,264.5" fill="none" stroke="currentColor"/>
+    <path class="displacy-arc" id="arrow-522ecba8fa2c491788d42117ad5a0efc-0-3" stroke-width="2px" d="M595,264.5 C595,177.0 740.0,177.0 740.0,264.5" fill="none" stroke="currentColor"/>
     <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-a5d57711c4f9492eaf109afe367a4bc7-0-3" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">pcomp</textPath>
+        <textPath xlink:href="#arrow-522ecba8fa2c491788d42117ad5a0efc-0-3" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">pcomp</textPath>
     </text>
     <path class="displacy-arrowhead" d="M740.0,266.5 L748.0,254.5 732.0,254.5" fill="currentColor"/>
 </g>
 
 <g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-a5d57711c4f9492eaf109afe367a4bc7-0-4" stroke-width="2px" d="M770,264.5 C770,177.0 915.0,177.0 915.0,264.5" fill="none" stroke="currentColor"/>
+    <path class="displacy-arc" id="arrow-522ecba8fa2c491788d42117ad5a0efc-0-4" stroke-width="2px" d="M770,264.5 C770,177.0 915.0,177.0 915.0,264.5" fill="none" stroke="currentColor"/>
     <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-a5d57711c4f9492eaf109afe367a4bc7-0-4" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">dobj</textPath>
+        <textPath xlink:href="#arrow-522ecba8fa2c491788d42117ad5a0efc-0-4" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">dobj</textPath>
     </text>
     <path class="displacy-arrowhead" d="M915.0,266.5 L923.0,254.5 907.0,254.5" fill="currentColor"/>
 </g>
 
 <g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-a5d57711c4f9492eaf109afe367a4bc7-0-5" stroke-width="2px" d="M420,264.5 C420,89.5 1095.0,89.5 1095.0,264.5" fill="none" stroke="currentColor"/>
+    <path class="displacy-arc" id="arrow-522ecba8fa2c491788d42117ad5a0efc-0-5" stroke-width="2px" d="M420,264.5 C420,89.5 1095.0,89.5 1095.0,264.5" fill="none" stroke="currentColor"/>
     <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-a5d57711c4f9492eaf109afe367a4bc7-0-5" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">dep</textPath>
+        <textPath xlink:href="#arrow-522ecba8fa2c491788d42117ad5a0efc-0-5" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">dep</textPath>
     </text>
     <path class="displacy-arrowhead" d="M1095.0,266.5 L1103.0,254.5 1087.0,254.5" fill="currentColor"/>
 </g>
 
 <g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-a5d57711c4f9492eaf109afe367a4bc7-0-6" stroke-width="2px" d="M1120,264.5 C1120,177.0 1265.0,177.0 1265.0,264.5" fill="none" stroke="currentColor"/>
+    <path class="displacy-arc" id="arrow-522ecba8fa2c491788d42117ad5a0efc-0-6" stroke-width="2px" d="M1120,264.5 C1120,177.0 1265.0,177.0 1265.0,264.5" fill="none" stroke="currentColor"/>
     <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-a5d57711c4f9492eaf109afe367a4bc7-0-6" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">prep</textPath>
+        <textPath xlink:href="#arrow-522ecba8fa2c491788d42117ad5a0efc-0-6" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">prep</textPath>
     </text>
     <path class="displacy-arrowhead" d="M1265.0,266.5 L1273.0,254.5 1257.0,254.5" fill="currentColor"/>
 </g>
 
 <g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-a5d57711c4f9492eaf109afe367a4bc7-0-7" stroke-width="2px" d="M1470,264.5 C1470,89.5 1795.0,89.5 1795.0,264.5" fill="none" stroke="currentColor"/>
+    <path class="displacy-arc" id="arrow-522ecba8fa2c491788d42117ad5a0efc-0-7" stroke-width="2px" d="M1470,264.5 C1470,89.5 1795.0,89.5 1795.0,264.5" fill="none" stroke="currentColor"/>
     <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-a5d57711c4f9492eaf109afe367a4bc7-0-7" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">quantmod</textPath>
+        <textPath xlink:href="#arrow-522ecba8fa2c491788d42117ad5a0efc-0-7" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">quantmod</textPath>
     </text>
     <path class="displacy-arrowhead" d="M1470,266.5 L1462,254.5 1478,254.5" fill="currentColor"/>
 </g>
 
 <g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-a5d57711c4f9492eaf109afe367a4bc7-0-8" stroke-width="2px" d="M1645,264.5 C1645,177.0 1790.0,177.0 1790.0,264.5" fill="none" stroke="currentColor"/>
+    <path class="displacy-arc" id="arrow-522ecba8fa2c491788d42117ad5a0efc-0-8" stroke-width="2px" d="M1645,264.5 C1645,177.0 1790.0,177.0 1790.0,264.5" fill="none" stroke="currentColor"/>
     <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-a5d57711c4f9492eaf109afe367a4bc7-0-8" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">compound</textPath>
+        <textPath xlink:href="#arrow-522ecba8fa2c491788d42117ad5a0efc-0-8" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">compound</textPath>
     </text>
     <path class="displacy-arrowhead" d="M1645,266.5 L1637,254.5 1653,254.5" fill="currentColor"/>
 </g>
 
 <g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-a5d57711c4f9492eaf109afe367a4bc7-0-9" stroke-width="2px" d="M1295,264.5 C1295,2.0 1800.0,2.0 1800.0,264.5" fill="none" stroke="currentColor"/>
+    <path class="displacy-arc" id="arrow-522ecba8fa2c491788d42117ad5a0efc-0-9" stroke-width="2px" d="M1295,264.5 C1295,2.0 1800.0,2.0 1800.0,264.5" fill="none" stroke="currentColor"/>
     <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-a5d57711c4f9492eaf109afe367a4bc7-0-9" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">pobj</textPath>
+        <textPath xlink:href="#arrow-522ecba8fa2c491788d42117ad5a0efc-0-9" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">pobj</textPath>
     </text>
     <path class="displacy-arrowhead" d="M1800.0,266.5 L1808.0,254.5 1792.0,254.5" fill="currentColor"/>
 </g>
@@ -1347,6 +1354,59 @@ billion NUM
 <li><p>hate speech analysis</p></li>
 </ul>
 </section>
+</section>
+<section id="word-embeddings">
+<h2>Word Embeddings<a class="headerlink" href="#word-embeddings" title="Link to this heading">#</a></h2>
+<section id="id10">
+<h3>Word Embeddings<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Represent feature space in smaller dimension</p></li>
+<li><p>Similar words are near in embedding space</p></li>
+<li><p>Trained by using neural networks<br />
+ → Use those trained weights as first layer in your NLP neural network.</p></li>
+</ul>
+</section>
+<section id="word-similarity">
+<h3>Word similarity<a class="headerlink" href="#word-similarity" title="Link to this heading">#</a></h3>
+<p>Is “St Pauli” more similar to:</p>
+<ul class="simple">
+<li><p>De Wallen → Similar type</p></li>
+</ul>
+<p>or</p>
+<ul class="simple">
+<li><p>HSV → Similar topic?</p></li>
+</ul>
+<p>Result depends on the context … or on the feature space / embedding you chose</p>
+</section>
+<section id="using-embeddings">
+<h3>Using Embeddings<a class="headerlink" href="#using-embeddings" title="Link to this heading">#</a></h3>
+<div class="group">
+    <div class="text">
+<p>Relevant items for your task should be similar in the embedding space / i.e close to each other.</p>
+<p>.
+</div>
+<div class="images">
+<img src="../images/nlp/img_p8_1.png">
+</div></p>
+</div></section>
+<section id="how-do-we-get-word-embeddings">
+<h3>How do we get Word Embeddings<a class="headerlink" href="#how-do-we-get-word-embeddings" title="Link to this heading">#</a></h3>
+<div class="group">
+    <div class="text">
+CBOW - Continuous Bag of Words
+<ul class="simple">
+<li><p>Predict the current word based on the context words</p></li>
+<li><p>Input (X): context words ,  Output (y): current word</p></li>
+<li><p>For example, “One word was missing in all that.”
+<br></p></li>
+</ul>
+<p><a class="reference external" href="https://github.com/Eligijus112/word-embedding-creation">Example</a>
+</div>
+</div>
+<div class="images">
+<img src="../images/nlp/CBOW.png"><br />
+</div></p>
+</div></section>
 </section>
 </section>
 
@@ -1448,6 +1508,13 @@ billion NUM
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#so-what-do-we-do-with-all-that">So.. what do we do with all that?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text-similarity-or-document-similarity">Text similarity or Document Similarity</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text-classification">Text classification</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#word-embeddings">Word Embeddings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Word Embeddings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#word-similarity">Word similarity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-embeddings">Using Embeddings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-get-word-embeddings">How do we get Word Embeddings</a></li>
 </ul>
 </li>
 </ul>
