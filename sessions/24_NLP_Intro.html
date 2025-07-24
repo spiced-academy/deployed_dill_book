@@ -593,15 +593,13 @@ document.write(`
 <span class="n">query_transformed</span> <span class="o">=</span> <span class="n">cv</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;prediction:&#39;</span><span class="p">,</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">query_transformed</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">query_transformed</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;probability:&#39;</span><span class="p">,</span><span class="n">model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">query_transformed</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>prediction: document 2
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.2178996 , 0.39701782, 0.16718298, 0.2178996 ])
+probability: [0.2178996  0.39701782 0.16718298 0.2178996 ]
 </pre></div>
 </div>
 </div>
@@ -769,7 +767,62 @@ document.write(`
 <div class="images_30">
 <img src="../images/nlp/img_p17_2.png">
 </div></p>
-</div></section>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">nltk</span><span class="w"> </span><span class="kn">import</span> <span class="n">ngrams</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> gram</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">ngram</span> <span class="o">=</span> <span class="n">ngrams</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span> <span class="n">i</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">gram</span> <span class="ow">in</span> <span class="n">ngram</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">gram</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 gram
+
+(&#39;Let&#39;,)
+(&#39;us&#39;,)
+(&#39;learn&#39;,)
+(&#39;some&#39;,)
+(&#39;NLP.&#39;,)
+(&#39;NLP&#39;,)
+(&#39;is&#39;,)
+(&#39;amazing!&#39;,)
+----------
+2 gram
+
+(&#39;Let&#39;, &#39;us&#39;)
+(&#39;us&#39;, &#39;learn&#39;)
+(&#39;learn&#39;, &#39;some&#39;)
+(&#39;some&#39;, &#39;NLP.&#39;)
+(&#39;NLP.&#39;, &#39;NLP&#39;)
+(&#39;NLP&#39;, &#39;is&#39;)
+(&#39;is&#39;, &#39;amazing!&#39;)
+----------
+3 gram
+
+(&#39;Let&#39;, &#39;us&#39;, &#39;learn&#39;)
+(&#39;us&#39;, &#39;learn&#39;, &#39;some&#39;)
+(&#39;learn&#39;, &#39;some&#39;, &#39;NLP.&#39;)
+(&#39;some&#39;, &#39;NLP.&#39;, &#39;NLP&#39;)
+(&#39;NLP.&#39;, &#39;NLP&#39;, &#39;is&#39;)
+(&#39;NLP&#39;, &#39;is&#39;, &#39;amazing!&#39;)
+----------
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 
