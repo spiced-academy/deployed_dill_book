@@ -341,6 +341,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">TF-IDF</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">TF-IDF</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#n-grams">N-grams</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalization">Normalization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming">Stemming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lemmatization">Lemmatization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming-or-lemmatization">Stemming or Lemmatization?</a></li>
 </ul>
 </li>
 </ul>
@@ -823,6 +827,83 @@ probability: [0.2178996  0.39701782 0.16718298 0.2178996 ]
 </div>
 </div>
 </section>
+<section id="normalization">
+<h3>Normalization<a class="headerlink" href="#normalization" title="Link to this heading">#</a></h3>
+<p>[‘List’, ‘listed’, ‘lists’, ‘listing’, ‘listings’, ‘.’]</p>
+<p>→  [‘list’, ‘listed’, ‘lists’, ‘listing’, ‘listings’, ‘.’]</p>
+<p>Do we want to distinguish between “List” and “list”?</p>
+<p>Sometimes we do: “White House” vs. “white house”</p>
+<p>Notes: Normalization is the process of converting text data into a standardized form to reduce complexity and improve the efficiency of machine learning models. This can include lowercasing, stemming/lemmatization, …</p>
+</section>
+<section id="stemming">
+<h3>Stemming<a class="headerlink" href="#stemming" title="Link to this heading">#</a></h3>
+<p>[‘list’, ‘listed’, ‘lists’, ‘listing’, ‘listings’, ‘.’]</p>
+<p>→ [‘list’, ‘list’, ‘list’, ‘list’, ‘list’, ‘.’]</p>
+<div class="alert alert-block alert-info">
+<b>Note:</b> 
+<p>Stemming reduces words to a shorter form, a form that might have no meaning.</p>
+</div></section>
+<section id="lemmatization">
+<h3>Lemmatization<a class="headerlink" href="#lemmatization" title="Link to this heading">#</a></h3>
+<p>[‘list’, ‘listed’, ‘lists’, ‘listing’, ‘listings’, ‘.’]</p>
+<p>→ [‘list’, ‘listed’, ‘list’, ‘listing’, ‘listing’, ‘.’]</p>
+<div class="alert alert-block alert-info">
+<b>Note:</b> 
+<p>Lemmatization uses the language dictionary to get the base word of a word.</p>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stemmer</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">PorterStemmer</span><span class="p">()</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;We are learning how a stemmer works&quot;</span>
+<span class="n">text1</span> <span class="o">=</span> <span class="s2">&quot;People are running so fast.&quot;</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tokenized_text</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">text1</span><span class="p">)</span>
+<span class="n">stem</span> <span class="o">=</span> <span class="p">[</span><span class="n">stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">tokenized_text</span><span class="p">]</span>
+<span class="n">stem</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;peopl&#39;, &#39;are&#39;, &#39;run&#39;, &#39;so&#39;, &#39;fast&#39;, &#39;.&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lemmatizer</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">WordNetLemmatizer</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tokenized_text</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">text1</span><span class="p">)</span>
+<span class="n">lemm</span> <span class="o">=</span> <span class="p">[</span><span class="n">lemmatizer</span><span class="o">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">tokenized_text</span><span class="p">]</span>
+<span class="n">lemm</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;People&#39;, &#39;are&#39;, &#39;running&#39;, &#39;so&#39;, &#39;fast&#39;, &#39;.&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="stemming-or-lemmatization">
+<h3>Stemming or Lemmatization?<a class="headerlink" href="#stemming-or-lemmatization" title="Link to this heading">#</a></h3>
+<p>It depends…</p>
+<ul class="simple">
+<li><p>Stemming is faster</p></li>
+<li><p>Lemmatization preserves more information</p></li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -908,6 +989,10 @@ probability: [0.2178996  0.39701782 0.16718298 0.2178996 ]
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">TF-IDF</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">TF-IDF</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#n-grams">N-grams</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalization">Normalization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming">Stemming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lemmatization">Lemmatization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming-or-lemmatization">Stemming or Lemmatization?</a></li>
 </ul>
 </li>
 </ul>
