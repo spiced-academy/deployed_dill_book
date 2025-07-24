@@ -376,6 +376,9 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformers">Transformers</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Transformers</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Transformers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hugging-face">Hugging Face</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zero-shot-learning">Zero-Shot Learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
 </ul>
 </li>
 </ul>
@@ -1013,9 +1016,7 @@ probability: [0.2178996  0.39701782 0.16718298 0.2178996 ]
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package averaged_perceptron_tagger_eng to
 [nltk_data]     /home/runner/nltk_data...
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]   Unzipping taggers/averaged_perceptron_tagger_eng.zip.
+[nltk_data]   Unzipping taggers/averaged_perceptron_tagger_eng.zip.
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
@@ -1197,7 +1198,7 @@ billion NUM
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span class="tex2jax_ignore"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:lang="en" id="bf6d0fabb57a4e12aff3016d3dabd0fa-0" class="displacy" width="1975" height="399.5" direction="ltr" style="max-width: none; height: 399.5px; color: #000000; background: #ffffff; font-family: Arial; direction: ltr">
+<div class="output text_html"><span class="tex2jax_ignore"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:lang="en" id="f85e68de5c064463a2b342e8a672bfe4-0" class="displacy" width="1975" height="399.5" direction="ltr" style="max-width: none; height: 399.5px; color: #000000; background: #ffffff; font-family: Arial; direction: ltr">
 <text class="displacy-token" fill="currentColor" text-anchor="middle" y="309.5">
     <tspan class="displacy-word" fill="currentColor" x="50">Apple</tspan>
     <tspan class="displacy-tag" dy="2em" fill="currentColor" x="50">PROPN</tspan>
@@ -1254,81 +1255,81 @@ billion NUM
 </text>
 
 <g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-bf6d0fabb57a4e12aff3016d3dabd0fa-0-0" stroke-width="2px" d="M70,264.5 C70,89.5 395.0,89.5 395.0,264.5" fill="none" stroke="currentColor"/>
+    <path class="displacy-arc" id="arrow-f85e68de5c064463a2b342e8a672bfe4-0-0" stroke-width="2px" d="M70,264.5 C70,89.5 395.0,89.5 395.0,264.5" fill="none" stroke="currentColor"/>
     <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-bf6d0fabb57a4e12aff3016d3dabd0fa-0-0" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">nsubj</textPath>
+        <textPath xlink:href="#arrow-f85e68de5c064463a2b342e8a672bfe4-0-0" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">nsubj</textPath>
     </text>
     <path class="displacy-arrowhead" d="M70,266.5 L62,254.5 78,254.5" fill="currentColor"/>
 </g>
 
 <g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-bf6d0fabb57a4e12aff3016d3dabd0fa-0-1" stroke-width="2px" d="M245,264.5 C245,177.0 390.0,177.0 390.0,264.5" fill="none" stroke="currentColor"/>
+    <path class="displacy-arc" id="arrow-f85e68de5c064463a2b342e8a672bfe4-0-1" stroke-width="2px" d="M245,264.5 C245,177.0 390.0,177.0 390.0,264.5" fill="none" stroke="currentColor"/>
     <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-bf6d0fabb57a4e12aff3016d3dabd0fa-0-1" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">aux</textPath>
+        <textPath xlink:href="#arrow-f85e68de5c064463a2b342e8a672bfe4-0-1" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">aux</textPath>
     </text>
     <path class="displacy-arrowhead" d="M245,266.5 L237,254.5 253,254.5" fill="currentColor"/>
 </g>
 
 <g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-bf6d0fabb57a4e12aff3016d3dabd0fa-0-2" stroke-width="2px" d="M420,264.5 C420,177.0 565.0,177.0 565.0,264.5" fill="none" stroke="currentColor"/>
+    <path class="displacy-arc" id="arrow-f85e68de5c064463a2b342e8a672bfe4-0-2" stroke-width="2px" d="M420,264.5 C420,177.0 565.0,177.0 565.0,264.5" fill="none" stroke="currentColor"/>
     <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-bf6d0fabb57a4e12aff3016d3dabd0fa-0-2" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">prep</textPath>
+        <textPath xlink:href="#arrow-f85e68de5c064463a2b342e8a672bfe4-0-2" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">prep</textPath>
     </text>
     <path class="displacy-arrowhead" d="M565.0,266.5 L573.0,254.5 557.0,254.5" fill="currentColor"/>
 </g>
 
 <g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-bf6d0fabb57a4e12aff3016d3dabd0fa-0-3" stroke-width="2px" d="M595,264.5 C595,177.0 740.0,177.0 740.0,264.5" fill="none" stroke="currentColor"/>
+    <path class="displacy-arc" id="arrow-f85e68de5c064463a2b342e8a672bfe4-0-3" stroke-width="2px" d="M595,264.5 C595,177.0 740.0,177.0 740.0,264.5" fill="none" stroke="currentColor"/>
     <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-bf6d0fabb57a4e12aff3016d3dabd0fa-0-3" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">pcomp</textPath>
+        <textPath xlink:href="#arrow-f85e68de5c064463a2b342e8a672bfe4-0-3" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">pcomp</textPath>
     </text>
     <path class="displacy-arrowhead" d="M740.0,266.5 L748.0,254.5 732.0,254.5" fill="currentColor"/>
 </g>
 
 <g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-bf6d0fabb57a4e12aff3016d3dabd0fa-0-4" stroke-width="2px" d="M770,264.5 C770,177.0 915.0,177.0 915.0,264.5" fill="none" stroke="currentColor"/>
+    <path class="displacy-arc" id="arrow-f85e68de5c064463a2b342e8a672bfe4-0-4" stroke-width="2px" d="M770,264.5 C770,177.0 915.0,177.0 915.0,264.5" fill="none" stroke="currentColor"/>
     <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-bf6d0fabb57a4e12aff3016d3dabd0fa-0-4" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">dobj</textPath>
+        <textPath xlink:href="#arrow-f85e68de5c064463a2b342e8a672bfe4-0-4" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">dobj</textPath>
     </text>
     <path class="displacy-arrowhead" d="M915.0,266.5 L923.0,254.5 907.0,254.5" fill="currentColor"/>
 </g>
 
 <g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-bf6d0fabb57a4e12aff3016d3dabd0fa-0-5" stroke-width="2px" d="M420,264.5 C420,89.5 1095.0,89.5 1095.0,264.5" fill="none" stroke="currentColor"/>
+    <path class="displacy-arc" id="arrow-f85e68de5c064463a2b342e8a672bfe4-0-5" stroke-width="2px" d="M420,264.5 C420,89.5 1095.0,89.5 1095.0,264.5" fill="none" stroke="currentColor"/>
     <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-bf6d0fabb57a4e12aff3016d3dabd0fa-0-5" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">dep</textPath>
+        <textPath xlink:href="#arrow-f85e68de5c064463a2b342e8a672bfe4-0-5" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">dep</textPath>
     </text>
     <path class="displacy-arrowhead" d="M1095.0,266.5 L1103.0,254.5 1087.0,254.5" fill="currentColor"/>
 </g>
 
 <g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-bf6d0fabb57a4e12aff3016d3dabd0fa-0-6" stroke-width="2px" d="M1120,264.5 C1120,177.0 1265.0,177.0 1265.0,264.5" fill="none" stroke="currentColor"/>
+    <path class="displacy-arc" id="arrow-f85e68de5c064463a2b342e8a672bfe4-0-6" stroke-width="2px" d="M1120,264.5 C1120,177.0 1265.0,177.0 1265.0,264.5" fill="none" stroke="currentColor"/>
     <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-bf6d0fabb57a4e12aff3016d3dabd0fa-0-6" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">prep</textPath>
+        <textPath xlink:href="#arrow-f85e68de5c064463a2b342e8a672bfe4-0-6" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">prep</textPath>
     </text>
     <path class="displacy-arrowhead" d="M1265.0,266.5 L1273.0,254.5 1257.0,254.5" fill="currentColor"/>
 </g>
 
 <g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-bf6d0fabb57a4e12aff3016d3dabd0fa-0-7" stroke-width="2px" d="M1470,264.5 C1470,89.5 1795.0,89.5 1795.0,264.5" fill="none" stroke="currentColor"/>
+    <path class="displacy-arc" id="arrow-f85e68de5c064463a2b342e8a672bfe4-0-7" stroke-width="2px" d="M1470,264.5 C1470,89.5 1795.0,89.5 1795.0,264.5" fill="none" stroke="currentColor"/>
     <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-bf6d0fabb57a4e12aff3016d3dabd0fa-0-7" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">quantmod</textPath>
+        <textPath xlink:href="#arrow-f85e68de5c064463a2b342e8a672bfe4-0-7" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">quantmod</textPath>
     </text>
     <path class="displacy-arrowhead" d="M1470,266.5 L1462,254.5 1478,254.5" fill="currentColor"/>
 </g>
 
 <g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-bf6d0fabb57a4e12aff3016d3dabd0fa-0-8" stroke-width="2px" d="M1645,264.5 C1645,177.0 1790.0,177.0 1790.0,264.5" fill="none" stroke="currentColor"/>
+    <path class="displacy-arc" id="arrow-f85e68de5c064463a2b342e8a672bfe4-0-8" stroke-width="2px" d="M1645,264.5 C1645,177.0 1790.0,177.0 1790.0,264.5" fill="none" stroke="currentColor"/>
     <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-bf6d0fabb57a4e12aff3016d3dabd0fa-0-8" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">compound</textPath>
+        <textPath xlink:href="#arrow-f85e68de5c064463a2b342e8a672bfe4-0-8" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">compound</textPath>
     </text>
     <path class="displacy-arrowhead" d="M1645,266.5 L1637,254.5 1653,254.5" fill="currentColor"/>
 </g>
 
 <g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-bf6d0fabb57a4e12aff3016d3dabd0fa-0-9" stroke-width="2px" d="M1295,264.5 C1295,2.0 1800.0,2.0 1800.0,264.5" fill="none" stroke="currentColor"/>
+    <path class="displacy-arc" id="arrow-f85e68de5c064463a2b342e8a672bfe4-0-9" stroke-width="2px" d="M1295,264.5 C1295,2.0 1800.0,2.0 1800.0,264.5" fill="none" stroke="currentColor"/>
     <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-bf6d0fabb57a4e12aff3016d3dabd0fa-0-9" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">pobj</textPath>
+        <textPath xlink:href="#arrow-f85e68de5c064463a2b342e8a672bfe4-0-9" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">pobj</textPath>
     </text>
     <path class="displacy-arrowhead" d="M1800.0,266.5 L1808.0,254.5 1792.0,254.5" fill="currentColor"/>
 </g>
@@ -1684,6 +1685,34 @@ word2vec-ruscorpora-300
 <img src="../images/nlp/transformer_example.png" width=800>
 </div>
 </div></section>
+<section id="hugging-face">
+<h3>Hugging Face<a class="headerlink" href="#hugging-face" title="Link to this heading">#</a></h3>
+<p>&gt; 7k pre trained NLP models on <a class="reference external" href="https://huggingface.co">huggingface.co</a></p>
+<center>
+    <img src="../images/nlp/img_p43_1.png" width=800>
+</center></section>
+<section id="zero-shot-learning">
+<h3>Zero-Shot Learning<a class="headerlink" href="#zero-shot-learning" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>A pretrained model performs a downstream task directly from  a natural language description</p></li>
+<li><p>input: “Classify the sentiment of: Today is a great day!!”</p></li>
+</ul>
+<p>(see notebook 2,3 in workbooks)</p>
+</section>
+<section id="resources">
+<h3>Resources<a class="headerlink" href="#resources" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/pyladieshamburg/getting-started-with-nlp">Getting started with NLP (Pyladies)</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/google-ngram-downloader/">NGram Loader</a></p></li>
+<li><p><a class="reference external" href="https://spacy.io/">spaCy</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/&#64;adriensieg/text-similarities-da019229c894">Text similarities</a></p></li>
+<li><p><a class="reference external" href="https://www.microsoft.com/en-us/research/video/neural-models-information-retrieval-video/">Neural models for information retrieval</a></p></li>
+<li><p><a class="reference external" href="https://nlp.stanford.edu/projects/glove/">Glove</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=wjZofJX0v4M">What is a transformer? (3blue1brown)</a></p></li>
+<li><p>How does zero shot learning work [<a class="reference external" href="https://blog.roboflow.com/zero-shot-learning-computer-vision/">video</a>, <a class="reference external" href="https://www.kdnuggets.com/2022/12/zeroshot-learning-explained.html">text</a>]?</p></li>
+<li><p>Sentiment Analysis with VADER [<a class="reference external" href="https://vadersentiment.readthedocs.io/en/latest/">stand alone</a>, <a class="reference external" href="https://www.nltk.org/howto/sentiment.html">using nltk</a>]</p></li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -1804,6 +1833,9 @@ word2vec-ruscorpora-300
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformers">Transformers</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Transformers</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Transformers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hugging-face">Hugging Face</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zero-shot-learning">Zero-Shot Learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
 </ul>
 </li>
 </ul>
