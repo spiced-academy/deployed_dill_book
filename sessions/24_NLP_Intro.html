@@ -341,15 +341,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">TF-IDF</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">TF-IDF</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#n-grams">N-grams</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalization">Normalization</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming">Stemming</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lemmatization">Lemmatization</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming-or-lemmatization">Stemming or Lemmatization?</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-text-preprocessing">Advanced Text Preprocessing</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stopwords">Stopwords</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Stopwords</a></li>
 </ul>
 </li>
 </ul>
@@ -778,179 +769,7 @@ document.write(`
 <div class="images_30">
 <img src="../images/nlp/img_p17_2.png">
 </div></p>
-</div><div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">nltk</span><span class="w"> </span><span class="kn">import</span> <span class="n">ngrams</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">4</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> gram</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">ngram</span> <span class="o">=</span> <span class="n">ngrams</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span> <span class="n">i</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">gram</span> <span class="ow">in</span> <span class="n">ngram</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">gram</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 gram
-
-(&#39;Let&#39;,)
-(&#39;us&#39;,)
-(&#39;learn&#39;,)
-(&#39;some&#39;,)
-(&#39;NLP.&#39;,)
-(&#39;NLP&#39;,)
-(&#39;is&#39;,)
-(&#39;amazing!&#39;,)
-----------
-2 gram
-
-(&#39;Let&#39;, &#39;us&#39;)
-(&#39;us&#39;, &#39;learn&#39;)
-(&#39;learn&#39;, &#39;some&#39;)
-(&#39;some&#39;, &#39;NLP.&#39;)
-(&#39;NLP.&#39;, &#39;NLP&#39;)
-(&#39;NLP&#39;, &#39;is&#39;)
-(&#39;is&#39;, &#39;amazing!&#39;)
-----------
-3 gram
-
-(&#39;Let&#39;, &#39;us&#39;, &#39;learn&#39;)
-(&#39;us&#39;, &#39;learn&#39;, &#39;some&#39;)
-(&#39;learn&#39;, &#39;some&#39;, &#39;NLP.&#39;)
-(&#39;some&#39;, &#39;NLP.&#39;, &#39;NLP&#39;)
-(&#39;NLP.&#39;, &#39;NLP&#39;, &#39;is&#39;)
-(&#39;NLP&#39;, &#39;is&#39;, &#39;amazing!&#39;)
-----------
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="normalization">
-<h3>Normalization<a class="headerlink" href="#normalization" title="Link to this heading">#</a></h3>
-<p>[‘List’, ‘listed’, ‘lists’, ‘listing’, ‘listings’, ‘.’]</p>
-<p>→  [‘list’, ‘listed’, ‘lists’, ‘listing’, ‘listings’, ‘.’]</p>
-<p>Do we want to distinguish between “List” and “list”?</p>
-<p>Sometimes we do: “White House” vs. “white house”</p>
-<p>Notes: Normalization is the process of converting text data into a standardized form to reduce complexity and improve the efficiency of machine learning models. This can include lowercasing, stemming/lemmatization, …</p>
-</section>
-<section id="stemming">
-<h3>Stemming<a class="headerlink" href="#stemming" title="Link to this heading">#</a></h3>
-<p>[‘list’, ‘listed’, ‘lists’, ‘listing’, ‘listings’, ‘.’]</p>
-<p>→ [‘list’, ‘list’, ‘list’, ‘list’, ‘list’, ‘.’]</p>
-<div class="alert alert-block alert-info">
-<b>Note:</b> 
-<p>Stemming reduces words to a shorter form, a form that might have no meaning.</p>
 </div></section>
-<section id="lemmatization">
-<h3>Lemmatization<a class="headerlink" href="#lemmatization" title="Link to this heading">#</a></h3>
-<p>[‘list’, ‘listed’, ‘lists’, ‘listing’, ‘listings’, ‘.’]</p>
-<p>→ [‘list’, ‘listed’, ‘list’, ‘listing’, ‘listing’, ‘.’]</p>
-<div class="alert alert-block alert-info">
-<b>Note:</b> 
-<p>Lemmatization uses the language dictionary to get the base word of a word.</p>
-</div><div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stemmer</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">PorterStemmer</span><span class="p">()</span>
-
-<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;We are learning how a stemmer works&quot;</span>
-<span class="n">text1</span> <span class="o">=</span> <span class="s2">&quot;People are running so fast.&quot;</span> 
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tokenized_text</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-<span class="n">stem</span> <span class="o">=</span> <span class="p">[</span><span class="n">stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">tokenized_text</span><span class="p">]</span>
-<span class="n">stem</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;we&#39;, &#39;are&#39;, &#39;learn&#39;, &#39;how&#39;, &#39;a&#39;, &#39;stemmer&#39;, &#39;work&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lemmatizer</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">WordNetLemmatizer</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tokenized_text</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-<span class="n">lemm</span> <span class="o">=</span> <span class="p">[</span><span class="n">lemmatizer</span><span class="o">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">tokenized_text</span><span class="p">]</span>
-<span class="n">lemm</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;We&#39;, &#39;are&#39;, &#39;learning&#39;, &#39;how&#39;, &#39;a&#39;, &#39;stemmer&#39;, &#39;work&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="stemming-or-lemmatization">
-<h3>Stemming or Lemmatization?<a class="headerlink" href="#stemming-or-lemmatization" title="Link to this heading">#</a></h3>
-<p>It depends…</p>
-<ul class="simple">
-<li><p>Stemming is faster</p></li>
-<li><p>Lemmatization preserves more information</p></li>
-</ul>
-</section>
-</section>
-<section id="advanced-text-preprocessing">
-<h2>Advanced Text Preprocessing<a class="headerlink" href="#advanced-text-preprocessing" title="Link to this heading">#</a></h2>
-<section id="stopwords">
-<h3>Stopwords<a class="headerlink" href="#stopwords" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>some words do not provide meaningful information … they are not “content words”</p></li>
-<li><p>the list of non-content words is language specific and corpus specific</p></li>
-</ul>
-<p>What would you say are stop words in this text?</p>
-<p>“Apple is looking at buying U.K. startup for $1 billion”</p>
-</section>
-<section id="id7">
-<h3>Stopwords<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>some words do not provide meaningful information … they are not “content words”</p></li>
-<li><p>the list of non-content words is language specific and corpus specific</p></li>
-</ul>
-<p>What would you say are stop words in this text?</p>
-<p>“Apple <strong>is</strong> looking <strong>at</strong> buying U.K. startup <strong>for</strong> $1 billion”</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s2">&quot;stopwords&quot;</span><span class="p">)</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">nltk.corpus</span><span class="w"> </span><span class="kn">import</span> <span class="n">stopwords</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;english&#39;</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;a&#39;, &#39;about&#39;, &#39;above&#39;, &#39;after&#39;, &#39;again&#39;, &#39;against&#39;, &#39;ain&#39;, &#39;all&#39;, &#39;am&#39;, &#39;an&#39;, &#39;and&#39;, &#39;any&#39;, &#39;are&#39;, &#39;aren&#39;, &quot;aren&#39;t&quot;, &#39;as&#39;, &#39;at&#39;, &#39;be&#39;, &#39;because&#39;, &#39;been&#39;, &#39;before&#39;, &#39;being&#39;, &#39;below&#39;, &#39;between&#39;, &#39;both&#39;, &#39;but&#39;, &#39;by&#39;, &#39;can&#39;, &#39;couldn&#39;, &quot;couldn&#39;t&quot;, &#39;d&#39;, &#39;did&#39;, &#39;didn&#39;, &quot;didn&#39;t&quot;, &#39;do&#39;, &#39;does&#39;, &#39;doesn&#39;, &quot;doesn&#39;t&quot;, &#39;doing&#39;, &#39;don&#39;, &quot;don&#39;t&quot;, &#39;down&#39;, &#39;during&#39;, &#39;each&#39;, &#39;few&#39;, &#39;for&#39;, &#39;from&#39;, &#39;further&#39;, &#39;had&#39;, &#39;hadn&#39;, &quot;hadn&#39;t&quot;, &#39;has&#39;, &#39;hasn&#39;, &quot;hasn&#39;t&quot;, &#39;have&#39;, &#39;haven&#39;, &quot;haven&#39;t&quot;, &#39;having&#39;, &#39;he&#39;, &quot;he&#39;d&quot;, &quot;he&#39;ll&quot;, &#39;her&#39;, &#39;here&#39;, &#39;hers&#39;, &#39;herself&#39;, &quot;he&#39;s&quot;, &#39;him&#39;, &#39;himself&#39;, &#39;his&#39;, &#39;how&#39;, &#39;i&#39;, &quot;i&#39;d&quot;, &#39;if&#39;, &quot;i&#39;ll&quot;, &quot;i&#39;m&quot;, &#39;in&#39;, &#39;into&#39;, &#39;is&#39;, &#39;isn&#39;, &quot;isn&#39;t&quot;, &#39;it&#39;, &quot;it&#39;d&quot;, &quot;it&#39;ll&quot;, &quot;it&#39;s&quot;, &#39;its&#39;, &#39;itself&#39;, &quot;i&#39;ve&quot;, &#39;just&#39;, &#39;ll&#39;, &#39;m&#39;, &#39;ma&#39;, &#39;me&#39;, &#39;mightn&#39;, &quot;mightn&#39;t&quot;, &#39;more&#39;, &#39;most&#39;, &#39;mustn&#39;, &quot;mustn&#39;t&quot;, &#39;my&#39;, &#39;myself&#39;, &#39;needn&#39;, &quot;needn&#39;t&quot;, &#39;no&#39;, &#39;nor&#39;, &#39;not&#39;, &#39;now&#39;, &#39;o&#39;, &#39;of&#39;, &#39;off&#39;, &#39;on&#39;, &#39;once&#39;, &#39;only&#39;, &#39;or&#39;, &#39;other&#39;, &#39;our&#39;, &#39;ours&#39;, &#39;ourselves&#39;, &#39;out&#39;, &#39;over&#39;, &#39;own&#39;, &#39;re&#39;, &#39;s&#39;, &#39;same&#39;, &#39;shan&#39;, &quot;shan&#39;t&quot;, &#39;she&#39;, &quot;she&#39;d&quot;, &quot;she&#39;ll&quot;, &quot;she&#39;s&quot;, &#39;should&#39;, &#39;shouldn&#39;, &quot;shouldn&#39;t&quot;, &quot;should&#39;ve&quot;, &#39;so&#39;, &#39;some&#39;, &#39;such&#39;, &#39;t&#39;, &#39;than&#39;, &#39;that&#39;, &quot;that&#39;ll&quot;, &#39;the&#39;, &#39;their&#39;, &#39;theirs&#39;, &#39;them&#39;, &#39;themselves&#39;, &#39;then&#39;, &#39;there&#39;, &#39;these&#39;, &#39;they&#39;, &quot;they&#39;d&quot;, &quot;they&#39;ll&quot;, &quot;they&#39;re&quot;, &quot;they&#39;ve&quot;, &#39;this&#39;, &#39;those&#39;, &#39;through&#39;, &#39;to&#39;, &#39;too&#39;, &#39;under&#39;, &#39;until&#39;, &#39;up&#39;, &#39;ve&#39;, &#39;very&#39;, &#39;was&#39;, &#39;wasn&#39;, &quot;wasn&#39;t&quot;, &#39;we&#39;, &quot;we&#39;d&quot;, &quot;we&#39;ll&quot;, &quot;we&#39;re&quot;, &#39;were&#39;, &#39;weren&#39;, &quot;weren&#39;t&quot;, &quot;we&#39;ve&quot;, &#39;what&#39;, &#39;when&#39;, &#39;where&#39;, &#39;which&#39;, &#39;while&#39;, &#39;who&#39;, &#39;whom&#39;, &#39;why&#39;, &#39;will&#39;, &#39;with&#39;, &#39;won&#39;, &quot;won&#39;t&quot;, &#39;wouldn&#39;, &quot;wouldn&#39;t&quot;, &#39;y&#39;, &#39;you&#39;, &quot;you&#39;d&quot;, &quot;you&#39;ll&quot;, &#39;your&#39;, &quot;you&#39;re&quot;, &#39;yours&#39;, &#39;yourself&#39;, &#39;yourselves&#39;, &quot;you&#39;ve&quot;]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package stopwords to /home/runner/nltk_data...
-[nltk_data]   Unzipping corpora/stopwords.zip.
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 </section>
 </section>
 
@@ -1036,15 +855,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">TF-IDF</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">TF-IDF</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#n-grams">N-grams</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalization">Normalization</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming">Stemming</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lemmatization">Lemmatization</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming-or-lemmatization">Stemming or Lemmatization?</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-text-preprocessing">Advanced Text Preprocessing</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stopwords">Stopwords</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Stopwords</a></li>
 </ul>
 </li>
 </ul>
