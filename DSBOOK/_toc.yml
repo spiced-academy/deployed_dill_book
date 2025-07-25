@@ -43,6 +43,7 @@ parts:
   #   - file: sessions/22_Dimensionality_Reduction
   #   - file: sessions/23_Clustering
     - file: sessions/24_NLP_Intro
+    - file: sessions/25.1_Prompt_Engineering
 
   - caption: Rapid Assessment Test
     chapters:
