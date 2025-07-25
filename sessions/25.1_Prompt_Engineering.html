@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>EDA &amp; Presenting your Results &#8212; DS Course Material</title>
+    <title>Prompt Engineering &#8212; DS Course Material</title>
   
   
   
@@ -58,12 +58,12 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'sessions/07.2_EDA_process';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'sessions/25.1_Prompt_Engineering';</script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Linear Regression" href="08_Linear_Regression.html" />
-    <link rel="prev" title="Exploratory Data Analysis" href="07_Intro_EDA.html" />
+    <link rel="next" title="Git and Github" href="../RATs/01_Git_RAT.html" />
+    <link rel="prev" title="Natural Language Processing" href="24_NLP_Intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -174,7 +174,7 @@
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Coding fundamentals &amp; Introduction</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_Orientation_deployed-dill.html">Welcome to the Data Science and Machine Learning Engineering Bootcamp Deployed-Dill!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_Git_Workflows.html">Let’s talk about git..</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_Intro_to_Data_Science_ML.html">Introduction to Data Science &amp; ML</a></li>
@@ -182,7 +182,7 @@
 <li class="toctree-l1"><a class="reference internal" href="05.2_Intro_to_SQL.html">Introduction to SQL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06.1_Gestalt_Principles_Visualisation.html">Gestalt <del>Laws</del> Principles and Visualisation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07_Intro_EDA.html">Exploratory Data Analysis</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">EDA &amp; Presenting your Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.2_EDA_process.html">EDA &amp; Presenting your Results</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Machine Learning Basics</span></p>
 <ul class="nav bd-sidenav">
@@ -196,14 +196,14 @@
 <li class="toctree-l1"><a class="reference internal" href="15_Decision_Tree.html">Decision Trees</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">More Machine Learning</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="16_Ensemble_Methods_part1.html">Ensemble Methods - Part 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="16_Ensemble_Methods_part2.html">Ensemble Methods - Part 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="17_Data_Products.html">Designing Data Products</a></li>
 <li class="toctree-l1"><a class="reference internal" href="18_Neural_Networks.html">Artificial Neural Networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="19_Image_Modelling.html">Image Modeling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="24_NLP_Intro.html">Natural Language Processing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="25.1_Prompt_Engineering.html">Prompt Engineering</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Prompt Engineering</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Rapid Assessment Test</span></p>
 <ul class="nav bd-sidenav">
@@ -312,7 +312,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>EDA & Presenting your Results</h1>
+    <h1>Prompt Engineering</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -322,25 +322,24 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-eda-process-recap">The EDA Process - Recap</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eda">EDA</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eda-proof-of-concept-workflow">EDA Proof of Concept - Workflow</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dos-and-donts-of-eda">Dos and Don’ts of EDA</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eda-should-enable">EDA Should Enable</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dos">Dos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-mistakes">Common mistakes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-not-to-lie-dont-truncate">How not to lie… don’t truncate</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-not-to-lie-use-an-appropriate-scale">How not to lie… use an appropriate scale</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-use-colors-be-intentional">If you use colors be intentional</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#color-blindness-avoid-mixing-green-and-red-at-least">Color blindness - avoid mixing green and red at least</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1">Part 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#llms">LLMs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-text">Generating text</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#presenting-your-results">Presenting your results</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#presentation-of-eda">Presentation of EDA</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#think-of-your-audience-usually-a-mix">Think of your audience - usually a mix</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dont-lose-your-audience">Don’t lose your audience…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-prompts-work">How prompts work</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-a-little-game">First, a little game 😄</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prompt-structure">Prompt structure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prompt-elements">Prompt Elements</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prompt-templates">Prompt Templates</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zero-shot-prompting">Zero-shot Prompting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#few-shot-prompting">Few-shot Prompting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chain-of-thought-cot-prompting">Chain-of-Thought (CoT) Prompting</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
             </nav>
         </div>
@@ -352,133 +351,127 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="eda-presenting-your-results">
-<h1>EDA &amp; Presenting your Results<a class="headerlink" href="#eda-presenting-your-results" title="Link to this heading">#</a></h1>
-<section id="the-eda-process-recap">
-<h2>The EDA Process - Recap<a class="headerlink" href="#the-eda-process-recap" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="prompt-engineering">
+<h1>Prompt Engineering<a class="headerlink" href="#prompt-engineering" title="Link to this heading">#</a></h1>
+<section id="part-1">
+<h2>Part 1<a class="headerlink" href="#part-1" title="Link to this heading">#</a></h2>
 </section>
-<section id="eda">
-<h2>EDA<a class="headerlink" href="#eda" title="Link to this heading">#</a></h2>
-<div class="group">
-    <div class="text">
-<p>Jupyter notebook</p>
+<section id="llms">
+<h2>LLMs<a class="headerlink" href="#llms" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>overview and goals at the beginning</p></li>
-<li><p>description of data</p></li>
-<li><p>general stats about the data</p></li>
-<li><p>hypothesis about the data</p></li>
-<li><p>data cleaning</p></li>
-<li><p>analysis</p></li>
-<li><p>findings</p></li>
+<li><p>Large Language Models are supervised models</p></li>
+<li><p>The objective is to predict the next word in a sentence</p></li>
 </ul>
-<p><a class="reference external" href="https://github.com/neuefische/datascience-infographics/blob/main/EDA_Checklist.md">EDA checklist</a><br />
-</div>
-<div class="images">
-<img src="../images/eda_process/img_p3_3.png" width=500>
-</div></p>
-</div>   </section>
-<section id="eda-proof-of-concept-workflow">
-<h2>EDA Proof of Concept - Workflow<a class="headerlink" href="#eda-proof-of-concept-workflow" title="Link to this heading">#</a></h2>
-<p>Timeboxed work! so use an iterative process</p>
+<img src="../images/prompt_engineering/llm_example.png" width=500 position="center"><section id="generating-text">
+<h3>Generating text<a class="headerlink" href="#generating-text" title="Link to this heading">#</a></h3>
+<p>In order to generate new text, the model needs a starting point</p>
 <ul class="simple">
-<li><p>make a draft of plan</p></li>
-<li><p>do simple plots</p></li>
-<li><p>answer main questions (from hypothesis generation)</p></li>
-<li><p>iterate: go deeper, go prettier, go better</p></li>
-<li><p>clean up and document</p></li>
-</ul>
-<p>Start early with the slides!</p>
-</section>
-<section id="dos-and-donts-of-eda">
-<h2>Dos and Don’ts of EDA<a class="headerlink" href="#dos-and-donts-of-eda" title="Link to this heading">#</a></h2>
-<section id="eda-should-enable">
-<h3>EDA Should Enable<a class="headerlink" href="#eda-should-enable" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Exploration</p></li>
-<li><p>Analysis</p></li>
-<li><p>Discovery</p></li>
-<li><p>Communication</p></li>
+<li><p>Provide some initial text for the LLM to complete</p></li>
+<li><p>We call this a <strong>prompt</strong></p></li>
 </ul>
 </section>
-<section id="dos">
-<h3>Dos<a class="headerlink" href="#dos" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Be truthful, based on real data</strong> - you might be lying without knowing</p></li>
-<li><p><strong>Be accurate and avoid ambiguity</strong></p></li>
-<li><p><strong>Easy interpretation for your audience</strong> - don’t make them work at trying to decipher a chart or computation</p></li>
-<li><p><strong>Elegant and aesthetically pleasing for better understanding</strong> - it’s not about doing pretty charts, but about better understanding</p></li>
-</ul>
 </section>
-<section id="common-mistakes">
-<h3>Common mistakes<a class="headerlink" href="#common-mistakes" title="Link to this heading">#</a></h3>
+<section id="how-prompts-work">
+<h2>How prompts work<a class="headerlink" href="#how-prompts-work" title="Link to this heading">#</a></h2>
+<section id="first-a-little-game">
+<h3>First, a little game 😄<a class="headerlink" href="#first-a-little-game" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://gandalf.lakera.ai/baseline">https://gandalf.lakera.ai/baseline</a></p>
+<img src="../images/prompt_engineering/gandalf_game_qr.png" width=150 position="center"></section>
+<section id="prompt-structure">
+<h3>Prompt structure<a class="headerlink" href="#prompt-structure" title="Link to this heading">#</a></h3>
+<p>A typical LLM prompt structure consists of the following messages:</p>
 <ul class="simple">
-<li><p><strong>Not cleaning the data</strong></p></li>
-<li><p><strong>Cherry picking</strong> - focusing on a metric that proves your assumptions</p></li>
-<li><p><strong>Focusing on (or ignoring) outliers</strong> - outliers should be considered as a factor and not as an indicator</p></li>
-<li><p><strong>Chart junk</strong> - sometimes less is more</p></li>
-<li><p><strong>Missing or ignoring data patterns</strong> - seasonality, holiday, weekends …</p></li>
-<li><p><strong>Lacking action</strong> - recommendations, conclusion, hypothesis</p></li>
-</ul>
-</section>
-<section id="how-not-to-lie-dont-truncate">
-<h3>How not to lie… don’t truncate<a class="headerlink" href="#how-not-to-lie-dont-truncate" title="Link to this heading">#</a></h3>
-<center>
-    <img src="../images/eda_process/img_p9_2.png" width=1000>
-</center></section>
-<section id="how-not-to-lie-use-an-appropriate-scale">
-<h3>How not to lie… use an appropriate scale<a class="headerlink" href="#how-not-to-lie-use-an-appropriate-scale" title="Link to this heading">#</a></h3>
-<center>
-    <img src="../images/eda_process/img_p10_2.png" width=1000>
-</center></section>
-<section id="if-you-use-colors-be-intentional">
-<h3>If you use colors be intentional<a class="headerlink" href="#if-you-use-colors-be-intentional" title="Link to this heading">#</a></h3>
-<center>
-    <img src="../images/eda_process/img_p11_2.png" width=1000>
-</center></section>
-<section id="color-blindness-avoid-mixing-green-and-red-at-least">
-<h3>Color blindness - avoid mixing green and red at least<a class="headerlink" href="#color-blindness-avoid-mixing-green-and-red-at-least" title="Link to this heading">#</a></h3>
-<center>
-    <img src="../images/eda_process/img_p12_2.png" width=1000>
-</center></section>
-</section>
-<section id="presenting-your-results">
-<h2>Presenting your results<a class="headerlink" href="#presenting-your-results" title="Link to this heading">#</a></h2>
-<section id="presentation-of-eda">
-<h3>Presentation of EDA<a class="headerlink" href="#presentation-of-eda" title="Link to this heading">#</a></h3>
-<p>Use Slides!</p>
-<ul class="simple">
-<li><p>setting the scene</p>
+<li><p><strong>System message:</strong></p>
 <ul>
-<li><p>intro to the dataset</p></li>
-<li><p>intro about client</p></li>
-<li><p>intro about the quality of the data</p></li>
+<li><p>Unique, applies to all instructions on the model</p></li>
+<li><p>Is defined only once based on our requirements</p></li>
 </ul>
 </li>
-<li><p>focus on hypothesis: whys</p></li>
-<li><p>methodology: hows</p></li>
-<li><p>describing the findings and changes in approach… in context</p></li>
-<li><p>generated knowledge: insights</p></li>
-<li><p>future work</p></li>
-<li><p>if possible: show impact and applications how to make your ds presentation great</p></li>
+<li><p><strong>User message:</strong></p>
+<ul>
+<li><p>Has the question that needs to be answered</p></li>
+<li><p>Expecting a new message each time we run inference</p></li>
+</ul>
+</li>
+<li><p><strong>(Optional) Assistant message:</strong></p>
+<ul>
+<li><p>Includes the expected response from the LLM</p></li>
+<li><p>Usually used for training/fine-tuning models only</p></li>
+</ul>
+</li>
 </ul>
 </section>
-<section id="think-of-your-audience-usually-a-mix">
-<h3>Think of your audience - usually a mix<a class="headerlink" href="#think-of-your-audience-usually-a-mix" title="Link to this heading">#</a></h3>
+<section id="prompt-elements">
+<h3>Prompt Elements<a class="headerlink" href="#prompt-elements" title="Link to this heading">#</a></h3>
+<p>A prompt contains any of the following elements:</p>
 <ul class="simple">
-<li><p><strong>Technical people</strong> - how it is made, why did you decide this or that</p></li>
-<li><p><strong>Business people</strong> - how is it good for business, how much impact, enable decision-making</p></li>
-<li><p><strong>Sales people</strong> - how is it useful or attractive for customers</p></li>
+<li><p><strong>Instruction</strong> - a specific task or instruction you want the model to perform</p></li>
+<li><p><strong>Context</strong> - external information or additional context that can steer the model to better responses</p></li>
+<li><p><strong>Input Data</strong> - the input or question that we are interested to find a response for</p></li>
+<li><p><strong>Output Indicator</strong> - the type or format of the output.</p></li>
 </ul>
+<p><strong>Example:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Classify</span> <span class="n">the</span> <span class="n">text</span> <span class="n">into</span> <span class="n">neutral</span><span class="p">,</span> <span class="n">negative</span><span class="p">,</span> <span class="ow">or</span> <span class="n">positive</span>
+<span class="n">Text</span><span class="p">:</span> <span class="n">I</span> <span class="n">think</span> <span class="n">the</span> <span class="n">food</span> <span class="n">was</span> <span class="n">okay</span><span class="o">.</span>
+<span class="n">Sentiment</span><span class="p">:</span>
+</pre></div>
+</div>
 </section>
-<section id="dont-lose-your-audience">
-<h3>Don’t lose your audience…<a class="headerlink" href="#dont-lose-your-audience" title="Link to this heading">#</a></h3>
+</section>
+<section id="prompt-templates">
+<h2>Prompt Templates<a class="headerlink" href="#prompt-templates" title="Link to this heading">#</a></h2>
+<section id="zero-shot-prompting">
+<h3>Zero-shot Prompting<a class="headerlink" href="#zero-shot-prompting" title="Link to this heading">#</a></h3>
+<p><strong>Prompt:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Classify</span> <span class="n">the</span> <span class="n">text</span> <span class="n">into</span> <span class="n">neutral</span><span class="p">,</span> <span class="n">negative</span> <span class="ow">or</span> <span class="n">positive</span><span class="o">.</span> 
+<span class="n">Text</span><span class="p">:</span> <span class="n">I</span> <span class="n">think</span> <span class="n">the</span> <span class="n">vacation</span> <span class="ow">is</span> <span class="n">okay</span><span class="o">.</span>
+<span class="n">Sentiment</span><span class="p">:</span>
+</pre></div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Neutral</span>
+</pre></div>
+</div>
+</section>
+<section id="few-shot-prompting">
+<h3>Few-shot Prompting<a class="headerlink" href="#few-shot-prompting" title="Link to this heading">#</a></h3>
+<p><strong>Prompt:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Classify the text into neutral, negative or positive. 
+Follow these examples:
+
+Example 1: 
+Text: I think the movie is very bad
+Sentiment: Negative
+
+Example 2:
+Text: Today was a good day!
+Sentiment: Positive
+
+Example 3:
+Text: Today we learnt about Machine Learning
+Sentiment: Neutral
+
+Now classify the following text:
+
+Text: I think the vacation is okay.
+Sentiment:
+</pre></div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Neutral</span>
+</pre></div>
+</div>
+</section>
+<section id="chain-of-thought-cot-prompting">
+<h3>Chain-of-Thought (CoT) Prompting<a class="headerlink" href="#chain-of-thought-cot-prompting" title="Link to this heading">#</a></h3>
+<img src="../images/prompt_engineering/cot_example.png" width=800 position="center"></section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Keep it simple and stupid (KISS principle)</p></li>
-<li><p>Be concise and accurate, no extra information if not needed</p></li>
-<li><p>Join explanation blocks with “whys” and “hows”</p></li>
-<li><p>Be clear, don’t be ambiguous - clarity inspires trust in your results</p></li>
+<li><p><a class="reference external" href="https://www.promptingguide.ai/">Prompt Engineering Guide</a></p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2201.11903">Chain-of-Thought Prompting Elicits Reasoning in Large Language Models</a></p></li>
 </ul>
-</section>
 </section>
 </section>
 
@@ -513,20 +506,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="07_Intro_EDA.html"
+       href="24_NLP_Intro.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Exploratory Data Analysis</p>
+        <p class="prev-next-title">Natural Language Processing</p>
       </div>
     </a>
     <a class="right-next"
-       href="08_Linear_Regression.html"
+       href="../RATs/01_Git_RAT.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Linear Regression</p>
+        <p class="prev-next-title">Git and Github</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -546,25 +539,24 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-eda-process-recap">The EDA Process - Recap</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eda">EDA</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eda-proof-of-concept-workflow">EDA Proof of Concept - Workflow</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dos-and-donts-of-eda">Dos and Don’ts of EDA</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eda-should-enable">EDA Should Enable</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dos">Dos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-mistakes">Common mistakes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-not-to-lie-dont-truncate">How not to lie… don’t truncate</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-not-to-lie-use-an-appropriate-scale">How not to lie… use an appropriate scale</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-use-colors-be-intentional">If you use colors be intentional</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#color-blindness-avoid-mixing-green-and-red-at-least">Color blindness - avoid mixing green and red at least</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1">Part 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#llms">LLMs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-text">Generating text</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#presenting-your-results">Presenting your results</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#presentation-of-eda">Presentation of EDA</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#think-of-your-audience-usually-a-mix">Think of your audience - usually a mix</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dont-lose-your-audience">Don’t lose your audience…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-prompts-work">How prompts work</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-a-little-game">First, a little game 😄</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prompt-structure">Prompt structure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prompt-elements">Prompt Elements</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prompt-templates">Prompt Templates</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zero-shot-prompting">Zero-shot Prompting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#few-shot-prompting">Few-shot Prompting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chain-of-thought-cot-prompting">Chain-of-Thought (CoT) Prompting</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
   </nav></div>
 
