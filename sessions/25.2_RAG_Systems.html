@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>EDA &amp; Presenting your Results &#8212; DS Course Material</title>
+    <title>RAG Systems &#8212; DS Course Material</title>
   
   
   
@@ -58,12 +58,12 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'sessions/07.2_EDA_process';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'sessions/25.2_RAG_Systems';</script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Linear Regression" href="08_Linear_Regression.html" />
-    <link rel="prev" title="Exploratory Data Analysis" href="07_Intro_EDA.html" />
+    <link rel="next" title="Git and Github" href="../RATs/01_Git_RAT.html" />
+    <link rel="prev" title="Capstone Phase" href="20_Capstone_Phase.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -174,7 +174,7 @@
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Coding fundamentals &amp; Introduction</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_Orientation_deployed-dill.html">Welcome to the Data Science and Machine Learning Engineering Bootcamp Deployed-Dill!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_Git_Workflows.html">Let’s talk about git..</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_Intro_to_Data_Science_ML.html">Introduction to Data Science &amp; ML</a></li>
@@ -182,7 +182,7 @@
 <li class="toctree-l1"><a class="reference internal" href="05.2_Intro_to_SQL.html">Introduction to SQL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06.1_Gestalt_Principles_Visualisation.html">Gestalt <del>Laws</del> Principles and Visualisation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07_Intro_EDA.html">Exploratory Data Analysis</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">EDA &amp; Presenting your Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.2_EDA_process.html">EDA &amp; Presenting your Results</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Machine Learning Basics</span></p>
 <ul class="nav bd-sidenav">
@@ -196,7 +196,7 @@
 <li class="toctree-l1"><a class="reference internal" href="15_Decision_Tree.html">Decision Trees</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">More Machine Learning</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="16_Ensemble_Methods_part1.html">Ensemble Methods - Part 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="16_Ensemble_Methods_part2.html">Ensemble Methods - Part 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="17_Data_Products.html">Designing Data Products</a></li>
@@ -205,7 +205,7 @@
 <li class="toctree-l1"><a class="reference internal" href="24_NLP_Intro.html">Natural Language Processing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="25.1_Prompt_Engineering.html">Prompt Engineering</a></li>
 <li class="toctree-l1"><a class="reference internal" href="20_Capstone_Phase.html">Capstone Phase</a></li>
-<li class="toctree-l1"><a class="reference internal" href="25.2_RAG_Systems.html">RAG Systems</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">RAG Systems</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Rapid Assessment Test</span></p>
 <ul class="nav bd-sidenav">
@@ -314,7 +314,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>EDA & Presenting your Results</h1>
+    <h1>RAG Systems</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -324,23 +324,28 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-eda-process-recap">The EDA Process - Recap</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eda">EDA</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eda-proof-of-concept-workflow">EDA Proof of Concept - Workflow</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dos-and-donts-of-eda">Dos and Don’ts of EDA</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eda-should-enable">EDA Should Enable</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dos">Dos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-mistakes">Common mistakes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-not-to-lie-dont-truncate">How not to lie… don’t truncate</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-not-to-lie-use-an-appropriate-scale">How not to lie… use an appropriate scale</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-use-colors-be-intentional">If you use colors be intentional</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#color-blindness-avoid-mixing-green-and-red-at-least">Color blindness - avoid mixing green and red at least</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap">Recap</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prompt-elements">Prompt Elements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-with-llms">Problem with LLMs</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#presenting-your-results">Presenting your results</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#presentation-of-eda">Presentation of EDA</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#think-of-your-audience-usually-a-mix">Think of your audience - usually a mix</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dont-lose-your-audience">Don’t lose your audience…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-missing-information">Solving Missing Information</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-fine-tuning">Model Fine-tuning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-with-fine-tuning">Problems with Fine-tuning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introducing-rag">Introducing RAG</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rag-components">RAG Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-database">Vector Database</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#documents-retrieval">Documents Retrieval</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prompting-and-generation">Prompting and Generation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rag-conclusion">RAG Conclusion</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pros">PROS:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cons">CONS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#again-another-game-this-is-reverse-gandalf">Again, another game 😄 (this is reverse Gandalf)</a></li>
 </ul>
 </li>
 </ul>
@@ -354,132 +359,143 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="eda-presenting-your-results">
-<h1>EDA &amp; Presenting your Results<a class="headerlink" href="#eda-presenting-your-results" title="Link to this heading">#</a></h1>
-<section id="the-eda-process-recap">
-<h2>The EDA Process - Recap<a class="headerlink" href="#the-eda-process-recap" title="Link to this heading">#</a></h2>
-</section>
-<section id="eda">
-<h2>EDA<a class="headerlink" href="#eda" title="Link to this heading">#</a></h2>
-<div class="group">
-    <div class="text">
-<p>Jupyter notebook</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="rag-systems">
+<h1>RAG Systems<a class="headerlink" href="#rag-systems" title="Link to this heading">#</a></h1>
+<section id="recap">
+<h2>Recap<a class="headerlink" href="#recap" title="Link to this heading">#</a></h2>
+<section id="prompt-elements">
+<h3>Prompt Elements<a class="headerlink" href="#prompt-elements" title="Link to this heading">#</a></h3>
+<p>A prompt contains any of the following elements:</p>
 <ul class="simple">
-<li><p>overview and goals at the beginning</p></li>
-<li><p>description of data</p></li>
-<li><p>general stats about the data</p></li>
-<li><p>hypothesis about the data</p></li>
-<li><p>data cleaning</p></li>
-<li><p>analysis</p></li>
-<li><p>findings</p></li>
+<li><p><strong>Instruction</strong> - a specific task or instruction you want the model to perform</p></li>
+<li><p><strong>Context</strong> - external information or additional context that can steer the model to better responses</p></li>
+<li><p><strong>Input Data</strong> - the input or question that we are interested to find a response for</p></li>
+<li><p><strong>Output Indicator</strong> - the type or format of the output.</p></li>
 </ul>
-<p><a class="reference external" href="https://github.com/neuefische/datascience-infographics/blob/main/EDA_Checklist.md">EDA checklist</a><br />
+<p><strong>Example:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Classify</span> <span class="n">the</span> <span class="n">text</span> <span class="n">into</span> <span class="n">neutral</span><span class="p">,</span> <span class="n">negative</span><span class="p">,</span> <span class="ow">or</span> <span class="n">positive</span>
+<span class="n">Text</span><span class="p">:</span> <span class="n">I</span> <span class="n">think</span> <span class="n">the</span> <span class="n">food</span> <span class="n">was</span> <span class="n">okay</span><span class="o">.</span>
+<span class="n">Sentiment</span><span class="p">:</span>
+</pre></div>
 </div>
-<div class="images">
-<img src="../images/eda_process/img_p3_3.png" width=500>
-</div></p>
-</div>   </section>
-<section id="eda-proof-of-concept-workflow">
-<h2>EDA Proof of Concept - Workflow<a class="headerlink" href="#eda-proof-of-concept-workflow" title="Link to this heading">#</a></h2>
-<p>Timeboxed work! so use an iterative process</p>
-<ul class="simple">
-<li><p>make a draft of plan</p></li>
-<li><p>do simple plots</p></li>
-<li><p>answer main questions (from hypothesis generation)</p></li>
-<li><p>iterate: go deeper, go prettier, go better</p></li>
-<li><p>clean up and document</p></li>
-</ul>
-<p>Start early with the slides!</p>
 </section>
-<section id="dos-and-donts-of-eda">
-<h2>Dos and Don’ts of EDA<a class="headerlink" href="#dos-and-donts-of-eda" title="Link to this heading">#</a></h2>
-<section id="eda-should-enable">
-<h3>EDA Should Enable<a class="headerlink" href="#eda-should-enable" title="Link to this heading">#</a></h3>
+<section id="problem-with-llms">
+<h3>Problem with LLMs<a class="headerlink" href="#problem-with-llms" title="Link to this heading">#</a></h3>
+<p>LLMs face some problems until today. Some of the problems are:</p>
 <ul class="simple">
-<li><p>Exploration</p></li>
-<li><p>Analysis</p></li>
-<li><p>Discovery</p></li>
-<li><p>Communication</p></li>
+<li><p><strong>Hallucination:</strong> Models tend to answer with garbage/irrelevant data if they don’t know the right answer. This can be solved with grounding and prompting.</p></li>
+<li><p><strong>Reasoning &amp; Calculations:</strong> LLMs usually fail in these types of questions. They are not trained to perform such operations. Can be solved with CoT prompting or fine-tuning.</p></li>
+<li><p><strong>Missing information:</strong> The model is trained on a limited set of data. We would not expect it to answer questions about unknown domains</p></li>
 </ul>
 </section>
-<section id="dos">
-<h3>Dos<a class="headerlink" href="#dos" title="Link to this heading">#</a></h3>
+</section>
+<section id="solving-missing-information">
+<h2>Solving Missing Information<a class="headerlink" href="#solving-missing-information" title="Link to this heading">#</a></h2>
+<section id="model-fine-tuning">
+<h3>Model Fine-tuning<a class="headerlink" href="#model-fine-tuning" title="Link to this heading">#</a></h3>
+<p>Fine-tuning LLMs means we take a pre-trained model and further train it on a specific data set. It is a form of transfer learning where a pre-trained model trained on a large dataset is adapted to work for a specific task. The dataset required for fine-tuning is very small compared to the dataset required for pre-training.</p>
+<img src="../images/prompt_engineering/llms_fine_tuned.png" width=700 position="center">
+<p><em>Prompt to Microsoft Copilot: Generate an image that represents a large language model being fine-tuned</em></p>
+</section>
+<section id="problems-with-fine-tuning">
+<h3>Problems with Fine-tuning<a class="headerlink" href="#problems-with-fine-tuning" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>Be truthful, based on real data</strong> - you might be lying without knowing</p></li>
-<li><p><strong>Be accurate and avoid ambiguity</strong></p></li>
-<li><p><strong>Easy interpretation for your audience</strong> - don’t make them work at trying to decipher a chart or computation</p></li>
-<li><p><strong>Elegant and aesthetically pleasing for better understanding</strong> - it’s not about doing pretty charts, but about better understanding</p></li>
+<li><p><strong>Cost:</strong> it is costly, requires resources and time</p></li>
+<li><p><strong>Short lifetime:</strong> the model will need to be fine-tuned again whenever we receive new data</p></li>
+<li><p><strong>Harder to keep information:</strong> fine-tuning usually helps the model to do a specific task, retaining information is more tricky for LLMs</p></li>
 </ul>
 </section>
-<section id="common-mistakes">
-<h3>Common mistakes<a class="headerlink" href="#common-mistakes" title="Link to this heading">#</a></h3>
+<section id="introducing-rag">
+<h3>Introducing RAG<a class="headerlink" href="#introducing-rag" title="Link to this heading">#</a></h3>
+<p>Retrieval Augmented Generation (RAG) is an architecture that augments the capabilities of a Large Language Model (LLM) like ChatGPT by adding an information retrieval system that provides grounding data. This is very similar to what search engines do (information retrieval).</p>
 <ul class="simple">
-<li><p><strong>Not cleaning the data</strong></p></li>
-<li><p><strong>Cherry picking</strong> - focusing on a metric that proves your assumptions</p></li>
-<li><p><strong>Focusing on (or ignoring) outliers</strong> - outliers should be considered as a factor and not as an indicator</p></li>
-<li><p><strong>Chart junk</strong> - sometimes less is more</p></li>
-<li><p><strong>Missing or ignoring data patterns</strong> - seasonality, holiday, weekends …</p></li>
-<li><p><strong>Lacking action</strong> - recommendations, conclusion, hypothesis</p></li>
+<li><p>Data is stored in a database as documents</p></li>
+<li><p>Relevant information is passed to the model in the system prompt</p></li>
+<li><p>The model is instructed to answer based on the information provided only</p></li>
+</ul>
+<img src="../images/prompt_engineering/rag-framework.webp" width=700 position="center"></section>
+<section id="rag-components">
+<h3>RAG Components<a class="headerlink" href="#rag-components" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Vector Database</p></li>
+<li><p>Document Retriever (Search Operation)</p></li>
+<li><p>Prompt-injection and model generation</p></li>
 </ul>
 </section>
-<section id="how-not-to-lie-dont-truncate">
-<h3>How not to lie… don’t truncate<a class="headerlink" href="#how-not-to-lie-dont-truncate" title="Link to this heading">#</a></h3>
-<center>
-    <img src="../images/eda_process/img_p9_2.png" width=1000>
-</center></section>
-<section id="how-not-to-lie-use-an-appropriate-scale">
-<h3>How not to lie… use an appropriate scale<a class="headerlink" href="#how-not-to-lie-use-an-appropriate-scale" title="Link to this heading">#</a></h3>
-<center>
-    <img src="../images/eda_process/img_p10_2.png" width=1000>
-</center></section>
-<section id="if-you-use-colors-be-intentional">
-<h3>If you use colors be intentional<a class="headerlink" href="#if-you-use-colors-be-intentional" title="Link to this heading">#</a></h3>
-<center>
-    <img src="../images/eda_process/img_p11_2.png" width=1000>
-</center></section>
-<section id="color-blindness-avoid-mixing-green-and-red-at-least">
-<h3>Color blindness - avoid mixing green and red at least<a class="headerlink" href="#color-blindness-avoid-mixing-green-and-red-at-least" title="Link to this heading">#</a></h3>
-<center>
-    <img src="../images/eda_process/img_p12_2.png" width=1000>
-</center></section>
-</section>
-<section id="presenting-your-results">
-<h2>Presenting your results<a class="headerlink" href="#presenting-your-results" title="Link to this heading">#</a></h2>
-<section id="presentation-of-eda">
-<h3>Presentation of EDA<a class="headerlink" href="#presentation-of-eda" title="Link to this heading">#</a></h3>
-<p>Use Slides!</p>
+<section id="vector-database">
+<h3>Vector Database<a class="headerlink" href="#vector-database" title="Link to this heading">#</a></h3>
+<p>In a RAG system, documents are usually stored in vector databases.</p>
 <ul class="simple">
-<li><p>setting the scene</p>
-<ul>
-<li><p>intro to the dataset</p></li>
-<li><p>intro about client</p></li>
-<li><p>intro about the quality of the data</p></li>
-</ul>
-</li>
-<li><p>focus on hypothesis: whys</p></li>
-<li><p>methodology: hows</p></li>
-<li><p>describing the findings and changes in approach… in context</p></li>
-<li><p>generated knowledge: insights</p></li>
-<li><p>future work</p></li>
-<li><p>if possible: show impact and applications how to make your ds presentation great</p></li>
+<li><p>Each document is stored as an instance, alongside it’s metadata (id, name of the file, category, date… etc.)</p></li>
+<li><p>Embedding vector is also stored in the database. This will help us in retrieval</p></li>
+<li><p>Vectors are indexed (similar vectors clustered together for quicker search)</p></li>
 </ul>
 </section>
-<section id="think-of-your-audience-usually-a-mix">
-<h3>Think of your audience - usually a mix<a class="headerlink" href="#think-of-your-audience-usually-a-mix" title="Link to this heading">#</a></h3>
+<section id="documents-retrieval">
+<h3>Documents Retrieval<a class="headerlink" href="#documents-retrieval" title="Link to this heading">#</a></h3>
+<p>When the user asks a query, we retrieve the top <em>k</em> relevant documents from the database. The similarity is based on:</p>
 <ul class="simple">
-<li><p><strong>Technical people</strong> - how it is made, why did you decide this or that</p></li>
-<li><p><strong>Business people</strong> - how is it good for business, how much impact, enable decision-making</p></li>
-<li><p><strong>Sales people</strong> - how is it useful or attractive for customers</p></li>
+<li><p>Cosine similarity (Semantic search)</p></li>
+<li><p>Search algorithms, e.g. <a class="reference external" href="https://en.wikipedia.org/wiki/Okapi_BM25">BM25</a> (Keyword search)</p></li>
 </ul>
 </section>
-<section id="dont-lose-your-audience">
-<h3>Don’t lose your audience…<a class="headerlink" href="#dont-lose-your-audience" title="Link to this heading">#</a></h3>
+<section id="prompting-and-generation">
+<h3>Prompting and Generation<a class="headerlink" href="#prompting-and-generation" title="Link to this heading">#</a></h3>
+<p>After the documents are retrieved, they are injected in the system prompt to the model. We can further instruct the model to answer based on the input data only.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>You are a helpful AI assistant. Your task is to answer user questions based on the provided context.
+You should only use information from the provided documents. If you can&#39;t find the answer in the context, simply respond that the answer is not found in the input data.
+
+Context:
+DOC 1:
+&lt;title&gt;Topics covered in the Bootcamp&lt;/title&gt;
+- Python
+- EDA
+- Machine Learning
+- Computer Vision
+- NLP
+- Time Series
+
+User query: How many topics are covered in the bootcamp?
+Response:
+</pre></div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">There</span> <span class="n">are</span> <span class="mi">6</span> <span class="n">topics</span> <span class="n">covered</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">bootcamp</span><span class="o">.</span>
+</pre></div>
+</div>
+<img src="../images/prompt_engineering/rag_workflow.jpg" width=700 position="center"></section>
+<section id="rag-conclusion">
+<h3>RAG Conclusion<a class="headerlink" href="#rag-conclusion" title="Link to this heading">#</a></h3>
+<section id="pros">
+<h4>PROS:<a class="headerlink" href="#pros" title="Link to this heading">#</a></h4>
 <ul class="simple">
-<li><p>Keep it simple and stupid (KISS principle)</p></li>
-<li><p>Be concise and accurate, no extra information if not needed</p></li>
-<li><p>Join explanation blocks with “whys” and “hows”</p></li>
-<li><p>Be clear, don’t be ambiguous - clarity inspires trust in your results</p></li>
+<li><p>Dynamically insert relevant data in the prompt</p></li>
+<li><p>Create better systems that give more accurate answers</p></li>
+<li><p>Avoid fine-tuning the model multiple times</p></li>
 </ul>
+</section>
+<section id="cons">
+<h4>CONS<a class="headerlink" href="#cons" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Document parsing is challenging especially with different types of files (HTML, PDF, JSON, etc.)</p></li>
+<li><p>Heavily depends on the retrieved data and the model’s capability to extract relevant information from the input data</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.geeksforgeeks.org/fine-tuning-large-language-model-llm/">Fine-tuning LLMS (GFG)</a></p></li>
+<li><p><a class="reference external" href="https://www.promptingguide.ai/techniques/rag">Prompt Engineering Guide: RAG</a></p></li>
+<li><p><a class="reference external" href="https://www.ibm.com/topics/vector-database">Vector Databases (IBM)</a></p></li>
+<li><p><a class="reference external" href="https://www.deeplearning.ai/short-courses/building-multimodal-search-and-rag/">DeepLearning.ai RAG Course</a></p></li>
+</ul>
+<section id="again-another-game-this-is-reverse-gandalf">
+<h3>Again, another game 😄 (this is reverse Gandalf)<a class="headerlink" href="#again-another-game-this-is-reverse-gandalf" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://gandalf.lakera.ai/adventure-7">https://gandalf.lakera.ai/adventure-7</a>
+<img src="../images/prompt_engineering/reverse_gandalf_game_qr.png" width=150 position="center"></p>
 </section>
 </section>
 </section>
@@ -515,20 +531,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="07_Intro_EDA.html"
+       href="20_Capstone_Phase.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Exploratory Data Analysis</p>
+        <p class="prev-next-title">Capstone Phase</p>
       </div>
     </a>
     <a class="right-next"
-       href="08_Linear_Regression.html"
+       href="../RATs/01_Git_RAT.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Linear Regression</p>
+        <p class="prev-next-title">Git and Github</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -548,23 +564,28 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-eda-process-recap">The EDA Process - Recap</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eda">EDA</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eda-proof-of-concept-workflow">EDA Proof of Concept - Workflow</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dos-and-donts-of-eda">Dos and Don’ts of EDA</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eda-should-enable">EDA Should Enable</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dos">Dos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-mistakes">Common mistakes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-not-to-lie-dont-truncate">How not to lie… don’t truncate</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-not-to-lie-use-an-appropriate-scale">How not to lie… use an appropriate scale</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-use-colors-be-intentional">If you use colors be intentional</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#color-blindness-avoid-mixing-green-and-red-at-least">Color blindness - avoid mixing green and red at least</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap">Recap</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prompt-elements">Prompt Elements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-with-llms">Problem with LLMs</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#presenting-your-results">Presenting your results</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#presentation-of-eda">Presentation of EDA</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#think-of-your-audience-usually-a-mix">Think of your audience - usually a mix</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dont-lose-your-audience">Don’t lose your audience…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-missing-information">Solving Missing Information</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-fine-tuning">Model Fine-tuning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-with-fine-tuning">Problems with Fine-tuning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introducing-rag">Introducing RAG</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rag-components">RAG Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-database">Vector Database</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#documents-retrieval">Documents Retrieval</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prompting-and-generation">Prompting and Generation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rag-conclusion">RAG Conclusion</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pros">PROS:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cons">CONS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#again-another-game-this-is-reverse-gandalf">Again, another game 😄 (this is reverse Gandalf)</a></li>
 </ul>
 </li>
 </ul>

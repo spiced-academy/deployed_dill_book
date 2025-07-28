@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>EDA &amp; Presenting your Results &#8212; DS Course Material</title>
+    <title>Capstone Phase &#8212; DS Course Material</title>
   
   
   
@@ -58,12 +58,12 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'sessions/07.2_EDA_process';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'sessions/20_Capstone_Phase';</script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Linear Regression" href="08_Linear_Regression.html" />
-    <link rel="prev" title="Exploratory Data Analysis" href="07_Intro_EDA.html" />
+    <link rel="next" title="RAG Systems" href="25.2_RAG_Systems.html" />
+    <link rel="prev" title="Prompt Engineering" href="25.1_Prompt_Engineering.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -174,7 +174,7 @@
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Coding fundamentals &amp; Introduction</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_Orientation_deployed-dill.html">Welcome to the Data Science and Machine Learning Engineering Bootcamp Deployed-Dill!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_Git_Workflows.html">Let’s talk about git..</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_Intro_to_Data_Science_ML.html">Introduction to Data Science &amp; ML</a></li>
@@ -182,7 +182,7 @@
 <li class="toctree-l1"><a class="reference internal" href="05.2_Intro_to_SQL.html">Introduction to SQL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06.1_Gestalt_Principles_Visualisation.html">Gestalt <del>Laws</del> Principles and Visualisation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07_Intro_EDA.html">Exploratory Data Analysis</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">EDA &amp; Presenting your Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.2_EDA_process.html">EDA &amp; Presenting your Results</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Machine Learning Basics</span></p>
 <ul class="nav bd-sidenav">
@@ -196,7 +196,7 @@
 <li class="toctree-l1"><a class="reference internal" href="15_Decision_Tree.html">Decision Trees</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">More Machine Learning</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="16_Ensemble_Methods_part1.html">Ensemble Methods - Part 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="16_Ensemble_Methods_part2.html">Ensemble Methods - Part 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="17_Data_Products.html">Designing Data Products</a></li>
@@ -204,7 +204,7 @@
 <li class="toctree-l1"><a class="reference internal" href="19_Image_Modelling.html">Image Modeling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="24_NLP_Intro.html">Natural Language Processing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="25.1_Prompt_Engineering.html">Prompt Engineering</a></li>
-<li class="toctree-l1"><a class="reference internal" href="20_Capstone_Phase.html">Capstone Phase</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Capstone Phase</a></li>
 <li class="toctree-l1"><a class="reference internal" href="25.2_RAG_Systems.html">RAG Systems</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Rapid Assessment Test</span></p>
@@ -314,7 +314,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>EDA & Presenting your Results</h1>
+    <h1>Capstone Phase</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -324,25 +324,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-eda-process-recap">The EDA Process - Recap</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eda">EDA</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eda-proof-of-concept-workflow">EDA Proof of Concept - Workflow</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dos-and-donts-of-eda">Dos and Don’ts of EDA</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eda-should-enable">EDA Should Enable</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dos">Dos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-mistakes">Common mistakes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-not-to-lie-dont-truncate">How not to lie… don’t truncate</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-not-to-lie-use-an-appropriate-scale">How not to lie… use an appropriate scale</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-use-colors-be-intentional">If you use colors be intentional</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#color-blindness-avoid-mixing-green-and-red-at-least">Color blindness - avoid mixing green and red at least</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#presenting-your-results">Presenting your results</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#presentation-of-eda">Presentation of EDA</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#think-of-your-audience-usually-a-mix">Think of your audience - usually a mix</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dont-lose-your-audience">Don’t lose your audience…</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-your-capstone-project">Structure your Capstone Project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-on-same-data">Working on same Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sessions-in-capstone-phase">Sessions in Capstone Phase</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Sessions in Capstone Phase</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-reviews">Code Reviews</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meteolytix-freshly-baked">Meteolytix - Freshly baked!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#public-datasets">Public Datasets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Public Datasets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Public Datasets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Public Datasets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datasets-other-common-sources">Datasets - other common sources</a></li>
 </ul>
             </nav>
         </div>
@@ -354,133 +346,137 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="eda-presenting-your-results">
-<h1>EDA &amp; Presenting your Results<a class="headerlink" href="#eda-presenting-your-results" title="Link to this heading">#</a></h1>
-<section id="the-eda-process-recap">
-<h2>The EDA Process - Recap<a class="headerlink" href="#the-eda-process-recap" title="Link to this heading">#</a></h2>
-</section>
-<section id="eda">
-<h2>EDA<a class="headerlink" href="#eda" title="Link to this heading">#</a></h2>
-<div class="group">
-    <div class="text">
-<p>Jupyter notebook</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="capstone-phase">
+<h1>Capstone Phase<a class="headerlink" href="#capstone-phase" title="Link to this heading">#</a></h1>
+<section id="structure-your-capstone-project">
+<h2>Structure your Capstone Project<a class="headerlink" href="#structure-your-capstone-project" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>overview and goals at the beginning</p></li>
-<li><p>description of data</p></li>
-<li><p>general stats about the data</p></li>
-<li><p>hypothesis about the data</p></li>
-<li><p>data cleaning</p></li>
-<li><p>analysis</p></li>
-<li><p>findings</p></li>
-</ul>
-<p><a class="reference external" href="https://github.com/neuefische/datascience-infographics/blob/main/EDA_Checklist.md">EDA checklist</a><br />
-</div>
-<div class="images">
-<img src="../images/eda_process/img_p3_3.png" width=500>
-</div></p>
-</div>   </section>
-<section id="eda-proof-of-concept-workflow">
-<h2>EDA Proof of Concept - Workflow<a class="headerlink" href="#eda-proof-of-concept-workflow" title="Link to this heading">#</a></h2>
-<p>Timeboxed work! so use an iterative process</p>
-<ul class="simple">
-<li><p>make a draft of plan</p></li>
-<li><p>do simple plots</p></li>
-<li><p>answer main questions (from hypothesis generation)</p></li>
-<li><p>iterate: go deeper, go prettier, go better</p></li>
-<li><p>clean up and document</p></li>
-</ul>
-<p>Start early with the slides!</p>
-</section>
-<section id="dos-and-donts-of-eda">
-<h2>Dos and Don’ts of EDA<a class="headerlink" href="#dos-and-donts-of-eda" title="Link to this heading">#</a></h2>
-<section id="eda-should-enable">
-<h3>EDA Should Enable<a class="headerlink" href="#eda-should-enable" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Exploration</p></li>
-<li><p>Analysis</p></li>
-<li><p>Discovery</p></li>
-<li><p>Communication</p></li>
-</ul>
-</section>
-<section id="dos">
-<h3>Dos<a class="headerlink" href="#dos" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Be truthful, based on real data</strong> - you might be lying without knowing</p></li>
-<li><p><strong>Be accurate and avoid ambiguity</strong></p></li>
-<li><p><strong>Easy interpretation for your audience</strong> - don’t make them work at trying to decipher a chart or computation</p></li>
-<li><p><strong>Elegant and aesthetically pleasing for better understanding</strong> - it’s not about doing pretty charts, but about better understanding</p></li>
-</ul>
-</section>
-<section id="common-mistakes">
-<h3>Common mistakes<a class="headerlink" href="#common-mistakes" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Not cleaning the data</strong></p></li>
-<li><p><strong>Cherry picking</strong> - focusing on a metric that proves your assumptions</p></li>
-<li><p><strong>Focusing on (or ignoring) outliers</strong> - outliers should be considered as a factor and not as an indicator</p></li>
-<li><p><strong>Chart junk</strong> - sometimes less is more</p></li>
-<li><p><strong>Missing or ignoring data patterns</strong> - seasonality, holiday, weekends …</p></li>
-<li><p><strong>Lacking action</strong> - recommendations, conclusion, hypothesis</p></li>
-</ul>
-</section>
-<section id="how-not-to-lie-dont-truncate">
-<h3>How not to lie… don’t truncate<a class="headerlink" href="#how-not-to-lie-dont-truncate" title="Link to this heading">#</a></h3>
-<center>
-    <img src="../images/eda_process/img_p9_2.png" width=1000>
-</center></section>
-<section id="how-not-to-lie-use-an-appropriate-scale">
-<h3>How not to lie… use an appropriate scale<a class="headerlink" href="#how-not-to-lie-use-an-appropriate-scale" title="Link to this heading">#</a></h3>
-<center>
-    <img src="../images/eda_process/img_p10_2.png" width=1000>
-</center></section>
-<section id="if-you-use-colors-be-intentional">
-<h3>If you use colors be intentional<a class="headerlink" href="#if-you-use-colors-be-intentional" title="Link to this heading">#</a></h3>
-<center>
-    <img src="../images/eda_process/img_p11_2.png" width=1000>
-</center></section>
-<section id="color-blindness-avoid-mixing-green-and-red-at-least">
-<h3>Color blindness - avoid mixing green and red at least<a class="headerlink" href="#color-blindness-avoid-mixing-green-and-red-at-least" title="Link to this heading">#</a></h3>
-<center>
-    <img src="../images/eda_process/img_p12_2.png" width=1000>
-</center></section>
-</section>
-<section id="presenting-your-results">
-<h2>Presenting your results<a class="headerlink" href="#presenting-your-results" title="Link to this heading">#</a></h2>
-<section id="presentation-of-eda">
-<h3>Presentation of EDA<a class="headerlink" href="#presentation-of-eda" title="Link to this heading">#</a></h3>
-<p>Use Slides!</p>
-<ul class="simple">
-<li><p>setting the scene</p>
+<li><p><strong>Precisely define your Goal</strong></p>
 <ul>
-<li><p>intro to the dataset</p></li>
-<li><p>intro about client</p></li>
-<li><p>intro about the quality of the data</p></li>
+<li><p>what have others reached?</p></li>
+<li><p>what do you want to reach?</p></li>
+<li><p>what are the steps to get there?</p></li>
 </ul>
 </li>
-<li><p>focus on hypothesis: whys</p></li>
-<li><p>methodology: hows</p></li>
-<li><p>describing the findings and changes in approach… in context</p></li>
-<li><p>generated knowledge: insights</p></li>
-<li><p>future work</p></li>
-<li><p>if possible: show impact and applications how to make your ds presentation great</p></li>
+<li><p><strong>Set yourself small tasks to reach your Goal</strong></p>
+<ul>
+<li><p>Github Projects with a Kanban Board for Issues <br />
+→ great for planning next steps especially in teams</p></li>
+</ul>
+</li>
 </ul>
 </section>
-<section id="think-of-your-audience-usually-a-mix">
-<h3>Think of your audience - usually a mix<a class="headerlink" href="#think-of-your-audience-usually-a-mix" title="Link to this heading">#</a></h3>
+<section id="working-on-same-data">
+<h2>Working on same Data<a class="headerlink" href="#working-on-same-data" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>Technical people</strong> - how it is made, why did you decide this or that</p></li>
-<li><p><strong>Business people</strong> - how is it good for business, how much impact, enable decision-making</p></li>
-<li><p><strong>Sales people</strong> - how is it useful or attractive for customers</p></li>
+<li><p>better exchange with teammates (people face same problems)</p></li>
+<li><p>find quicker solutions to general problems 🦆</p></li>
+<li><p>supplement each other</p></li>
+<li><p>safety in stakeholder calls</p></li>
+<li><p>comparable results</p></li>
+<li><p>drag each other out of rabbit holes</p></li>
 </ul>
 </section>
-<section id="dont-lose-your-audience">
-<h3>Don’t lose your audience…<a class="headerlink" href="#dont-lose-your-audience" title="Link to this heading">#</a></h3>
+<section id="sessions-in-capstone-phase">
+<h2>Sessions in Capstone Phase<a class="headerlink" href="#sessions-in-capstone-phase" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Keep it simple and stupid (KISS principle)</p></li>
-<li><p>Be concise and accurate, no extra information if not needed</p></li>
-<li><p>Join explanation blocks with “whys” and “hows”</p></li>
-<li><p>Be clear, don’t be ambiguous - clarity inspires trust in your results</p></li>
+<li><p><strong>Daily Stand-Up</strong></p>
+<ul>
+<li><p>short meeting with coaches</p></li>
+<li><p>photo/video of the day</p></li>
+<li><p>job interview / recap questions (optional)</p></li>
+</ul>
+</li>
+<li><p><strong>Weekly Project Management Meeting</strong></p>
+<ul>
+<li><p>structuring the project and prioritizing issues</p></li>
+<li><p>discuss blockers and/or issues</p></li>
+<li><p>fine-tuning goals</p></li>
+</ul>
+</li>
 </ul>
 </section>
+<section id="id1">
+<h2>Sessions in Capstone Phase<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Stakeholder Review on midterm</strong></p>
+<ul>
+<li><p>after 2 weeks</p></li>
+<li><p>presenting 10 min per group the results of the project so far</p></li>
+<li><p>discussing project and further work with Stakeholders</p></li>
+<li><p>playing roles for a realistic setting</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="code-reviews">
+<h2>Code Reviews<a class="headerlink" href="#code-reviews" title="Link to this heading">#</a></h2>
+<p><strong>Opportunity to <a class="reference external" href="https://google.github.io/eng-practices/review/#:~:text=A%20code%20review%20is%20a,code%20review%20processes%20and%20policies.">code review</a> each other</strong></p>
+<ul class="simple">
+<li><p><strong>two pairs of eyes see more than one</strong></p></li>
+<li><p><strong>learn from each other</strong></p>
+<ul>
+<li><p>someone else solves a problem and you learn</p></li>
+<li><p>maybe you work in time series analysis and want to learn about NLP</p></li>
+</ul>
+</li>
+<li><p><strong>learn about usual business at work</strong></p>
+<ul>
+<li><p>code reviews are important in daily work</p></li>
+<li><p>learn to work with people of the other kind <br />
+→ some are slower, some are faster</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="meteolytix-freshly-baked">
+<h2>Meteolytix - Freshly baked!<a class="headerlink" href="#meteolytix-freshly-baked" title="Link to this heading">#</a></h2>
+<p>Turnover for bakeries and weather data.</p>
+<ul class="simple">
+<li><p><strong>Time Series</strong></p></li>
+<li><p>Weather Data</p></li>
+<li><p>Stakeholder - probably</p></li>
+</ul>
+</section>
+<section id="public-datasets">
+<h2>Public Datasets<a class="headerlink" href="#public-datasets" title="Link to this heading">#</a></h2>
+<center>
+    <img src="../images/capstone_phase/img_p8_1.png" width=1000>
+</center>
+<p><a class="reference external" href="https://www.govdata.de/">Sources</a></p>
+</section>
+<section id="id2">
+<h2>Public Datasets<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<center>
+    <img src="../images/capstone_phase/img_p9_1.png" width=700>
+</center>
+<p><a class="reference external" href="https://data.deutschebahn.com">Sources</a></p>
+</section>
+<section id="id3">
+<h2>Public Datasets<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<center>
+    <img src="../images/capstone_phase/img_p10_1.png" width=400>
+</center>
+<p><a class="reference external" href="https://github.com/awesomedata/awesome-public-datasets">Sources</a></p>
+</section>
+<section id="id4">
+<h2>Public Datasets<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<center>
+    <img src="../images/capstone_phase/img_p11_2.png" width=1000>
+</center>
+<p><a class="reference external" href="https://dataset-finder.netlify.app/">Data is Plural</a></p>
+</section>
+<section id="datasets-other-common-sources">
+<h2>Datasets - other common sources<a class="headerlink" href="#datasets-other-common-sources" title="Link to this heading">#</a></h2>
+<p>Challenges and datasets</p>
+<p>There’s always new challenges coming up. Popular locations are…</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.kaggle.com/">Kaggle</a></p></li>
+<li><p><a class="reference external" href="https://zindi.africa/">Zindi</a></p></li>
+<li><p><a class="reference external" href="https://www.aicrowd.com/">AICrowd</a></p></li>
+<li><p><a class="reference external" href="https://globalfishingwatch.org/">globalfishingwatch</a></p></li>
+<li><p><a class="reference external" href="https://www.drivendata.org/">Driven Data</a></p></li>
+</ul>
 </section>
 </section>
 
@@ -515,20 +511,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="07_Intro_EDA.html"
+       href="25.1_Prompt_Engineering.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Exploratory Data Analysis</p>
+        <p class="prev-next-title">Prompt Engineering</p>
       </div>
     </a>
     <a class="right-next"
-       href="08_Linear_Regression.html"
+       href="25.2_RAG_Systems.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Linear Regression</p>
+        <p class="prev-next-title">RAG Systems</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -548,25 +544,17 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-eda-process-recap">The EDA Process - Recap</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eda">EDA</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eda-proof-of-concept-workflow">EDA Proof of Concept - Workflow</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dos-and-donts-of-eda">Dos and Don’ts of EDA</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eda-should-enable">EDA Should Enable</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dos">Dos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-mistakes">Common mistakes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-not-to-lie-dont-truncate">How not to lie… don’t truncate</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-not-to-lie-use-an-appropriate-scale">How not to lie… use an appropriate scale</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-use-colors-be-intentional">If you use colors be intentional</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#color-blindness-avoid-mixing-green-and-red-at-least">Color blindness - avoid mixing green and red at least</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#presenting-your-results">Presenting your results</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#presentation-of-eda">Presentation of EDA</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#think-of-your-audience-usually-a-mix">Think of your audience - usually a mix</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dont-lose-your-audience">Don’t lose your audience…</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-your-capstone-project">Structure your Capstone Project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-on-same-data">Working on same Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sessions-in-capstone-phase">Sessions in Capstone Phase</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Sessions in Capstone Phase</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-reviews">Code Reviews</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meteolytix-freshly-baked">Meteolytix - Freshly baked!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#public-datasets">Public Datasets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Public Datasets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Public Datasets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Public Datasets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datasets-other-common-sources">Datasets - other common sources</a></li>
 </ul>
   </nav></div>
 
