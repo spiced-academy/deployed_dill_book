@@ -38,12 +38,13 @@ parts:
     - file: sessions/17_Data_Products
     - file: sessions/18_Neural_Networks
     - file: sessions/19_Image_Modelling
-  #   - file: sessions/20_Capstone_Phase
   #   - file: sessions/21_Time_Series_Analysis_Intro
   #   - file: sessions/22_Dimensionality_Reduction
   #   - file: sessions/23_Clustering
     - file: sessions/24_NLP_Intro
     - file: sessions/25.1_Prompt_Engineering
+    - file: sessions/20_Capstone_Phase
+    - file: sessions/25.2_RAG_Systems
 
   - caption: Rapid Assessment Test
     chapters:
