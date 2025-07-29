@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Capstone Phase &#8212; DS Course Material</title>
+    <title>Ai Agents &#8212; DS Course Material</title>
   
   
   
@@ -58,12 +58,12 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'sessions/20_Capstone_Phase';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'sessions/26_Ai_Agents';</script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="RAG Systems" href="25.2_RAG_Systems.html" />
-    <link rel="prev" title="Prompt Engineering" href="25.1_Prompt_Engineering.html" />
+    <link rel="next" title="Git and Github" href="../RATs/01_Git_RAT.html" />
+    <link rel="prev" title="RAG Systems" href="25.2_RAG_Systems.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -204,9 +204,9 @@
 <li class="toctree-l1"><a class="reference internal" href="19_Image_Modelling.html">Image Modeling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="24_NLP_Intro.html">Natural Language Processing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="25.1_Prompt_Engineering.html">Prompt Engineering</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Capstone Phase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_Capstone_Phase.html">Capstone Phase</a></li>
 <li class="toctree-l1"><a class="reference internal" href="25.2_RAG_Systems.html">RAG Systems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="26_Ai_Agents.html">Ai Agents</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ai Agents</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Rapid Assessment Test</span></p>
 <ul class="nav bd-sidenav">
@@ -315,7 +315,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Capstone Phase</h1>
+    <h1>Ai Agents</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -325,17 +325,25 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-your-capstone-project">Structure your Capstone Project</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-on-same-data">Working on same Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sessions-in-capstone-phase">Sessions in Capstone Phase</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Sessions in Capstone Phase</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-reviews">Code Reviews</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meteolytix-freshly-baked">Meteolytix - Freshly baked!</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#public-datasets">Public Datasets</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Public Datasets</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Public Datasets</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Public Datasets</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datasets-other-common-sources">Datasets - other common sources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-an-agent">What is an Agent?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deployed-dill-agent">Deployed Dill Agent</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Deployed Dill Agent</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reason-and-plan">Reason and Plan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-tools">Use Tools</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-the-task">Complete the Task</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agents-components">Agents Components</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reasoning-planning-and-actions">Reasoning, Planning  and Actions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-agents-workflow">Ai Agents Workflow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Ai Agents Workflow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-agent-conclusion">Ai Agent Conclusion</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pros">PROS:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cons">CONS</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -347,137 +355,125 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="capstone-phase">
-<h1>Capstone Phase<a class="headerlink" href="#capstone-phase" title="Link to this heading">#</a></h1>
-<section id="structure-your-capstone-project">
-<h2>Structure your Capstone Project<a class="headerlink" href="#structure-your-capstone-project" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><strong>Precisely define your Goal</strong></p>
-<ul>
-<li><p>what have others reached?</p></li>
-<li><p>what do you want to reach?</p></li>
-<li><p>what are the steps to get there?</p></li>
-</ul>
-</li>
-<li><p><strong>Set yourself small tasks to reach your Goal</strong></p>
-<ul>
-<li><p>Github Projects with a Kanban Board for Issues <br />
-→ great for planning next steps especially in teams</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="working-on-same-data">
-<h2>Working on same Data<a class="headerlink" href="#working-on-same-data" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>better exchange with teammates (people face same problems)</p></li>
-<li><p>find quicker solutions to general problems 🦆</p></li>
-<li><p>supplement each other</p></li>
-<li><p>safety in stakeholder calls</p></li>
-<li><p>comparable results</p></li>
-<li><p>drag each other out of rabbit holes</p></li>
-</ul>
-</section>
-<section id="sessions-in-capstone-phase">
-<h2>Sessions in Capstone Phase<a class="headerlink" href="#sessions-in-capstone-phase" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><strong>Daily Stand-Up</strong></p>
-<ul>
-<li><p>short meeting with coaches</p></li>
-<li><p>photo/video of the day</p></li>
-<li><p>job interview / recap questions (optional)</p></li>
-</ul>
-</li>
-<li><p><strong>Weekly Project Management Meeting</strong></p>
-<ul>
-<li><p>structuring the project and prioritizing issues</p></li>
-<li><p>discuss blockers and/or issues</p></li>
-<li><p>fine-tuning goals</p></li>
-</ul>
-</li>
-</ul>
+  <section class="tex2jax_ignore mathjax_ignore" id="ai-agents">
+<h1>Ai Agents<a class="headerlink" href="#ai-agents" title="Link to this heading">#</a></h1>
+<section id="what-is-an-agent">
+<h2>What is an Agent?<a class="headerlink" href="#what-is-an-agent" title="Link to this heading">#</a></h2>
+<section id="deployed-dill-agent">
+<h3>Deployed Dill Agent<a class="headerlink" href="#deployed-dill-agent" title="Link to this heading">#</a></h3>
+<p>Imagine Deployed Dill receives a command, such as:<br />
+<strong>“Dill, please book me a flight to Italy.”</strong></p>
 </section>
 <section id="id1">
-<h2>Sessions in Capstone Phase<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h3>Deployed Dill Agent<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Imagine Deployed Dill receives a command, such as:<br />
+<strong>“Dill, please book me a flight to Italy.”</strong></p>
+<p>Because Dill understands natural language, he immediately grasps the request.</p>
+</section>
+<section id="reason-and-plan">
+<h3>Reason and Plan<a class="headerlink" href="#reason-and-plan" title="Link to this heading">#</a></h3>
+<p>Before acting, Dill begins reasoning and planning, identifying the necessary steps and tools it needs to:</p>
 <ul class="simple">
-<li><p><strong>Stakeholder Review on midterm</strong></p>
-<ul>
-<li><p>after 2 weeks</p></li>
-<li><p>presenting 10 min per group the results of the project so far</p></li>
-<li><p>discussing project and further work with Stakeholders</p></li>
-<li><p>playing roles for a realistic setting</p></li>
-</ul>
-</li>
+<li><p>Check available flights</p></li>
+<li><p>Compare prices and times</p></li>
+<li><p>Select the best option</p></li>
+<li><p>Book the flight</p></li>
+<li><p>Send the confirmation</p></li>
 </ul>
 </section>
-<section id="code-reviews">
-<h2>Code Reviews<a class="headerlink" href="#code-reviews" title="Link to this heading">#</a></h2>
-<p><strong>Opportunity to <a class="reference external" href="https://google.github.io/eng-practices/review/#:~:text=A%20code%20review%20is%20a,code%20review%20processes%20and%20policies.">code review</a> each other</strong></p>
+<section id="use-tools">
+<h3>Use Tools<a class="headerlink" href="#use-tools" title="Link to this heading">#</a></h3>
+<p>With a clear plan in mind, Dill takes action.<br />
+It uses tools available to it, like:</p>
 <ul class="simple">
-<li><p><strong>two pairs of eyes see more than one</strong></p></li>
-<li><p><strong>learn from each other</strong></p>
-<ul>
-<li><p>someone else solves a problem and you learn</p></li>
-<li><p>maybe you work in time series analysis and want to learn about NLP</p></li>
+<li><p>Flight search APIs</p></li>
+<li><p>Booking services</p></li>
+<li><p>Email tools</p></li>
 </ul>
-</li>
-<li><p><strong>learn about usual business at work</strong></p>
-<ul>
-<li><p>code reviews are important in daily work</p></li>
-<li><p>learn to work with people of the other kind <br />
-→ some are slower, some are faster</p></li>
+<p>Dill uses the flight search tool to find the best options, then completes the booking on the selected airline’s platform.</p>
+</section>
+<section id="complete-the-task">
+<h3>Complete the Task<a class="headerlink" href="#complete-the-task" title="Link to this heading">#</a></h3>
+<div class="group">
+    <div class="text">
+<p>Finally, Deployed Dill sends us the confirmation email and itinerary.</p>
+</div>
+    <div class="images">
+<img src="../images/ai_agents/deployed_dill_agents.png" width=800>
+</div>
+</div></section>
+<section id="agents-components">
+<h3>Agents Components<a class="headerlink" href="#agents-components" title="Link to this heading">#</a></h3>
+<p><strong>The Brain (Ai Models)</strong>:</p>
+<ul class="simple">
+<li><p>Handles reasoning, planning</p></li>
+<li><p>Decide Actions based on the situation.</p></li>
+<li><p>Uses tools to complete tasks.</p></li>
 </ul>
-</li>
+<p><strong>The Body (Capabilities and tools)</strong></p>
+<ul class="simple">
+<li><p>Provides the necessary tools for the agent to act.</p></li>
 </ul>
 </section>
-<section id="meteolytix-freshly-baked">
-<h2>Meteolytix - Freshly baked!<a class="headerlink" href="#meteolytix-freshly-baked" title="Link to this heading">#</a></h2>
-<p>Turnover for bakeries and weather data.</p>
-<ul class="simple">
-<li><p><strong>Time Series</strong></p></li>
-<li><p>Weather Data</p></li>
-<li><p>Stakeholder - probably</p></li>
-</ul>
 </section>
-<section id="public-datasets">
-<h2>Public Datasets<a class="headerlink" href="#public-datasets" title="Link to this heading">#</a></h2>
-<center>
-    <img src="../images/capstone_phase/img_p8_1.png" width=1000>
-</center>
-<p><a class="reference external" href="https://www.govdata.de/">Sources</a></p>
+<section id="reasoning-planning-and-actions">
+<h2>Reasoning, Planning  and Actions<a class="headerlink" href="#reasoning-planning-and-actions" title="Link to this heading">#</a></h2>
+<section id="ai-agents-workflow">
+<h3>Ai Agents Workflow<a class="headerlink" href="#ai-agents-workflow" title="Link to this heading">#</a></h3>
+<p>Agents work in a continuous cycle of thinking(Thought) –&gt; acting (Act), and observing (Observe).</p>
+<ol class="arabic simple">
+<li><p><strong>Thought</strong>: The LLM part of the Agent decides which step to take</p></li>
+<li><p><strong>Act</strong>: The Agent uses the tools available to it to perform the action</p></li>
+<li><p><strong>Observe</strong>: The model reflect on the response from the tool</p></li>
+</ol>
 </section>
 <section id="id2">
-<h2>Public Datasets<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<center>
-    <img src="../images/capstone_phase/img_p9_1.png" width=700>
-</center>
-<p><a class="reference external" href="https://data.deutschebahn.com">Sources</a></p>
+<h3>Ai Agents Workflow<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Agents work in a continuous cycle of thinking(Thought) –&gt; acting (Act), and observing (Observe).</p>
+<ol class="arabic simple">
+<li><p><strong>Thought</strong>: The LLM part of the Agent decides which step to take</p></li>
+<li><p><strong>Act</strong>: The Agent uses the tools available to it to perform the action</p></li>
+<li><p><strong>Observe</strong>: The model reflect on the response from the tool</p></li>
+</ol>
+<p>The rule are embedded directly in the prompt:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>You are a helpful AI assistant. Your task is to answer user questions.  You have access to the following tools:
+
+{tools}
+Use the following format:
+
+Question: the input question you must answer
+Thought: you should always think about what to do
+Action: the action to take, should be one of [{tool_names}]
+Action Input: the input to the action
+Observation: the result of the action
+... (this Thought/Action/Action Input/Observation can repeat N times)
+Thought: I now know the final answer
+Final Answer: the final answer to the original input question
+
+Begin!
+Question: {input}
+Thought:{agent_scratchpad}&#39;
+</pre></div>
+</div>
 </section>
-<section id="id3">
-<h2>Public Datasets<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<center>
-    <img src="../images/capstone_phase/img_p10_1.png" width=400>
-</center>
-<p><a class="reference external" href="https://github.com/awesomedata/awesome-public-datasets">Sources</a></p>
-</section>
-<section id="id4">
-<h2>Public Datasets<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
-<center>
-    <img src="../images/capstone_phase/img_p11_2.png" width=1000>
-</center>
-<p><a class="reference external" href="https://dataset-finder.netlify.app/">Data is Plural</a></p>
-</section>
-<section id="datasets-other-common-sources">
-<h2>Datasets - other common sources<a class="headerlink" href="#datasets-other-common-sources" title="Link to this heading">#</a></h2>
-<p>Challenges and datasets</p>
-<p>There’s always new challenges coming up. Popular locations are…</p>
+<section id="ai-agent-conclusion">
+<h3>Ai Agent Conclusion<a class="headerlink" href="#ai-agent-conclusion" title="Link to this heading">#</a></h3>
+<section id="pros">
+<h4>PROS:<a class="headerlink" href="#pros" title="Link to this heading">#</a></h4>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.kaggle.com/">Kaggle</a></p></li>
-<li><p><a class="reference external" href="https://zindi.africa/">Zindi</a></p></li>
-<li><p><a class="reference external" href="https://www.aicrowd.com/">AICrowd</a></p></li>
-<li><p><a class="reference external" href="https://globalfishingwatch.org/">globalfishingwatch</a></p></li>
-<li><p><a class="reference external" href="https://www.drivendata.org/">Driven Data</a></p></li>
+<li><p>Advanced Reasoning and Language Understanding</p></li>
+<li><p>Autonomous Task Completion</p></li>
+<li><p>Tool Use Integration</p></li>
 </ul>
+</section>
+<section id="cons">
+<h4>CONS<a class="headerlink" href="#cons" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Limited generalization to complex tasks</p></li>
+<li><p>Security and Safety Risks</p></li>
+</ul>
+</section>
+</section>
 </section>
 </section>
 
@@ -512,20 +508,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="25.1_Prompt_Engineering.html"
+       href="25.2_RAG_Systems.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Prompt Engineering</p>
+        <p class="prev-next-title">RAG Systems</p>
       </div>
     </a>
     <a class="right-next"
-       href="25.2_RAG_Systems.html"
+       href="../RATs/01_Git_RAT.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">RAG Systems</p>
+        <p class="prev-next-title">Git and Github</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -545,17 +541,25 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-your-capstone-project">Structure your Capstone Project</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-on-same-data">Working on same Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sessions-in-capstone-phase">Sessions in Capstone Phase</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Sessions in Capstone Phase</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-reviews">Code Reviews</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meteolytix-freshly-baked">Meteolytix - Freshly baked!</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#public-datasets">Public Datasets</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Public Datasets</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Public Datasets</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Public Datasets</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datasets-other-common-sources">Datasets - other common sources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-an-agent">What is an Agent?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deployed-dill-agent">Deployed Dill Agent</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Deployed Dill Agent</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reason-and-plan">Reason and Plan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-tools">Use Tools</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-the-task">Complete the Task</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agents-components">Agents Components</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reasoning-planning-and-actions">Reasoning, Planning  and Actions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-agents-workflow">Ai Agents Workflow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Ai Agents Workflow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-agent-conclusion">Ai Agent Conclusion</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pros">PROS:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cons">CONS</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
