@@ -355,6 +355,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confidence-intervals">Confidence Intervals</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-confidence-interval">What is a Confidence Interval?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-height">Example: Height</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-we-define-this-range-of-values">How can we define this range of values?</a></li>
 </ul>
 </li>
 </ul>
@@ -530,7 +531,7 @@ where \)</span>F(x)<span class="math notranslate nohighlight">\( is the CDF of t
 $<span class="math notranslate nohighlight">\( P(X = k) = \binom{n}{k} p^k (1-p)^{n-k} \)</span>$
 where:</p>
 <ul>
-<li><p><span class="math notranslate nohighlight">\(\binom{n}{k}\)</span> is the <a class="reference external" href="https://en.wikipedia.org/wiki/Binomial_coefficient">binomial coefficient</a> (number of ways to choose <span class="math notranslate nohighlight">\(k\)</span> successes from <span class="math notranslate nohighlight">\(n\)</span> trials)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\binom{n}{k}\)</span> is the <a class="reference external" href="https://en.wikipedia.org/wiki/Binomial_coefficient">binomial coefficient</a></p></li>
 <li><p><span class="math notranslate nohighlight">\(n\)</span> is the number of trials</p></li>
 <li><p><span class="math notranslate nohighlight">\(k\)</span> is the number of successes</p></li>
 <li><p><span class="math notranslate nohighlight">\(p\)</span> is the probability of success in each trial (0.5 for a fair coin)</p></li>
@@ -665,6 +666,84 @@ CI = [162 cm, 168 cm] with 95% confidence
 <div style="margin: 40px auto; text-align: center;">
    <img src="../images/distributions/confidence_intervals.png" alt="Confidence Intervals Illustration" style="max-width: 100%; height: auto; border: 1px solid #ccc; border-radius: 8px;">
 </div></section>
+<section id="how-can-we-define-this-range-of-values">
+<h3>How can we define this range of values?<a class="headerlink" href="#how-can-we-define-this-range-of-values" title="Link to this heading">#</a></h3>
+<p>A CI is tipically defined as:
+$<span class="math notranslate nohighlight">\( \text{CI} = \text{Point Estimate} \pm \text{Margin of Error} \)</span>$</p>
+<ul class="simple">
+<li><p><strong>Point Estimate</strong>: sample statistic (e.g., sample mean, sample proportion)</p></li>
+<li><p><strong>Margin of Error (MoE)</strong>: quantifies the uncertainty in the estimate, how much we expect the sample statistic to be off from the true population parameter.</p></li>
+</ul>
+<!-- Method 1 -->
+<body style="font-family: Arial, sans-serif; margin: 40px; line-height: 1.6;">
+  <h3 style="text-align: center; margin-bottom: 40px;">Methods to Calculate Margin of Error (MoE)</h3>
+<details style="margin-bottom: 20px;">
+    <summary style="font-size: 1.2em; font-weight: bold; cursor: pointer; padding: 10px; background-color: #e6ffe6; border-left: 5px solid green; border-radius: 5px;">
+      1. Z-Score Method for the Mean
+    </summary>
+    <div style="padding: 20px; background-color: #e6ffe6; border: 1px solid #c0e6c0; border-top: none; border-radius: 0 0 6px 6px;">
+      <p><strong>MoE =</strong> z* × (σ / √n)</p>
+      <p>Use when:</p>
+      <ul>
+        <li>Population standard deviation (σ) is known.</li>
+        <li>Sample size (n) is large (n ≥ 30).</li>
+      </ul>
+      <p> <strong>Critical value z*</strong>:
+      <ul>
+        <li>From the standard normal distribution for the desired confidence level (e.g., 1.96 for 95% confidence).</li>
+      </p>
+     </div>
+  </details>
+  <!-- Method 2 -->
+  <details style="margin-bottom: 20px;">
+    <summary style="font-size: 1.2em; font-weight: bold; cursor: pointer; padding: 10px; background-color: #fff8e1; border-left: 5px solid orange; border-radius: 5px;">
+      2. T-Score Method for the Mean
+    </summary>
+    <div style="padding: 20px; background-color: #fff8e1; border: 1px solid #ffdf99; border-top: none; border-radius: 0 0 6px 6px;">
+      <p><strong>MoE =</strong> t* × (s / √n)</p>
+      <p>Use when:</p>
+      <ul> 
+        <li>Population standard deviation (σ) is unknown.</li>
+        <li>Sample size (n) is small (n < 30).</li>
+      </ul>
+      <p>Use sample standard deviation (s)</p>
+      <p><strong>Critical value t*</strong>:
+      <ul>
+        <li>From the t-distribution for the desired confidence level and degrees of freedom (df = n - 1).</li>
+      </p>
+    </div>
+  </details>
+<details style="margin-top: 20px;">
+  <summary style="font-size: 1.2em; font-weight: bold; cursor: pointer; padding: 10px; background-color: #f0f0f0; border-left: 5px solid #555; border-radius: 5px;">
+    Z vs T Critical Values Comparison Table
+  </summary>
+  <div style="margin-top: 10px;">
+    <table style="width: 100%; border: 1px solid #ddd; border-collapse: collapse; margin-top: 10px;">
+<tr style="background-color: #f0f0f0;">
+        <th style="border: 1px solid #ccc; padding: 8px;">Confidence Level</th>
+        <th style="border: 1px solid #ccc; padding: 8px;">Z-Score (z*)</th>
+        <th style="border: 1px solid #ccc; padding: 8px;">T-Score (df = 15)</th>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ccc; padding: 8px;">90%</td>
+        <td style="border: 1px solid #ccc; padding: 8px;">1.645</td>
+        <td style="border: 1px solid #ccc; padding: 8px;">1.753</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ccc; padding: 8px;">95%</td>
+        <td style="border: 1px solid #ccc; padding: 8px;">1.960</td>
+        <td style="border: 1px solid #ccc; padding: 8px;">2.131</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ccc; padding: 8px;">99%</td>
+        <td style="border: 1px solid #ccc; padding: 8px;">2.576</td>
+        <td style="border: 1px solid #ccc; padding: 8px;">2.947</td>
+      </tr>
+    </table>
+  </div>
+</details>
+</body>
+</section>
 </section>
 </section>
 
@@ -759,6 +838,7 @@ CI = [162 cm, 168 cm] with 95% confidence
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confidence-intervals">Confidence Intervals</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-confidence-interval">What is a Confidence Interval?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-height">Example: Height</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-we-define-this-range-of-values">How can we define this range of values?</a></li>
 </ul>
 </li>
 </ul>
