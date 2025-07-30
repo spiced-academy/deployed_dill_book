@@ -1,0 +1,818 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Distributions &#8212; DS Course Material</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=dd428105" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'sessions/27_Distributions_CI';</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Git and Github" href="../RATs/01_Git_RAT.html" />
+    <link rel="prev" title="Ai Agents" href="26_Ai_Agents.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/spiced_logo_purple.png" class="logo__image only-light" alt="DS Course Material - Home"/>
+    <script>document.write(`<img src="../_static/spiced_logo_purple.png" class="logo__image only-dark" alt="DS Course Material - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Coding fundamentals &amp; Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_Orientation_deployed-dill.html">Welcome to the Data Science and Machine Learning Engineering Bootcamp Deployed-Dill!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_Git_Workflows.html">Let’s talk about git..</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_Intro_to_Data_Science_ML.html">Introduction to Data Science &amp; ML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.1_Intro_to_Databases.html">Introduction to Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.2_Intro_to_SQL.html">Introduction to SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.1_Gestalt_Principles_Visualisation.html">Gestalt <del>Laws</del> Principles and Visualisation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_Intro_EDA.html">Exploratory Data Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.2_EDA_process.html">EDA &amp; Presenting your Results</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Machine Learning Basics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="08_Linear_Regression.html">Linear Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09.1_Bias_Variance_Tradeoff.html">Bias Variance Tradeoff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09.2_Regularization.html">Regularization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_Gradient_Descent.html">Gradient Descent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_Evaluation_Metrics.html">Evaluation Metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_Logistic_Regression.html">Logistic Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_KNN_Distance_Metrics.html">KNN &amp; Distance Metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_Decision_Tree.html">Decision Trees</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">More Machine Learning</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="16_Ensemble_Methods_part1.html">Ensemble Methods - Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_Ensemble_Methods_part2.html">Ensemble Methods - Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_Data_Products.html">Designing Data Products</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_Neural_Networks.html">Artificial Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_Image_Modelling.html">Image Modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="24_NLP_Intro.html">Natural Language Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="25.1_Prompt_Engineering.html">Prompt Engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_Capstone_Phase.html">Capstone Phase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="25.2_RAG_Systems.html">RAG Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="26_Ai_Agents.html">Ai Agents</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Distributions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Rapid Assessment Test</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../RATs/01_Git_RAT.html">Git and Github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RATs/02_Intro_to_ML_RAT.html">Intro to Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RATs/03_Python_Part_1_RAT.html">Python Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RATs/04_Python_Part_2_RAT.html">Python Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RATs/05_pandas_NumPy.html">pandas &amp; NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RATs/06_EDA_RAT.html">Exploratory Data Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RATs/07_Linear_Regression_RAT.html">Linear Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RATs/08_Bias_Variance_RAT.html">Bias Variance Trade-Off</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RATs/09_Gradient_Descent_RAT.html">Gradient Descent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RATs/10_Evaluation_Metrics_RAT.html">Evaluation Metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RATs/11_Logistic_Regression_RAT.html">Logistic Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RATs/12_KNN_RAT.html">K-nearest Neighbors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RATs/13_Decision_Trees_RAT.html">Decision Trees</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RATs/14_Ensemble_Methods_RAT.html">Ensemble Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RATs/15_CNNs_RAT.html">Convolutional Neural Network</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Distributions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-vs-paranormal">Normal vs Paranormal</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memostats-game">MemoStats Game</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-data">Types of Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categorical-data">Categorical Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-data">Numerical Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-data-types-matter">Why Data Types Matter?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-to-probability-distributions">Intro to (Probability) Distributions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-mass-function-pmf">Probability Mass Function (PMF)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-density-function-pdf">Probability Density Function (PDF)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cumulative-distribution-function-cdf">Cumulative Distribution Function (CDF)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribution-examples">Distribution Examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binomial-distribution">Binomial Distribution 🪙</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poisson-distribution">Poisson Distribution 📧</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uniform-distribution">Uniform Distribution 🎲</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-distribution">Normal Distribution 📈</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-distributions-matter">Why Distributions matter?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confidence-intervals">Confidence Intervals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-confidence-interval">What is a Confidence Interval?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-height">Example: Height</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="distributions">
+<h1>Distributions<a class="headerlink" href="#distributions" title="Link to this heading">#</a></h1>
+<section id="normal-vs-paranormal">
+<h2>Normal vs Paranormal<a class="headerlink" href="#normal-vs-paranormal" title="Link to this heading">#</a></h2>
+<p><img src="../images/distributions/Normal_Vs_Paranormal.png" alt="Distributions Functions"> </img></p>
+<section id="memostats-game">
+<h3>MemoStats Game<a class="headerlink" href="#memostats-game" title="Link to this heading">#</a></h3>
+<div class="group">
+ <div class="text">
+<p>Let’s find paired cards in the <a class="reference external" href="https://interacty.me/projects/abe078932ec2d5d1">MemoStats Game</a> !!!</p>
+<ul class="simple">
+<li><p>you uncover a card</p></li>
+<li><p>explain what you see</p></li>
+<li><p>if you find the paired card, you continue to uncover cards</p></li>
+<li><p>otherwise, a new player takes your turn</p></li>
+</ul>
+ </div>
+ <div class="images">
+    <img src="../images/distributions/QR_Code.png" alt="Distributions Functions"> 
+ </div>
+</div>
+</section>
+</section>
+<section id="types-of-data">
+<h2>Types of Data<a class="headerlink" href="#types-of-data" title="Link to this heading">#</a></h2>
+<div class="group">
+ <div class="text">
+<ul class="simple">
+<li><p><strong>Quantitative</strong>: numerical data that can be measured (e.g., height, weight, temperature)</p></li>
+<li><p><strong>Qualitative</strong>: categorical data that describes characteristics or qualities (e.g., colors, names, types)</p></li>
+</ul>
+ </div>
+ <div class="images">
+    <img src="../images/distributions/Types_of_Data.png" alt="Types of Data"> 
+ </div>
+ </div><section id="categorical-data">
+<h3>Categorical Data<a class="headerlink" href="#categorical-data" title="Link to this heading">#</a></h3>
+<div class="group">
+ <div class="text">
+<ul class="simple">
+<li><p><strong>Nominal</strong>: categories without a specific order (e.g., colors, types of fruit)</p></li>
+<li><p><strong>Ordinal</strong>: categories with a specific order (e.g., rankings, satisfaction levels)</p></li>
+<li><p><strong>Distribution</strong>: often shown as a bar chart or pie chart</p></li>
+</ul>
+ </div>
+ <div class="images">
+    <img src="../images/distributions/distr_category.png" alt="distr_category"> 
+ </div>
+ </div></section>
+<section id="numerical-data">
+<h3>Numerical Data<a class="headerlink" href="#numerical-data" title="Link to this heading">#</a></h3>
+<div class="group">
+ <div class="text">
+<ul class="simple">
+<li><p><strong>Discrete</strong>: countable data (e.g., number of students, number of cars, roll of a die)</p></li>
+<li><p><strong>Continuous</strong>: measurable data (e.g., height, weight, temperature)</p></li>
+<li><p><strong>Distribution</strong>: often shown as a barchart, histogram, probability density functions (PDFs) or line charts</p></li>
+</ul>
+ </div>
+ <div class="images">
+    <img src="../images/distributions/distr_numerical.png" alt="distr_numerical"> 
+ </div>
+ </div></section>
+<section id="why-data-types-matter">
+<h3>Why Data Types Matter?<a class="headerlink" href="#why-data-types-matter" title="Link to this heading">#</a></h3>
+<div class="group">
+ <div class="text"> 
+<ul class="simple">
+<li><p><strong>Analysis</strong>: Different data types require different statistical methods and probabilty distributions.</p></li>
+<li><p><strong>Visualization</strong>: Choosing the right chart or graph depends on the data type.</p></li>
+</ul>
+ </div>
+ <div class="images">
+    <img src="../images/distributions/why_smiles.png" alt="distr_why">
+</div>
+</div>
+</section>
+</section>
+<section id="intro-to-probability-distributions">
+<h2>Intro to (Probability) Distributions<a class="headerlink" href="#intro-to-probability-distributions" title="Link to this heading">#</a></h2>
+<div class="group">
+ <div class="text">  
+<ul class="simple">
+<li><p><strong>Distribution</strong>: Shows how values in a dataset are spread out. It tells us how often each value occurs.</p></li>
+<li><p><strong>Probability Distribution</strong>: A mathematical function that describes the <strong>likelihood</strong> of different outcomes.</p></li>
+<li><p><strong>Types of Distributions</strong>:</p>
+<ul>
+<li><p><strong>Discrete</strong>: Used for countable outcomes (e.g., number of students in a class).</p></li>
+<li><p><strong>Continuous</strong>: Used for measurable outcomes (e.g., height, weight, temperature).</p></li>
+</ul>
+</li>
+</ul>
+ </div>
+ <div class="images">   
+    <img src="../images/distributions/distributions.png" alt="distributions">
+ </div>
+</div>
+<section id="probability-mass-function-pmf">
+<h3>Probability Mass Function (PMF)<a class="headerlink" href="#probability-mass-function-pmf" title="Link to this heading">#</a></h3>
+<div class="group">
+ <div class="text">  
+<ul class="simple">
+<li><p>It gives the probability of a specific outcome for <strong>discrete random variables</strong>.</p></li>
+<li><p>It is defined as:
+$<span class="math notranslate nohighlight">\( P(X = x) = p(x) \)</span><span class="math notranslate nohighlight">\(
+where \)</span>p(x)<span class="math notranslate nohighlight">\( is the PMF of the random variable \)</span>X$.</p></li>
+<li><p><strong>Example</strong>: If you roll a die 🎲, the <strong>PMF</strong> gives the probability of rolling each number (1 to 6).</p></li>
+<li><p><strong>PMF</strong> is often represented as a bar chart.</p></li>
+</ul>
+ </div>
+ <div class="images">   
+    <img src="../images/distributions/die_outcome.png" alt="distributions">
+ </div>
+ </div>
+</section>
+<section id="probability-density-function-pdf">
+<h3>Probability Density Function (PDF)<a class="headerlink" href="#probability-density-function-pdf" title="Link to this heading">#</a></h3>
+<div class="group">
+ <div class="text">
+<ul>
+<li><p>It describes the density of the probabilty for <strong>continuous random variables</strong>.</p></li>
+<li><p><strong>Probaility</strong> is represented as an <strong>area under the curve over a range of values</strong>.</p></li>
+<li><p>It is defined as:
+$<span class="math notranslate nohighlight">\( P(a &lt; X &lt; b) = \int_{a}^{b} f(x) \, dx \)</span><span class="math notranslate nohighlight">\( 
+where \)</span>f(x)<span class="math notranslate nohighlight">\( is the PDF of the random variable \)</span>X$.</p></li>
+<li><p><strong>Example</strong>: What is the probability that a randomly chosen person’s height is between 160 cm and 180 cm?</p>
+</div>
+<div class="images">
+    <img src="../images/distributions/standard_distr.png" alt="Probability Density Function">  
+</div>
+</div></li>
+</ul>
+</section>
+<section id="cumulative-distribution-function-cdf">
+<h3>Cumulative Distribution Function (CDF)<a class="headerlink" href="#cumulative-distribution-function-cdf" title="Link to this heading">#</a></h3>
+<div class="group">
+ <div class="text"> 
+<ul class="simple">
+<li><p>It gives the cumulative probability that a random variable (either <strong>discrete</strong> or <strong>continuous</strong>) <span class="math notranslate nohighlight">\(X &lt;= \textbf{certain value x} \)</span></p></li>
+<li><p>It is defined as:
+$<span class="math notranslate nohighlight">\( F(x) = P(X \leq x) \)</span><span class="math notranslate nohighlight">\(
+where \)</span>F(x)<span class="math notranslate nohighlight">\( is the CDF of the random variable \)</span>X$.</p></li>
+<li><p><strong>Example</strong>: What’s the probability that time between arrivals of emails is less than 5 minutes?</p></li>
+</ul>
+</div>
+ <div class="images">
+    <img src="../images/distributions/cumul_distr.png" alt="Cumulative Distribution Function"> 
+ </div>
+</div></section>
+</section>
+<section id="distribution-examples">
+<h2>Distribution Examples<a class="headerlink" href="#distribution-examples" title="Link to this heading">#</a></h2>
+<section id="binomial-distribution">
+<h3>Binomial Distribution 🪙<a class="headerlink" href="#binomial-distribution" title="Link to this heading">#</a></h3>
+<div class="group">
+ <div class="text"> 
+<ul class="simple">
+<li><p>It describes the number of successes in a fixed number of indipendent trials/experiments, where each trial has two possible outcomes (success or failure).</p></li>
+<li><p>It is defined as:
+$<span class="math notranslate nohighlight">\( P(X = k) = \binom{n}{k} p^k (1-p)^{n-k} \)</span>$
+where:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\binom{n}{k}\)</span> is the <a class="reference external" href="https://en.wikipedia.org/wiki/Binomial_coefficient">binomial coefficient</a> (number of ways to choose <span class="math notranslate nohighlight">\(k\)</span> successes from <span class="math notranslate nohighlight">\(n\)</span> trials)</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> is the number of trials</p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> is the number of successes</p></li>
+<li><p><span class="math notranslate nohighlight">\(p\)</span> is the probability of success in each trial (0.5 for a fair coin)</p></li>
+</ul>
+</li>
+<li><p><strong>Example</strong>: Flipping a coin 10 times and counting how many times it lands on heads (success).</p></li>
+</ul>
+</div>
+<div class="images">
+        <img src="../images/distributions/binom_distr.png" alt="Binomial Distribution"> 
+    </div>
+</div></section>
+<section id="poisson-distribution">
+<h3>Poisson Distribution 📧<a class="headerlink" href="#poisson-distribution" title="Link to this heading">#</a></h3>
+<div class="group">
+ <div class="text"> 
+<ul class="simple">
+<li><p>It describes the number of events that occur within a fixed interval of time or space, given that events happen independently and at a constant average rate.</p></li>
+<li><p>It is defined as:
+$<span class="math notranslate nohighlight">\( P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!} \)</span>$
+where:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> is the average rate of events in the interval</p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> is the number of events</p></li>
+<li><p><span class="math notranslate nohighlight">\(!\)</span> is the <a class="reference external" href="https://en.wikipedia.org/wiki/Factorial">factorial function</a></p></li>
+</ul>
+</li>
+<li><p><strong>Example</strong>: The number of emails received in an hour, where the average rate is 5 emails per hour.</p></li>
+</ul>
+</div>
+<div class="images">
+        <img src="../images/distributions/poisson_distr.png" alt="Poissonian Distribution"> 
+    </div>
+</div></section>
+<section id="uniform-distribution">
+<h3>Uniform Distribution 🎲<a class="headerlink" href="#uniform-distribution" title="Link to this heading">#</a></h3>
+<div class="group">
+ <div class="text"> 
+<ul class="simple">
+<li><p>It describes a situation where all outcomes are equally likely within a range.</p></li>
+<li><p>It is defined as:
+$<span class="math notranslate nohighlight">\( P(X = x) = \frac{1}{b - a} \)</span>$
+where:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> is the minimum value</p></li>
+<li><p><span class="math notranslate nohighlight">\(b\)</span> is the maximum value</p></li>
+<li><p><span class="math notranslate nohighlight">\(x\)</span> is any value between <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>Example</strong>: Rolling a fair die, where each face (1 to 6) has an equal probability of 1/6.</p></li>
+</ul>
+</div>
+<div class="images">
+        <img src="../images/distributions/uniform_distr.png" alt="Uniform Distribution"> 
+    </div>
+</div></section>
+<section id="normal-distribution">
+<h3>Normal Distribution 📈<a class="headerlink" href="#normal-distribution" title="Link to this heading">#</a></h3>
+<div class="group">
+ <div class="text"> 
+<ul class="simple">
+<li><p>It is a bell-shaped curve where most of data points cluster around the mean, with fewer points as you move away from the mean.</p></li>
+<li><p>It is defined as:
+$<span class="math notranslate nohighlight">\( f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - \mu)^2}{2\sigma^2}} \)</span>$
+where:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\mu\)</span> is the mean (average)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma\)</span> is the standard deviation (spread of the data)</p></li>
+</ul>
+</li>
+<li><p><strong>Example</strong>: Heights of people in a population, IQ scores, or errors.</p></li>
+<li><p><strong>Applications</strong>: foundation for many statistical methods, including hypothesis testing and confidence intervals.</p></li>
+</ul>
+</div>
+<div class="images">
+        <img src="../images/distributions/normal_distr.png" alt="Normal Distribution"> 
+    </div>
+</div></section>
+<section id="why-distributions-matter">
+<h3>Why Distributions matter?<a class="headerlink" href="#why-distributions-matter" title="Link to this heading">#</a></h3>
+<div class="group">
+ <div class="text"> 
+<ul class="simple">
+<li><p>Help us understand the underlying patterns in data.</p></li>
+<li><p>Help us in identifying outliers and anomalies.</p></li>
+<li><p>Guide us in selecting appropriate statistical methods for analysis, modeling</p></li>
+</ul>
+</div>
+<div class="images">
+        <img src="../images/distributions/why_smiles.png" alt="Why Distribution"> 
+    </div>
+</div></section>
+</section>
+<section id="confidence-intervals">
+<h2>Confidence Intervals<a class="headerlink" href="#confidence-intervals" title="Link to this heading">#</a></h2>
+<img src="../images/distributions/coffee_break.png" alt="coffe_break"> 
+<section id="what-is-a-confidence-interval">
+<h3>What is a Confidence Interval?<a class="headerlink" href="#what-is-a-confidence-interval" title="Link to this heading">#</a></h3>
+<div group>
+ <div class="text">
+<div style="margin: 40px auto; text-align: center; max-width: 700px; font-size: 1.4em;">
+  <span style="color:violet">Confidence Interval (CI)</span> is a 
+  <span style="color:violet">range of values</span> constructed from a sample data so that we can be reasonably sure (usually 95% <span style="color:violet">confidence level</span>) that the <span style="color:red">true population parameter</span> lies somewhere in that range.
+</div>
+</div>
+<div class="images">
+    <img src="../images/distributions/doubt_face.png" alt="confidence_intervals">
+</div>
+</div>
+</section>
+<section id="example-height">
+<h3>Example: Height<a class="headerlink" href="#example-height" title="Link to this heading">#</a></h3>
+<p>Let’s say you’re estimating the average height of adult women in a city based on a sample, and you compute:</p>
+<div style="text-align: left; max-width: 800px; font-size: 1.1em;">
+CI = [162 cm, 168 cm] with 95% confidence
+</div>
+<div class="cell-class">
+<p>We are 95% confident that the true average height of all adult women in that city is between 162 cm and 168 cm.</p>
+</div><div style="display: flex; justify-content: space-between; gap: 20px; max-width: 100%; margin: 40px auto; flex-wrap: wrap;">
+<div style="flex: 1; min-width: 300px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background: #e6ffe6; font-size: 0.9em;">
+      <h3 style="margin-top: 0;">✅ What it does mean:</h3>
+      <p>If we repeated this sampling process many times, and built a 95% CI from each sample:</p>
+      <p>About 95% of those intervals would contain the true population parameter.</p>
+      <p>The interval reflects the precision of our estimate — wider means more uncertainty; narrower means more precise.</p>
+</div>
+<div style="flex: 1; min-width: 300px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background: #ffe6e6; font-size: 0.9em;">
+     <h3 style="margin-top: 0;">❌ What it does NOT mean:</h3>
+     <p>It does not mean there’s a 95% chance the true value is inside this specific interval — the true value is fixed; the interval is random.</p>
+     <p>It’s about long-run performance of the method, not a probability about this one interval.</p>
+</div>
+</div>
+<div style="margin: 40px auto; text-align: center;">
+   <img src="../images/distributions/confidence_intervals.png" alt="Confidence Intervals Illustration" style="max-width: 100%; height: auto; border: 1px solid #ccc; border-radius: 8px;">
+</div></section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./sessions"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="26_Ai_Agents.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Ai Agents</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../RATs/01_Git_RAT.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Git and Github</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-vs-paranormal">Normal vs Paranormal</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memostats-game">MemoStats Game</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-data">Types of Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categorical-data">Categorical Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-data">Numerical Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-data-types-matter">Why Data Types Matter?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-to-probability-distributions">Intro to (Probability) Distributions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-mass-function-pmf">Probability Mass Function (PMF)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-density-function-pdf">Probability Density Function (PDF)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cumulative-distribution-function-cdf">Cumulative Distribution Function (CDF)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribution-examples">Distribution Examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binomial-distribution">Binomial Distribution 🪙</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poisson-distribution">Poisson Distribution 📧</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uniform-distribution">Uniform Distribution 🎲</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-distribution">Normal Distribution 📈</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-distributions-matter">Why Distributions matter?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confidence-intervals">Confidence Intervals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-confidence-interval">What is a Confidence Interval?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-height">Example: Height</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The DS Coach Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
