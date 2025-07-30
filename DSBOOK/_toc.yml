@@ -45,6 +45,8 @@ parts:
     - file: sessions/25.1_Prompt_Engineering
     - file: sessions/20_Capstone_Phase
     - file: sessions/25.2_RAG_Systems
+    - file: sessions/26_Ai_Agents
+    - file: sessions/27_Distributions_CI   
 
   - caption: Rapid Assessment Test
     chapters:
