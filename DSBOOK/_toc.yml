@@ -47,8 +47,6 @@ parts:
     - file: sessions/25.2_RAG_Systems
     - file: sessions/26_Ai_Agents
 
-
-
   - caption: Rapid Assessment Test
     chapters:
     - file: RATs/01_Git_RAT
