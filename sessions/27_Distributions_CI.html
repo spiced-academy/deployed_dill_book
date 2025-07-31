@@ -478,11 +478,12 @@ document.write(`
 <h3>Probability Mass Function (PMF)<a class="headerlink" href="#probability-mass-function-pmf" title="Link to this heading">#</a></h3>
 <div class="group">
  <div class="text">  
-<ul class="simple">
+<ul>
 <li><p>It gives the probability of a specific outcome for <strong>discrete random variables</strong>.</p></li>
 <li><p>It is defined as:
-$<span class="math notranslate nohighlight">\( P(X = x) = p(x) \)</span><span class="math notranslate nohighlight">\(
-where \)</span>p(x)<span class="math notranslate nohighlight">\( is the PMF of the random variable \)</span>X$.</p></li>
+$<span class="math notranslate nohighlight">\( P(X = x) = p(x) \)</span>$</p>
+<p>where <span class="math notranslate nohighlight">\(p(x)\)</span> is the PMF of the random variable <span class="math notranslate nohighlight">\(X\)</span>.</p>
+</li>
 <li><p><strong>Example</strong>: If you roll a die 🎲, the <strong>PMF</strong> gives the probability of rolling each number (1 to 6).</p></li>
 <li><p><strong>PMF</strong> is often represented as a bar chart.</p></li>
 </ul>
@@ -500,8 +501,9 @@ where \)</span>p(x)<span class="math notranslate nohighlight">\( is the PMF of t
 <li><p>It describes the density of the probabilty for <strong>continuous random variables</strong>.</p></li>
 <li><p><strong>Probaility</strong> is represented as an <strong>area under the curve over a range of values</strong>.</p></li>
 <li><p>It is defined as:
-$<span class="math notranslate nohighlight">\( P(a &lt; X &lt; b) = \int_{a}^{b} f(x) \, dx \)</span><span class="math notranslate nohighlight">\( 
-where \)</span>f(x)<span class="math notranslate nohighlight">\( is the PDF of the random variable \)</span>X$.</p></li>
+$<span class="math notranslate nohighlight">\( P(a &lt; X &lt; b) = \int_{a}^{b} f(x) \, dx \)</span>$</p>
+<p>where <span class="math notranslate nohighlight">\(f(x)\)</span> is the PDF of the random variable <span class="math notranslate nohighlight">\(X\)</span>.</p>
+</li>
 <li><p><strong>Example</strong>: What is the probability that a randomly chosen person’s height is between 160 cm and 180 cm?</p>
 </div>
 <div class="images">
@@ -514,11 +516,12 @@ where \)</span>f(x)<span class="math notranslate nohighlight">\( is the PDF of t
 <h3>Cumulative Distribution Function (CDF)<a class="headerlink" href="#cumulative-distribution-function-cdf" title="Link to this heading">#</a></h3>
 <div class="group">
  <div class="text"> 
-<ul class="simple">
+<ul>
 <li><p>It gives the cumulative probability that a random variable (either <strong>discrete</strong> or <strong>continuous</strong>) <span class="math notranslate nohighlight">\(X &lt;= \textbf{certain value x} \)</span></p></li>
 <li><p>It is defined as:
-$<span class="math notranslate nohighlight">\( F(x) = P(X \leq x) \)</span><span class="math notranslate nohighlight">\(
-where \)</span>F(x)<span class="math notranslate nohighlight">\( is the CDF of the random variable \)</span>X$.</p></li>
+$<span class="math notranslate nohighlight">\( F(x) = P(X \leq x) \)</span>$</p>
+<p>where <span class="math notranslate nohighlight">\(F(x)\)</span> is the CDF of the random variable <span class="math notranslate nohighlight">\(X\)</span>.</p>
+</li>
 <li><p><strong>Example</strong>: What’s the probability that time between arrivals of emails is less than 5 minutes?</p></li>
 </ul>
 </div>
@@ -533,12 +536,12 @@ where \)</span>F(x)<span class="math notranslate nohighlight">\( is the CDF of t
 <h3>Binomial Distribution 🪙<a class="headerlink" href="#binomial-distribution" title="Link to this heading">#</a></h3>
 <div class="group">
  <div class="text"> 
-<ul class="simple">
+<ul>
 <li><p>It describes the number of successes in a fixed number of indipendent trials/experiments, where each trial has two possible outcomes (success or failure).</p></li>
 <li><p>It is defined as:
-$<span class="math notranslate nohighlight">\( P(X = k) = \binom{n}{k} p^k (1-p)^{n-k} \)</span>$
-where:</p>
-<ul>
+$<span class="math notranslate nohighlight">\( P(X = k) = \binom{n}{k} p^k (1-p)^{n-k} \)</span>$</p>
+<p>where:</p>
+<ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\binom{n}{k}\)</span> is the <a class="reference external" href="https://en.wikipedia.org/wiki/Binomial_coefficient">binomial coefficient</a></p></li>
 <li><p><span class="math notranslate nohighlight">\(n\)</span> is the number of trials</p></li>
 <li><p><span class="math notranslate nohighlight">\(k\)</span> is the number of successes</p></li>
@@ -556,12 +559,12 @@ where:</p>
 <h3>Poisson Distribution 📧<a class="headerlink" href="#poisson-distribution" title="Link to this heading">#</a></h3>
 <div class="group">
  <div class="text"> 
-<ul class="simple">
+<ul>
 <li><p>It describes the number of events that occur within a fixed interval of time or space, given that events happen independently and at a constant average rate.</p></li>
 <li><p>It is defined as:
-$<span class="math notranslate nohighlight">\( P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!} \)</span>$
-where:</p>
-<ul>
+$<span class="math notranslate nohighlight">\( P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!} \)</span>$</p>
+<p>where:</p>
+<ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\lambda\)</span> is the average rate of events in the interval</p></li>
 <li><p><span class="math notranslate nohighlight">\(k\)</span> is the number of events</p></li>
 <li><p><span class="math notranslate nohighlight">\(!\)</span> is the <a class="reference external" href="https://en.wikipedia.org/wiki/Factorial">factorial function</a></p></li>
@@ -578,12 +581,12 @@ where:</p>
 <h3>Uniform Distribution 🎲<a class="headerlink" href="#uniform-distribution" title="Link to this heading">#</a></h3>
 <div class="group">
  <div class="text"> 
-<ul class="simple">
+<ul>
 <li><p>It describes a situation where all outcomes are equally likely within a range.</p></li>
 <li><p>It is defined as:
-$<span class="math notranslate nohighlight">\( P(X = x) = \frac{1}{b - a} \)</span>$
-where:</p>
-<ul>
+$<span class="math notranslate nohighlight">\( P(X = x) = \frac{1}{b - a} \)</span>$</p>
+<p>where:</p>
+<ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(a\)</span> is the minimum value</p></li>
 <li><p><span class="math notranslate nohighlight">\(b\)</span> is the maximum value</p></li>
 <li><p><span class="math notranslate nohighlight">\(x\)</span> is any value between <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span></p></li>
@@ -600,12 +603,12 @@ where:</p>
 <h3>Normal Distribution 📈<a class="headerlink" href="#normal-distribution" title="Link to this heading">#</a></h3>
 <div class="group">
  <div class="text"> 
-<ul class="simple">
+<ul>
 <li><p>It is a bell-shaped curve where most of data points cluster around the mean, with fewer points as you move away from the mean.</p></li>
 <li><p>It is defined as:
-$<span class="math notranslate nohighlight">\( f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - \mu)^2}{2\sigma^2}} \)</span>$
-where:</p>
-<ul>
+$<span class="math notranslate nohighlight">\( f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - \mu)^2}{2\sigma^2}} \)</span>$</p>
+<p>where:</p>
+<ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\mu\)</span> is the mean (average)</p></li>
 <li><p><span class="math notranslate nohighlight">\(\sigma\)</span> is the standard deviation (spread of the data)</p></li>
 </ul>
