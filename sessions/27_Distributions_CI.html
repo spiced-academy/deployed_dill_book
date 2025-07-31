@@ -356,6 +356,14 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-confidence-interval">What is a Confidence Interval?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-height">Example: Height</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-we-define-this-range-of-values">How can we define this range of values?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-to-calculate-margin-of-error-moe">Methods to Calculate Margin of Error (MoE)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bootstrapping-for-calculating-ci">Bootstrapping for calculating CI:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-bootstraps">Getting Bootstraps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bootstrap-2">Bootstrap 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bootstrap-3">Bootstrap 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bootstrap-n">Bootstrap n</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collecting-bootstraps-means">Collecting Bootstraps Means</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constructing-confidence-interval">Constructing Confidence Interval</a></li>
 </ul>
 </li>
 </ul>
@@ -675,8 +683,9 @@ $<span class="math notranslate nohighlight">\( \text{CI} = \text{Point Estimate}
 <li><p><strong>Margin of Error (MoE)</strong>: quantifies the uncertainty in the estimate, how much we expect the sample statistic to be off from the true population parameter.</p></li>
 </ul>
 <!-- Method 1 -->
-<body style="font-family: Arial, sans-serif; margin: 40px; line-height: 1.6;">
-  <h3 style="text-align: center; margin-bottom: 40px;">Methods to Calculate Margin of Error (MoE)</h3>
+</section>
+<section id="methods-to-calculate-margin-of-error-moe">
+<h3>Methods to Calculate Margin of Error (MoE)<a class="headerlink" href="#methods-to-calculate-margin-of-error-moe" title="Link to this heading">#</a></h3>
 <details style="margin-bottom: 20px;">
     <summary style="font-size: 1.2em; font-weight: bold; cursor: pointer; padding: 10px; background-color: #e6ffe6; border-left: 5px solid green; border-radius: 5px;">
       1. Z-Score Method for the Mean
@@ -741,9 +750,38 @@ $<span class="math notranslate nohighlight">\( \text{CI} = \text{Point Estimate}
       </tr>
     </table>
   </div>
-</details>
-</body>
-</section>
+</details></section>
+<section id="bootstrapping-for-calculating-ci">
+<h3>Bootstrapping for calculating CI:<a class="headerlink" href="#bootstrapping-for-calculating-ci" title="Link to this heading">#</a></h3>
+<div group>
+ <div class="text">
+<div style="margin: 40px auto; text-align: center; max-width: 700px; font-size: 1.4em;">
+  One way to define this
+  <span style="color:violet">range of values</span> is the so called <span style="color:green">Bootstrapping</span> Method.
+</div>
+</div>
+<div class="images">
+    <img src="../images/distributions/with_replacement.png" alt="bootstrapping with replacement">
+</div>
+</div></section>
+<section id="getting-bootstraps">
+<h3>Getting Bootstraps<a class="headerlink" href="#getting-bootstraps" title="Link to this heading">#</a></h3>
+<img src="../images/distributions/bootstrap1.png" alt="bootstrapping with replacement"></section>
+<section id="bootstrap-2">
+<h3>Bootstrap 2<a class="headerlink" href="#bootstrap-2" title="Link to this heading">#</a></h3>
+<img src="../images/distributions/bootstrap2.png" alt="bootstrapping with replacement"></section>
+<section id="bootstrap-3">
+<h3>Bootstrap 3<a class="headerlink" href="#bootstrap-3" title="Link to this heading">#</a></h3>
+<img src="../images/distributions/bootstrap3.png" alt="bootstrapping with replacement"></section>
+<section id="bootstrap-n">
+<h3>Bootstrap n<a class="headerlink" href="#bootstrap-n" title="Link to this heading">#</a></h3>
+<img src="../images/distributions/bootstrapn.png" alt="bootstrapping with replacement"></section>
+<section id="collecting-bootstraps-means">
+<h3>Collecting Bootstraps Means<a class="headerlink" href="#collecting-bootstraps-means" title="Link to this heading">#</a></h3>
+<img src="../images/distributions/bootstrap_w_histogram.png" alt="bootstrapping with replacement"></section>
+<section id="constructing-confidence-interval">
+<h3>Constructing Confidence Interval<a class="headerlink" href="#constructing-confidence-interval" title="Link to this heading">#</a></h3>
+<img src="../images/distributions/bootstrap_w_ci.png" alt="bootstrapping with replacement"></section>
 </section>
 </section>
 
@@ -839,6 +877,14 @@ $<span class="math notranslate nohighlight">\( \text{CI} = \text{Point Estimate}
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-confidence-interval">What is a Confidence Interval?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-height">Example: Height</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-we-define-this-range-of-values">How can we define this range of values?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-to-calculate-margin-of-error-moe">Methods to Calculate Margin of Error (MoE)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bootstrapping-for-calculating-ci">Bootstrapping for calculating CI:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-bootstraps">Getting Bootstraps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bootstrap-2">Bootstrap 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bootstrap-3">Bootstrap 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bootstrap-n">Bootstrap n</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collecting-bootstraps-means">Collecting Bootstraps Means</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constructing-confidence-interval">Constructing Confidence Interval</a></li>
 </ul>
 </li>
 </ul>
