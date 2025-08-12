@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Hypothesis Testing &#8212; DS Course Material</title>
+    <title>Hypothesis Testing And A/B Testing &#8212; DS Course Material</title>
   
   
   
@@ -208,7 +208,7 @@
 <li class="toctree-l1"><a class="reference internal" href="25.2_RAG_Systems.html">RAG Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="26_Ai_Agents.html">Ai Agents</a></li>
 <li class="toctree-l1"><a class="reference internal" href="27_Distributions_CI.html">Distributions</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Hypothesis Testing</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Hypothesis Testing And A/B Testing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="21_Time_Series_Analysis_Intro.html">Time Series Analysis</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Rapid Assessment Test</span></p>
@@ -318,7 +318,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Hypothesis Testing</h1>
+    <h1>Hypothesis Testing And A/B Testing</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -331,10 +331,16 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intro">Intro</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-a-waterfall-view-really-worth-more">Is a Waterfall View Really Worth More?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-problem">The Problem</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hypothesis">Hypothesis</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-hypothesis">What is a Hypothesis?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-formulate-a-hypothesis">How Do We Formulate a Hypothesis?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-null-and-alternative-hypothesis">What is the Null and Alternative Hypothesis?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-hypotheses">Types of Hypotheses</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hypothesis-testing">Hypothesis Testing</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose-and-limitations-of-hypothesis-testing">Purpose and Limitations of Hypothesis Testing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-tailed-directional-hypothesis-test">One-Tailed (Directional) Hypothesis Test</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#two-tailed-non-directional-hypothesis-test">Two-Tailed (Non-Directional) Hypothesis Test</a></li>
@@ -362,8 +368,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="hypothesis-testing">
-<h1>Hypothesis Testing<a class="headerlink" href="#hypothesis-testing" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="hypothesis-testing-and-a-b-testing">
+<h1>Hypothesis Testing And A/B Testing<a class="headerlink" href="#hypothesis-testing-and-a-b-testing" title="Link to this heading">#</a></h1>
 <section id="intro">
 <h2>Intro<a class="headerlink" href="#intro" title="Link to this heading">#</a></h2>
 <section id="is-a-waterfall-view-really-worth-more">
@@ -389,6 +395,9 @@ document.write(`
 <li><p>Or could it just be due to random <strong>chance</strong>?</p></li>
 </ul>
 </section>
+</section>
+<section id="hypothesis">
+<h2>Hypothesis<a class="headerlink" href="#hypothesis" title="Link to this heading">#</a></h2>
 <section id="what-is-a-hypothesis">
 <h3>What is a Hypothesis?<a class="headerlink" href="#what-is-a-hypothesis" title="Link to this heading">#</a></h3>
 <div style="display: flex; font-family: Arial, sans-serif; margin: 20px; gap: 40px;">
@@ -524,6 +533,9 @@ In a hypothesis test, only H₀ can be tested and the goal is to find out if the
 </div>
 </div>
 </section>
+</section>
+<section id="hypothesis-testing">
+<h2>Hypothesis Testing<a class="headerlink" href="#hypothesis-testing" title="Link to this heading">#</a></h2>
 <section id="purpose-and-limitations-of-hypothesis-testing">
 <h3>Purpose and Limitations of Hypothesis Testing<a class="headerlink" href="#purpose-and-limitations-of-hypothesis-testing" title="Link to this heading">#</a></h3>
 <div style="max-width: 5000px; margin: 0; padding: 20px; display: flex; gap: 20px; align-items: center; flex-wrap: wrap; border: 1px solid #ddd; border-radius: 8px; background: #f9f9f9;">
@@ -1038,10 +1050,16 @@ Statistical significance (<strong>p-value</strong>) is not enough — always che
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intro">Intro</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-a-waterfall-view-really-worth-more">Is a Waterfall View Really Worth More?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-problem">The Problem</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hypothesis">Hypothesis</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-hypothesis">What is a Hypothesis?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-formulate-a-hypothesis">How Do We Formulate a Hypothesis?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-null-and-alternative-hypothesis">What is the Null and Alternative Hypothesis?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-hypotheses">Types of Hypotheses</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hypothesis-testing">Hypothesis Testing</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose-and-limitations-of-hypothesis-testing">Purpose and Limitations of Hypothesis Testing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-tailed-directional-hypothesis-test">One-Tailed (Directional) Hypothesis Test</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#two-tailed-non-directional-hypothesis-test">Two-Tailed (Non-Directional) Hypothesis Test</a></li>
