@@ -516,7 +516,6 @@ can be measured in different ways:</p>
 </div>
 </div>
 <p>Sample with <strong>two features</strong> x1 and x2, <strong>100 observations</strong> and obviously <strong>3 clusters</strong>.</p>
-<p>Notes: Mention that the number of clusters is usually not know in advance.</p>
 </section>
 <section id="id2">
 <h3>Example<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
@@ -566,10 +565,7 @@ can be measured in different ways:</p>
   <div class="images">
     <img src="../images/clustering/K-means.png">
   </div>
-</div><p>Notes:<br />
-Choose e.g.: “I’ll chose” / “Gaussian Mixture” / manually select 3 points / “GO!” / “Update Centroids” / …<br />
-Selecting “Farthest Points” behaves like kmeans++</p>
-</section>
+</div></section>
 <section id="how-to-find-the-best-number-of-clusters">
 <h3>How to find the best number of clusters?<a class="headerlink" href="#how-to-find-the-best-number-of-clusters" title="Link to this heading">#</a></h3>
 <div class="cell tag_remove-input docutils container">
@@ -651,8 +647,6 @@ Selecting “Farthest Points” behaves like kmeans++</p>
 <li><p>Balanced K-means (enforces the cluster sizes to be strictly balanced)</p></li>
 <li><p>Regularized K-means (effective clustering of high-dimensional data)</p></li>
 </ul>
-<p>Notes:<br />
-regarding greedy: only optimum for each single step is taken into account. Final outcome depends on number K and initialization. Which other algorithm was greedy? (decision trees).</p>
 </section>
 </section>
 <section id="hierarchical-clustering">
@@ -660,12 +654,6 @@ regarding greedy: only optimum for each single step is taken into account. Final
 <section id="idea">
 <h3>Idea<a class="headerlink" href="#idea" title="Link to this heading">#</a></h3>
 <p>Finding clusters not depending on random initialization.</p>
-<p>Notes:</p>
-<ul class="simple">
-<li><p>“most similar” includes the need to define similarity (see the beginning of the lecture, e.g. Euklidiean, Manhatten, …)</p></li>
-<li><p>“like a single observation” includes the need to define the characteristic of a cluster like the centre, e.g. The following slide shows two possibilities.</p></li>
-</ul>
-<p>Those are two hyperparameters which have to be defined.</p>
 </section>
 <section id="agglomerative-algorithm">
 <h3>Agglomerative algorithm<a class="headerlink" href="#agglomerative-algorithm" title="Link to this heading">#</a></h3>
@@ -767,8 +755,6 @@ Visual representation of records and hierarchy of clusters to which they belong 
 <li><p>clusters dense regions which are separated by areas that are relatively empty</p></li>
 <li><p>it identifies points that don’t belong to any cluster (aka noise)</p></li>
 </ul>
-<p>notes:</p>
-<p>captures the insight that clusters are dense groups of points. The idea is that if a particular point belongs to a cluster, it should be near to lots of other points in that cluster. DBSCAN finds clusters as dense regions of points separated by low-density areas.</p>
 </section>
 <section id="two-hyper-parameters">
 <h3>Two hyper-parameters<a class="headerlink" href="#two-hyper-parameters" title="Link to this heading">#</a></h3>
