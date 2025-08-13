@@ -50,6 +50,7 @@ parts:
     - file: sessions/28_Hypothesis_Testing
     - file: sessions/21_Time_Series_Analysis_Intro
     - file: sessions/23_Clustering
+    - file: sessions/22_Dimensionality_Reduction
 
   - caption: Rapid Assessment Test
     chapters:
