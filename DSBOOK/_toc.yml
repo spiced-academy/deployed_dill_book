@@ -51,6 +51,7 @@ parts:
     - file: sessions/21_Time_Series_Analysis_Intro
     - file: sessions/23_Clustering
     - file: sessions/22_Dimensionality_Reduction
+    - file: sessions/29_Recommender_Systems
 
   - caption: Rapid Assessment Test
     chapters:
